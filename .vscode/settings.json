@@ -1,2 +1,5 @@
 {
+    "git.useEditorAsCommitInput": false,
+    "git.useCommitInputAsStashMessage": true,
+    "git.verboseCommit": true
 }
