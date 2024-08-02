@@ -11,6 +11,12 @@ Route::get('/', function () {
 // });
 
 
-Route::get('/user/auth/login', 'App\Http\Controllers\UserAuthController@Login');
-Route::get('/user/{id}', 'App\Http\Controllers\UserAuthController@Profile');
+// Route::get('/user/auth/login', 'App\Http\Controllers\UserAuthController@Login');
+// Route::get('/user/{id}', 'App\Http\Controllers\UserAuthController@Profile');
 
+Route::group(['prefix' => 'user'], function () {
+    Route::group(['prefix' => 'auth'], function () {
+        Route::get('login', 'App\Http\Controllers\UserAuthController@Login');
+        Route::get('profile/{id}', 'App\Http\Controllers\UserAuthController@Profile');
+    });
+});
