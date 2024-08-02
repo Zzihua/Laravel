@@ -1,5 +1,5 @@
 <h1>{{ $title }}</h1> 
-<h2>{{ $subtitle }}</h2> 
+<h3>{{ $subtitle }}</h3> 
 <div class="social"> 
     <a href="#">分享到 Facebook</a> 
     <a href="#">分享到 Twitter</a> 
