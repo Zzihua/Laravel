@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Shop\Entity\User;
+use Hash;
 
 class UserAuthController extends Controller
 {
@@ -22,7 +24,21 @@ class UserAuthController extends Controller
     public function SignUpProcess()
     {
         $form_data = request()->all();
-        dd($form_data );
+
+        if( $form_data['password'] == '' || $form_data['email'] == '' || $form_data['nickname'] == ''){
+            return redirect('/user/auth/signup')
+            ->withInput()
+            ->withErrors('資料不齊全');
+        }else{
+            $user = User::create([
+                'email' => $form_data['email'],
+                'password' => Hash::make($form_data['password']),
+                'nickname' => $form_data['nickname'],
+            ]);
+            dd( $user );
+        }
+
+        
         
     }
     public function LogIn()

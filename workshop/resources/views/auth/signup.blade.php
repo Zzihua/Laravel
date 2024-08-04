@@ -1,4 +1,3 @@
-
 <!-- 指定繼承 layout.master 母模板 --> 
 @extends('layout.master_signup') 
 
@@ -8,74 +7,60 @@
 <!-- 傳送資料到母模板，並指定變數為 content -->
 @section('content') 
 
-		<!-- Page Title
-		============================================= -->
-		<section class="page-title bg-transparent">
-			<div class="container">
-				<div class="page-title-row">
 
-					<div class="page-title-content">
-						<h1>註冊頁面</h1>
-					</div>
-
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">首頁</a></li>
-							<li class="breadcrumb-item"><a href="#">會員</a></li>
-							<li class="breadcrumb-item active" aria-current="page">註冊頁面</li>
-						</ol>
-					</nav>
-
-				</div>
-			</div>
-		</section><!-- .page-title end -->
-
-		<!-- Content
-		============================================= -->
-		<section id="content">
+<!-- <div class="social"> 
+    <a href="#">分享到 Facebook</a> 
+    <a href="#">分享到 Twitter</a> 
+</div>  -->
+<section id="content">
 			<div class="content-wrap">
 				<div class="container">
 
-					<div >
+					<div class="mx-auto mb-0" id="tab-login-register" style="max-width: 500px;">
 
-						<div class="form-result"></div>
+						<ul class="nav canvas-alt-tabs2 tabs nav-pills justify-content-center mb-3" id="canvas-tab-nav2" role="tablist">
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="tab-login-tab" data-bs-toggle="pill" data-bs-target="#tab-login"
+									type="button" role="tab" aria-controls="tab-login" aria-selected="false">Login</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link active" id="tab-register-tab" data-bs-toggle="pill" data-bs-target="#tab-register" type="button"
+									role="tab" aria-controls="tab-register" aria-selected="true">Register</button>
+							</li>
+						</ul>
 
-						<div class="row">
-							<div class="col-lg-12">
-								<form action="/user/auth/signup" method="post" >
-                                    @csrf
-									<div class="form-process">
-										<div class="css3-spinner">
-											<div class="css3-spinner-scaler"></div>
-										</div>
+							<div class="tab-pane" id="tab-register" role="tabpanel" aria-labelledby="canvas-tab-register-tab"
+								tabindex="0">
+								<div class="card mb-0">
+									<div class="card-body" style="padding: 40px;">
+										<h3>Register for an Account</h3>
+
+										<form action="/user/auth/signup" method="post">
+                                            @csrf
+											<div class="col-12 form-group">
+												<label for="register-form-name">Name:</label>
+												<input type="text" id="nickname" name="nickname" value="" class="form-control">
+											</div>
+
+											<div class="col-12 form-group">
+												<label for="register-form-email">Email:</label>
+												<input type="text" id="email" name="email" value="" class="form-control">
+											</div>
+
+
+											<div class="col-12 form-group">
+												<label for="register-form-password">Password:</label>
+												<input type="password" id="password" name="password" value="" class="form-control">
+											</div>
+
+
+											<div class="col-12 form-group">
+												<button class="button button-3d button-black m-0" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
+											</div>
+
+										</form>
 									</div>
-									<div class="col-12 form-group">
-										<label>暱稱:</label>
-										<input type="text" name="nickname" id="nickname" class="form-control required" value="" placeholder="輸入名稱">
-									</div>
-									<div class="col-12 form-group">
-										<label>帳號:</label>
-										<input type="text" name="account" id="account" class="form-control required" value="" placeholder="輸入帳號">
-									</div>
-									<div class="col-12 form-group">
-										<label>密碼:</label>
-										<input type="text" name="password" id="password" class="form-control required" value="" placeholder="輸入密碼">
-									</div>
-									<div class="col-12 form-group">
-										<label>帳號類型:</label><br>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input required" type="radio" name="type" id="type" value="G">
-											<label class="form-check-label text-transform-none" for="type">一般會員</label>
-										</div>
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="type" id="type" value="A">
-											<label class="form-check-label text-transform-none" for="type">管理者</label>
-										</div>
-									</div>
-									<div class="col-12">
-										<button type="submit" class="btn btn-secondary">Register</button>
-									</div>
-								</form>
+								</div>
 							</div>
 
 						</div>
@@ -84,7 +69,7 @@
 
 				</div>
 			</div>
-		</section><!-- #content end -->
+		</section>
 
+@endsection  
 
-@endsection 

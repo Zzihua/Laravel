@@ -8,23 +8,29 @@
 	<meta name="description" content="Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today.">
 
 	<!-- Font Imports -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 	<!-- Core Style -->
-	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+	<!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
 	<!-- Font Icons -->
-	<link rel="stylesheet" href="{{asset('assets/css/font-icons.css')}}">
+	<!-- <link rel="stylesheet" href="css/font-icons.css"> -->
+    <link rel="stylesheet" href="{{asset('assets/css/font-icons.css')}}">
 
 	<!-- Custom CSS -->
-	<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+	<!-- <link rel="stylesheet" href="css/custom.css"> -->
+    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Document Title
 	============================================= -->
-	<title>Login - Layout 3 | Canvas</title>
+	<title>Login - Layout 2 | Canvas</title>
 
 </head>
 
@@ -1694,8 +1700,31 @@
 			<div class="header-wrap-clone"></div>
 		</header><!-- #header end -->
 
+		<!-- Page Title
+		============================================= -->
+		<section class="page-title bg-transparent">
+			<div class="container">
+				<div class="page-title-row">
 
-        @yield('content') 
+					<div class="page-title-content">
+						<h1>My Account</h1>
+					</div>
+
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Templates</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Login &amp; Register 3</li>
+						</ol>
+					</nav>
+
+				</div>
+			</div>
+		</section><!-- .page-title end -->
+
+		<!-- Content
+		============================================= -->
+		@yield('content') 
 
 		<!-- Footer
 		============================================= -->
@@ -1951,7 +1980,7 @@
 	<!-- JavaScripts
 	============================================= -->
 	<!-- <script src="/js/functions.js"></script> -->
-	<script src="{{asset('assets/js/functions.js')}}"></script>
+	<script src="{{asset('js/functions.js')}}"></script>
 
 </body>
 </html>
