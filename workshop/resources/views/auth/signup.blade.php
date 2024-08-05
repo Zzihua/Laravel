@@ -64,7 +64,7 @@
 													<label class="form-check-label text-transform-none" for="type">一般會員</label>
 												</div>
 												<div class="form-check form-check-inline">
-													@if
+													@if( old('type')=='A')
 													<input class="form-check-input" type="radio" name="type" id="type" value="A" checked>
 													@else
 													<input class="form-check-input" type="radio" name="type" id="type" value="A">
