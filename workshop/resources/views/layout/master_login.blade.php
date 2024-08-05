@@ -1707,7 +1707,7 @@
 				<div class="page-title-row">
 
 					<div class="page-title-content">
-						<h1>My Account</h1>
+						<h1>登入</h1>
 					</div>
 
 					<nav aria-label="breadcrumb">

@@ -8,10 +8,6 @@
 @section('content') 
 
 
-<!-- <div class="social"> 
-    <a href="#">分享到 Facebook</a> 
-    <a href="#">分享到 Twitter</a> 
-</div>  -->
 <section id="content">
 			<div class="content-wrap">
 				<div class="container">
@@ -33,20 +29,23 @@
 							<div class="tab-pane show active" id="tab-login" role="tabpanel" aria-labelledby="canvas-tab-login-tab"
 								tabindex="0">
 								<div class="card mb-0">
-									<div class="card-body" style="padding: 40px;">
-										<form id="login-form" name="login-form" class="mb-0" action="#" method="post">
 
+									@include('component.loginAlert')
+
+									<div class="card-body" style="padding: 40px;">
+										<form action="/user/auth/login" method="post">
+											@csrf
 											<h3>Login to your Account</h3>
 
 											<div class="row">
 												<div class="col-12 form-group">
-													<label for="login-form-username">Username:</label>
-													<input type="text" id="login-form-username" name="login-form-username" value="" class="form-control">
+													<label for="login-form-email">Email:</label>
+													<input type="text" id="email" name="email" value="" class="form-control">
 												</div>
 
 												<div class="col-12 form-group">
 													<label for="login-form-password">Password:</label>
-													<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control">
+													<input type="password" id="password" name="password" value="" class="form-control">
 												</div>
 
 												<div class="col-12 form-group">
@@ -55,53 +54,6 @@
 														<a href="#">Forgot Password?</a>
 													</div>
 												</div>
-											</div>
-
-										</form>
-									</div>
-								</div>
-							</div>
-
-							<div class="tab-pane" id="tab-register" role="tabpanel" aria-labelledby="canvas-tab-register-tab"
-								tabindex="0">
-								<div class="card mb-0">
-									<div class="card-body" style="padding: 40px;">
-										<h3>Register for an Account</h3>
-
-										<form id="register-form" name="register-form" class="row mb-0" action="#" method="post">
-
-											<div class="col-12 form-group">
-												<label for="register-form-name">Name:</label>
-												<input type="text" id="register-form-name" name="register-form-name" value="" class="form-control">
-											</div>
-
-											<div class="col-12 form-group">
-												<label for="register-form-email">Email Address:</label>
-												<input type="text" id="register-form-email" name="register-form-email" value="" class="form-control">
-											</div>
-
-											<div class="col-12 form-group">
-												<label for="register-form-username">Choose a Username:</label>
-												<input type="text" id="register-form-username" name="register-form-username" value="" class="form-control">
-											</div>
-
-											<div class="col-12 form-group">
-												<label for="register-form-phone">Phone:</label>
-												<input type="text" id="register-form-phone" name="register-form-phone" value="" class="form-control">
-											</div>
-
-											<div class="col-12 form-group">
-												<label for="register-form-password">Choose Password:</label>
-												<input type="password" id="register-form-password" name="register-form-password" value="" class="form-control">
-											</div>
-
-											<div class="col-12 form-group">
-												<label for="register-form-repassword">Re-enter Password:</label>
-												<input type="password" id="register-form-repassword" name="register-form-repassword" value="" class="form-control">
-											</div>
-
-											<div class="col-12 form-group">
-												<button class="button button-3d button-black m-0" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
 											</div>
 
 										</form>

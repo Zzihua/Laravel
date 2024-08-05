@@ -49,11 +49,22 @@ class UserAuthController extends Controller
                 ->subject('Laravel 8 Mail Test');
             });
             dd( $user );
-        }
-
-        
-        
+        }        
     }
+
+    public function LoginProcess()
+    {
+        $form_data = request()->all();
+
+        if( $form_data['password'] == '' || $form_data['email'] == ''){
+            return redirect('/user/auth/login')
+            ->withInput()
+            ->withErrors(['請檢查所有欄位都填滿']);
+        }
+        dd( $form_data );
+    }
+
+
     public function LogIn()
     {
         $binding = [
