@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Shop\Entity\User;
 use Hash;
+use Mail;
 use Validator;
+
 
 class UserAuthController extends Controller
 {
@@ -37,6 +39,15 @@ class UserAuthController extends Controller
                 'nickname' => $form_data['nickname'],
                 'type' => $form_data['type'],
             ]);
+           
+
+            Mail::send('email.signUpEmailNotification', [
+             'nickname' => $form_data['nickname']
+            ], function($message) use ($form_data) {
+                $message->to($form_data['email'],$form_data['nickname'])
+                ->from('C109156129@nkust.edu.tw')
+                ->subject('Laravel 8 Mail Test');
+            });
             dd( $user );
         }
 
@@ -51,4 +62,5 @@ class UserAuthController extends Controller
         return view( 'auth.login' , $binding);
     }
 
+    
 }
