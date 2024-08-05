@@ -32,6 +32,9 @@
 							<div class="tab-pane" id="tab-register" role="tabpanel" aria-labelledby="canvas-tab-register-tab"
 								tabindex="0">
 								<div class="card mb-0">
+									
+									@include('component.signupAlert')
+
 									<div class="card-body" style="padding: 40px;">
 										<h3>Register for an Account</h3>
 
