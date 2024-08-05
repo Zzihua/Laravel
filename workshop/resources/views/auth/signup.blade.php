@@ -1,5 +1,5 @@
 <!-- 指定繼承 layout.master 母模板 --> 
-@extends('layout.master_signup') 
+@extends('layout.master') 
 
 <!-- 傳送資料到母模板，並指定變數為 title --> 
 @section('title', $title) 
@@ -18,7 +18,7 @@
 
 					<div class="mx-auto mb-0" id="tab-login-register" style="max-width: 500px;">
 
-						<ul class="nav canvas-alt-tabs2 tabs nav-pills justify-content-center mb-3" id="canvas-tab-nav2" role="tablist">
+						<!-- <ul class="nav canvas-alt-tabs2 tabs nav-pills justify-content-center mb-3" id="canvas-tab-nav2" role="tablist">
 							<li class="nav-item" role="presentation">
 								<button class="nav-link" id="tab-login-tab" data-bs-toggle="pill" data-bs-target="#tab-login"
 									type="button" role="tab" aria-controls="tab-login" aria-selected="false" onclick="window.location.href='/user/auth/login'">Login</button>
@@ -27,7 +27,7 @@
 								<button class="nav-link active" id="tab-register-tab" data-bs-toggle="pill" data-bs-target="#tab-register" type="button"
 									role="tab" aria-controls="tab-register" aria-selected="true" onclick="window.location.href='/user/auth/signup'">Register</button>
 							</li>
-						</ul>
+						</ul> -->
 
 							<div class="tab-pane" id="tab-register" role="tabpanel" aria-labelledby="canvas-tab-register-tab"
 								tabindex="0">

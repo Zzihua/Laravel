@@ -26,11 +26,19 @@ class UserAuthController extends Controller
 
     public function LogIn()
     {
-        $binding = [
-            'title' => '登入',
-        ];
-        return view( 'auth.login' , $binding);
+        // $binding = [
+        //     'title' => '登入',
+        // ];
+        return view( 'auth.login');
     }
+
+    public function SignOut()
+    {
+        session()->forget('user_id');
+        return redirect('/user/auth/login');
+    }
+
+
 
 
     public function Home()
