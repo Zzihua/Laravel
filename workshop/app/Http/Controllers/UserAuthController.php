@@ -45,7 +45,7 @@ class UserAuthController extends Controller
              'nickname' => $form_data['nickname']
             ], function($message) use ($form_data) {
                 $message->to($form_data['email'],$form_data['nickname'])
-                ->from('C109156129@nkust.edu.tw')
+                ->from('c109156129@nkust.edu.tw')
                 ->subject('Laravel 8 Mail Test');
             });
             dd( $user );
