@@ -34,6 +34,7 @@ class UserAuthController extends Controller
                 'email' => $form_data['email'],
                 'password' => Hash::make($form_data['password']),
                 'nickname' => $form_data['nickname'],
+                'type' => $form_data['type'],
             ]);
             dd( $user );
         }

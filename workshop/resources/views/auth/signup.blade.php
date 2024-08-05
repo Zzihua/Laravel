@@ -21,11 +21,11 @@
 						<ul class="nav canvas-alt-tabs2 tabs nav-pills justify-content-center mb-3" id="canvas-tab-nav2" role="tablist">
 							<li class="nav-item" role="presentation">
 								<button class="nav-link" id="tab-login-tab" data-bs-toggle="pill" data-bs-target="#tab-login"
-									type="button" role="tab" aria-controls="tab-login" aria-selected="false">Login</button>
+									type="button" role="tab" aria-controls="tab-login" aria-selected="false" onclick="window.location.href='/user/auth/login'">Login</button>
 							</li>
 							<li class="nav-item" role="presentation">
 								<button class="nav-link active" id="tab-register-tab" data-bs-toggle="pill" data-bs-target="#tab-register" type="button"
-									role="tab" aria-controls="tab-register" aria-selected="true">Register</button>
+									role="tab" aria-controls="tab-register" aria-selected="true" onclick="window.location.href='/user/auth/signup'">Register</button>
 							</li>
 						</ul>
 
@@ -39,21 +39,40 @@
                                             @csrf
 											<div class="col-12 form-group">
 												<label for="register-form-name">Name:</label>
-												<input type="text" id="nickname" name="nickname" value="" class="form-control">
+												<input type="text" id="nickname" name="nickname" value="{{old(('nickname'))}}" class="form-control">
 											</div>
 
 											<div class="col-12 form-group">
 												<label for="register-form-email">Email:</label>
-												<input type="text" id="email" name="email" value="" class="form-control">
+												<input type="text" id="email" name="email" value="{{old(('email'))}}" class="form-control">
 											</div>
 
 
 											<div class="col-12 form-group">
 												<label for="register-form-password">Password:</label>
-												<input type="password" id="password" name="password" value="" class="form-control">
+												<input type="password" id="password" name="password" value="{{old(('password'))}}" class="form-control">
 											</div>
 
-
+											<div class="col-12 form-group">
+												<label><b>帳號類型:</b></label><br>
+												<div class="form-check form-check-inline">
+													@if ( old('type')=='G')
+													<input class="form-check-input required" type="radio" name="type" id="type" value="G" checked>
+													@else
+													<input class="form-check-input required" type="radio" name="type" id="type" value="G">
+													@endif	
+													<label class="form-check-label text-transform-none" for="type">一般會員</label>
+												</div>
+												<div class="form-check form-check-inline">
+													@if
+													<input class="form-check-input" type="radio" name="type" id="type" value="A" checked>
+													@else
+													<input class="form-check-input" type="radio" name="type" id="type" value="A">
+													@endif
+													<label class="form-check-label text-transform-none" for="type">管理者</label>
+												</div>
+											</div>
+											
 											<div class="col-12 form-group">
 												<button class="button button-3d button-black m-0" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
 											</div>
