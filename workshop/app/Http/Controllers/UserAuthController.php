@@ -33,6 +33,14 @@ class UserAuthController extends Controller
             ->withInput()
             ->withErrors(['請檢查所有欄位都填滿']);
         }else{
+            //判斷使用者帳號是否重複
+            $user = User::where('email', $form_data['email'])->firstOrFail();
+            if( !is_null($user) ){
+                return redirect('/user/auth/signup')
+                ->withInput()
+                ->withErrors(['帳號已被註冊，請更換帳號']);
+            }
+
             $user = User::create([
                 'email' => $form_data['email'],
                 'password' => Hash::make($form_data['password']),
@@ -48,22 +56,22 @@ class UserAuthController extends Controller
                 ->from('c109156129@nkust.edu.tw')
                 ->subject('Laravel 8 Mail Test');
             });
-            dd( $user );
+            return redirect('/user/auth/login');
         }        
     }
 
     public function LoginProcess()
     {
         $form_data = request()->all();
-
-        if( $form_data['password'] == '' || $form_data['email'] == ''){
-            return redirect('/user/auth/login')
-            ->withInput()
-            ->withErrors(['請檢查所有欄位都填滿']);
+        // dd($form_data);
+        $user = User::where('email', $form_data['email'])->FirstOrFail();
+        if (Hash::check($form_data['password'], $user->password)){
+            echo '登入成功';
+        }else{
+            echo '登入失敗';
         }
-        dd( $form_data );
-    }
 
+    }
 
     public function LogIn()
     {
