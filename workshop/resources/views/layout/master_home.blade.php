@@ -8,29 +8,30 @@
 	<meta name="description" content="Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today.">
 
 	<!-- Font Imports -->
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 	<!-- Core Style -->
 	<!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
 	<!-- Font Icons -->
 	<!-- <link rel="stylesheet" href="css/font-icons.css"> -->
-    <link rel="stylesheet" href="{{asset('assets/css/font-icons.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/font-icons.css')}}">
+
+	<!-- Plugins/Components CSS -->
+	<!-- <link rel="stylesheet" href="css/swiper.css"> -->
+	<link rel="stylesheet" href="{{asset('assets/css/swiper.css')}}">
 
 	<!-- Custom CSS -->
 	<!-- <link rel="stylesheet" href="css/custom.css"> -->
-    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Document Title
 	============================================= -->
-	<title>Login - Layout 2 | Canvas</title>
+	<title>Home - Portfolio Layout 2 | Canvas</title>
 
 </head>
 
@@ -49,12 +50,12 @@
 
 						<!-- Logo
 						============================================= -->
-						<!-- <div id="logo">
+						<div id="logo">
 							<a href="index.html">
 								<img class="logo-default" srcset="images/logo.png, images/logo@2x.png 2x" src="images/logo@2x.png" alt="Canvas Logo">
 								<img class="logo-dark" srcset="images/logo-dark.png, images/logo-dark@2x.png 2x" src="images/logo-dark@2x.png" alt="Canvas Logo">
 							</a>
-						</div>#logo end -->
+						</div><!-- #logo end -->
 
 						<div class="header-misc">
 
@@ -72,6 +73,7 @@
 									<div class="top-cart-title">
 										<h4>Shopping Cart</h4>
 									</div>
+									<!-- <a href="#" class="button button-circle button-3d button-light button-white">Light Button</a> -->
 									<div class="top-cart-items">
 										<div class="top-cart-item">
 											<div class="top-cart-item-image">
@@ -1700,32 +1702,244 @@
 			<div class="header-wrap-clone"></div>
 		</header><!-- #header end -->
 
-		<!-- Page Title
-		============================================= -->
-		<section class="page-title bg-transparent">
-			<div class="container">
-				<div class="page-title-row">
+		<section id="slider" class="slider-element swiper_wrapper customjs canvas-slider canvas-slider-grid min-vh-75">
+			<div class="slider-inner">
 
-					<div class="page-title-content">
-						<h1>登入</h1>
+				<div class="swiper-container swiper-parent">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href="#">
+								<div class="bg-overlay">
+									<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+										<div class="portfolio-desc">
+											<h3>Fixed Aperture</h3>
+											<span>Illustrations, Graphics</span>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/12.jpg');"></div>
+						</div>
+						<div class="swiper-slide">
+							<div class="swiper-container swiper-nested-1">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Locked Steel Gate</h3>
+														<span>Illustrations</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/2.jpg');"></div>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Mac Sunglasses</h3>
+														<span>Graphics, UI Elements</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/3.jpg');"></div>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Grotesque</h3>
+														<span>Illustrations, Graphics</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/6-1.jpg');"></div>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Cup of Coffee</h3>
+														<span>Media, Video</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/6-2.jpg');"></div>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Bridge Side</h3>
+														<span>Illustrations, Icons</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/9-2.jpg');"></div>
+									</div>
+								</div>
+								<div id="sw1-arrow-top" class="slider-arrow-top-sm"><i class="fa-solid fa-chevron-up"></i></div>
+								<div id="sw1-arrow-bottom" class="slider-arrow-bottom-sm"><i class="fa-solid fa-chevron-down"></i></div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<a href="#">
+								<div class="bg-overlay">
+									<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+										<div class="portfolio-desc">
+											<h3>Stroll Bridge</h3>
+											<span>Motion, Graphics</span>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/14.jpg');"></div>
+						</div>
+						<div class="swiper-slide">
+							<div class="swiper-container swiper-nested-2">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Study Table</h3>
+														<span>Graphics, Media</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/10.jpg');"></div>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Garden Sidebench</h3>
+														<span>Video</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/12-1.jpg');"></div>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Morning Dew</h3>
+														<span>Icons, Graphics</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/13.jpg');"></div>
+									</div>
+								</div>
+								<div id="sw2-arrow-top" class="slider-arrow-top-sm"><i class="fa-solid fa-chevron-up"></i></div>
+								<div id="sw2-arrow-bottom" class="slider-arrow-bottom-sm"><i class="fa-solid fa-chevron-down"></i></div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<a href="#">
+								<div class="bg-overlay">
+									<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+										<div class="portfolio-desc">
+											<h3>Riverside Birds</h3>
+											<span>Icons, Graphics</span>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/9.jpg');"></div>
+						</div>
+						<div class="swiper-slide">
+							<div class="swiper-container swiper-nested-3">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Tabletop Contents</h3>
+														<span>Media, Video</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/1.jpg');"></div>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Backpack Contents</h3>
+														<span>UI Elements</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/7.jpg');"></div>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<div class="bg-overlay">
+												<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+													<div class="portfolio-desc">
+														<h3>Coffee Cake</h3>
+														<span>Graphics</span>
+													</div>
+												</div>
+											</div>
+										</a>
+										<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/6-3.jpg');"></div>
+									</div>
+								</div>
+								<div id="sw3-arrow-top" class="slider-arrow-top-sm"><i class="fa-solid fa-chevron-up"></i></div>
+								<div id="sw3-arrow-bottom" class="slider-arrow-bottom-sm"><i class="fa-solid fa-chevron-down"></i></div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<a href="#">
+								<div class="bg-overlay">
+									<div class="bg-overlay-content text-overlay-mask dark desc-sm align-items-end justify-content-start">
+										<div class="portfolio-desc">
+											<h3>Shake It!</h3>
+											<span>Icons, Graphics</span>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="swiper-slide-bg" style="background-image: url('images/portfolio/single/full-thumbs/6.jpg');"></div>
+						</div>
 					</div>
-
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item"><a href="#">Templates</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Login &amp; Register 3</li>
-						</ol>
-					</nav>
-
+					<div class="slider-arrow-left"><i class="uil uil-angle-left-b"></i></div>
+					<div class="slider-arrow-right"><i class="uil uil-angle-right-b"></i></div>
 				</div>
+
 			</div>
-		</section><!-- .page-title end -->
+		</section>
 
 		<!-- Content
 		============================================= -->
-		@yield('content') 
+		<!-- #content end -->
 
+		@yield('content')
+		
 		<!-- Footer
 		============================================= -->
 		<footer id="footer" class="dark">
@@ -1979,8 +2193,80 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<!-- <script src="/js/functions.js"></script> -->
 	<script src="{{asset('js/functions.js')}}"></script>
+
+	<script>
+		window.addEventListener( 'pluginSwiperReady', () => {
+			var swiperParent = new Swiper('.swiper-parent',{
+				paginationClickable: false,
+				slidesPerView: 4,
+				grabCursor: true,
+				navigation: {
+			    	nextEl: '.slider-arrow-right',
+			    	prevEl: '.slider-arrow-left',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 4
+			        },
+			        992: {
+			          slidesPerView: 3
+			        },
+			        768: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested1 = new Swiper('.swiper-nested-1',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 3,
+				navigation: {
+			    	nextEl: '#sw1-arrow-bottom',
+			    	prevEl: '#sw1-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 3
+			        },
+			        992: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested2 = new Swiper('.swiper-nested-2',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 2,
+				navigation: {
+			    	nextEl: '#sw2-arrow-bottom',
+			    	prevEl: '#sw2-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested3 = new Swiper('.swiper-nested-3',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 2,
+				navigation: {
+			    	nextEl: '#sw3-arrow-bottom',
+			    	prevEl: '#sw3-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+		});
+	</script>
 
 </body>
 </html>

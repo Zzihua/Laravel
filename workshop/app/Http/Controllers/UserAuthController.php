@@ -24,6 +24,23 @@ class UserAuthController extends Controller
         return view( 'auth.signup' , $binding);
     }
 
+    public function LogIn()
+    {
+        $binding = [
+            'title' => '登入',
+        ];
+        return view( 'auth.login' , $binding);
+    }
+
+
+    public function Home()
+    {
+        $binding = [
+            'title' => 'Home',
+        ];
+        return view( 'auth.home', $binding);
+    }
+
     public function SignUpProcess()
     {
         $form_data = request()->all();
@@ -67,19 +84,20 @@ class UserAuthController extends Controller
         $user = User::where('email', $form_data['email'])->FirstOrFail();
         if (Hash::check($form_data['password'], $user->password)){
             echo '登入成功';
+            session() -> put('user_id', $user->id);
+            session() ->put('user_email', $user->email);
+            //導向首頁
+            return redirect('/user/auth/home');
         }else{
             echo '登入失敗';
+            return redirect('/user/auth/login')
+            ->withInput()
+            ->withErrors(['無此帳號，帳號或密碼錯誤']);
+
         }
 
     }
 
-    public function LogIn()
-    {
-        $binding = [
-            'title' => '登入',
-        ];
-        return view( 'auth.login' , $binding);
-    }
-
+   
     
 }
