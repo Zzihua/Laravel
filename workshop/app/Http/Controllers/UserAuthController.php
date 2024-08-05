@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Shop\Entity\User;
 use Hash;
+use Validator;
 
 class UserAuthController extends Controller
 {
