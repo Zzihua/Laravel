@@ -25,6 +25,7 @@
  <!-- Plugins/Components CSS -->
  <!-- <link rel="stylesheet" href="css/components/ion.rangeslider.css"> -->
  <link rel="stylesheet" href="{{asset('assets/css/components/ion.rangeslider.css')}}">
+ 
 
  <!-- Document Title
  ============================================= -->
@@ -117,6 +118,9 @@
 
        <ul class="menu-container">
         @if (session()->has('user_id'))
+        <li class="menu-item">
+         <a  href="{{route('user.auth.shop')}}"><div>商店</div></a>
+        </li>
         <li class="menu-item">
          <a class="button button-circle button-3d button-light button-white" href="{{route('user.auth.signout')}}"><div>登出</div></a>
         </li>

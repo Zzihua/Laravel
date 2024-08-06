@@ -24,6 +24,14 @@ class UserAuthController extends Controller
         return view( 'auth.signup' , $binding);
     }
 
+    public function Shop()
+    {
+        $binding = [
+            'title' => '商店',
+        ];
+        return view( 'auth.shop' , $binding);
+    }
+
     public function LogIn()
     {
         // $binding = [
