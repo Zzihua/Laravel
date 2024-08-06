@@ -32,17 +32,17 @@
                             <option value="C"
                                     @if(old('status', $Merchandise->status)=='C') selected @endif
                             >
-                                {{ trans('shop.merchandise.fields.status.create') }}
+                                建立中
                             </option>
                             <option value="S"
                                     @if(old('status', $Merchandise->status)=='S') selected @endif
                             >
-                               建立中
+                               銷售中
                             </option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="name">{{ trans('shop.merchandise.fields.name') }}</label>
+                        <label for="name">商品名稱</label>
                         <input type="text"
                                class="form-control"
                                id="name"
@@ -52,7 +52,7 @@
                         >
                     </div>
                     <div class="form-group">
-                        <label for="name_en">{{ trans('shop.merchandise.fields.name-en') }}</label>
+                        <label for="name_en">商品英文名稱</label>
                         <input type="text"
                                class="form-control"
                                id="name_en"
@@ -62,22 +62,22 @@
                         >
                     </div>
                     <div class="form-group">
-                        <label for="introduction">{{ trans('shop.merchandise.fields.introduction') }}</label>
+                        <label for="introduction">介紹</label>
                         <input type="text"
                                class="form-control"
                                id="introduction"
                                name="introduction"
-                               placeholder="{{ trans('shop.merchandise.fields.introduction') }}"
+                               placeholder="介紹"
                                value="{{ old('introduction', $Merchandise->introduction) }}"
                         >
                     </div>
                     <div class="form-group">
-                        <label for="introduction_en">{{ trans('shop.merchandise.fields.introduction-en') }}</label>
+                        <label for="introduction_en">英文介紹</label>
                         <input type="text"
                                class="form-control"
                                id="introduction_en"
                                name="introduction_en"
-                               placeholder="{{ trans('shop.merchandise.fields.introduction-en') }}"
+                               placeholder="英文介紹"
                                value="{{ old('introduction_en', $Merchandise->introduction_en) }}"
                         >
                     </div>
@@ -112,7 +112,7 @@
                                value="{{ old('remain_count', $Merchandise->remain_count) }}"
                         >
                     </div>
-                    <button type="submit" class="btn btn-default">{{ trans('shop.merchandise.update') }}</button>
+                    <button type="submit" class="btn btn-default">更新</button>
                     {{-- CSRF 欄位--}}
                     {{ csrf_field() }}
                 </form>
