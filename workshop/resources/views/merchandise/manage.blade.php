@@ -48,12 +48,12 @@
                             <td> {{ $Merchandise->price }}</td>
                             <td> {{ $Merchandise->remain_count }}</td>
                             <td>
-                                <a href="/merchandise/delete">
+                                <a href="/merchandise/{{ $Merchandise->id }}/edit">
                                     <i class="bi-pencil-square"></i>
                                 </a>
                             </td>
                             <td>
-                                <a href="/merchandise/{{ $Merchandise->id }}/edit">
+                                <a href="/merchandise/{{ $Merchandise->id }}/delete">
                                     <i class="bi-trash3-fill"></i>
                                 </a>
                             </td>
