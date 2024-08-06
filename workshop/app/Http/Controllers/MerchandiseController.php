@@ -53,7 +53,7 @@ class MerchandiseController extends Controller
         $Merchandise = Merchandise::findOrFail($merchandise_id);
         // 接收輸入資料
         $input = request()->all();
-    
+        // dd($input);
         
         
     
