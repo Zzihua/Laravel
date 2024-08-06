@@ -22,6 +22,10 @@
  <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+ <!-- Plugins/Components CSS -->
+ <!-- <link rel="stylesheet" href="css/components/ion.rangeslider.css"> -->
+ <link rel="stylesheet" href="{{asset('assets/css/components/ion.rangeslider.css')}}">
+
  <!-- Document Title
  ============================================= -->
  <title>Login - Layout 3 | Canvas</title>

@@ -23,6 +23,52 @@
                     {{-- 隱藏方法欄位 --}}
                     {{ method_field('PUT') }}
 
+
+					<div class="col-12">
+						<div class="card bg-light">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-6 form-group">
+										<label for="type"><b>狀態欄</b><small class="text-danger">*</small></label>
+										<select class="form-control"
+												name="status"
+												id="status"
+										>
+											<option value="C"
+													@if(old('status', $Merchandise->status)=='C') selected @endif
+											>
+												建立中
+											</option>
+											<option value="S"
+													@if(old('status', $Merchandise->status)=='S') selected @endif
+											>
+											銷售中
+											</option>
+										</select>
+									</div>
+									<div class="col-md-6 form-group">
+										<label for="data-plan-contact"><b>商品名稱</b><small class="text-danger">*</small></label>
+										<input type="text"
+											class="form-control"
+											id="name"
+											name="name"
+											placeholder="{{ trans('shop.merchandise.fields.name') }}"
+											value="{{ old('name', $Merchandise->name) }}"
+										>
+									</div>
+									<div class="col-6 form-group">
+										<label for="data-plan-email">Email Address<small class="text-danger">*</small></label>
+										<input type="email" name="data-plan-email" id="data-plan-email" class="form-control required" value="" placeholder="user@company.com">
+									</div>
+									<div class="col-6 form-group">
+										<label for="data-plan-company">Company</label>
+										<input type="text" name="data-plan-company" id="data-plan-company" class="form-control" value="" placeholder="Company Name">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
                     <div class="form-group">
                         <label for="type">狀態欄</label>
                         <select class="form-control"
@@ -112,7 +158,8 @@
                                value="{{ old('remain_count', $Merchandise->remain_count) }}"
                         >
                     </div>
-                    <button type="submit" class="btn btn-default">更新</button>
+                    <button type="button" id="calories-trigger" class="btn btn-secondary">取消</button>
+					<button type="submit" name="fitness-form-submit" class="btn btn-success ms-2">更新</button>
                     {{-- CSRF 欄位--}}
                     {{ csrf_field() }}
                 </form>
