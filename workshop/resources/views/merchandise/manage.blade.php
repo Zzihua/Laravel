@@ -18,13 +18,13 @@
             <div class="col-md-12">
                 <table class="table">
                     <tr>
-                        <th>{{ trans('shop.merchandise.fields.id') }}</th>
-                        <th>{{ trans('shop.merchandise.fields.name') }}</th>
-                        <th>{{ trans('shop.merchandise.fields.photo') }}</th>
-                        <th>{{ trans('shop.merchandise.fields.status-name') }}</th>
-                        <th>{{ trans('shop.merchandise.fields.price') }}</th>
-                        <th>{{ trans('shop.merchandise.fields.remain-count') }}</th>
-                        <th>{{ trans('shop.merchandise.edit') }}</th>
+                        <th>商品id</th>
+                        <th>商品名稱</th>
+                        <th>圖片</th>
+                        <th>介紹</th>
+                        <th>價格</th>
+                        <th>庫存</th>
+                        <th>編輯</th>
                     </tr>
                     @foreach($MerchandisePaginate as $Merchandise)
                         <tr>

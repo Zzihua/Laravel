@@ -114,6 +114,6 @@ class MerchandiseController extends Controller
             'MerchandisePaginate'=> $MerchandisePaginate,
         ];
         
-        return view('merchandise.manageMerchandise', $binding);
+        return view('merchandise.manage', $binding);
     }
 }
