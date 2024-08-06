@@ -94,7 +94,7 @@
 											name="photo"
 											placeholder="商品照片"
 										>
-										<img src="{{asset( $Merchandise->photo)}}" />
+										<img src="{{asset( $Merchandise->photo)}}"/>
 									</div>
 									<div class="col-6 form-group">
 										<label for="price"><b>價格</b><small class="text-danger">*</small></label>
@@ -212,8 +212,9 @@
                     </div> -->
 					<div class="form-group text-center">
                         <br>
-                        <button type="button" id="calories-trigger" class="btn btn-secondary">取消</button>
+                        <a href="/merchandise/manage"><button type="button" id="calories-trigger" class="btn btn-secondary">取消</button></a>
                         <button type="submit" name="fitness-form-submit" class="btn btn-success ms-2">更新</button>
+
                     </div>
                     
                     {{-- CSRF 欄位--}}

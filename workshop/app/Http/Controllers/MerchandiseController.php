@@ -89,7 +89,7 @@ class MerchandiseController extends Controller
         $Merchandise->update($input);
         
         // 重新導向到商品編輯頁
-        return redirect('/merchandise/' . $Merchandise->id . '/edit');
+        return redirect('/merchandise/manage');
     }
 
     // 商品管理清單檢視
