@@ -114,14 +114,14 @@
        <ul class="menu-container">
         @if (session()->has('user_id'))
         <li class="menu-item">
-         <a class="menu-link" href="{{route('user.auth.signout')}}"><div>登出</div></a>
+         <a class="button button-circle button-3d button-light button-white" href="{{route('user.auth.signout')}}"><div>登出</div></a>
         </li>
         @else
         <li class="menu-item">
-         <a class="menu-link" href="{{route('user.auth.login')}}"><div>登入</div></a>
+         <a class="button button-circle button-3d button-light button-white" href="{{route('user.auth.login')}}"><div>登入</div></a>
         </li>
         <li class="menu-item">
-         <a class="menu-link" href="{{route('user.auth.signup')}}"><div>註冊</div></a>
+         <a class="button button-circle button-3d button-light button-white" href="{{route('user.auth.signup')}}"><div>註冊</div></a>
         </li>
         @endif
        </ul>

@@ -12,7 +12,7 @@ class MerchandiseController extends Controller
     //     return view( 'merchandise.create');
     // }
 
-    public function merchandiseCreate(){
+    public function MerchandiseCreate(){
         
         // 建立商品基本資訊
         $merchandise_data = [
@@ -32,9 +32,16 @@ class MerchandiseController extends Controller
         return redirect('/merchandise/' . $Merchandise->id . '/edit');
     }
 
-    public function merchandiseEdit($merchandise_id){
-      
-        return $merchandise_id;
+    public function MerchandiseEdit($merchandise_id){
+
+        $Merchandise = Merchandise::where('id', $merchandise_id)->First();
+        // dd($Merchandise);s
+        $binding = [
+            'title' => '編輯商品',
+            'Merchandise'=> $Merchandise,
+        ];
+
+        return view('merchandise.edit',$binding);
       
     }
 }
