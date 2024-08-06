@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AuthUserAdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,7 +28,7 @@ Route::group(['prefix' => 'user'], function () {
 
 Route::group(['prefix' => 'merchandise'], function () {
     // Route::get('{merchandise_id}', 'App\Http\Controllers\MerchandiseController@MerchandiseItemPage');
-    Route::get('create', 'App\Http\Controllers\MerchandiseController@MerchandiseCreate');
+    Route::get('create', 'App\Http\Controllers\MerchandiseController@MerchandiseCreate')->withoutMiddleware([AuthUserAdminMiddleware::class]);
 
     Route::group(['prefix' => '{merchandise_id}'], function(){
         Route::get('edit','App\Http\Controllers\MerchandiseController@MerchandiseEdit');

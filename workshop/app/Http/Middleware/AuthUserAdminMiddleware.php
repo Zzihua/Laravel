@@ -17,13 +17,15 @@ class AuthUserAdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $user_id = session()->get('user_id');
-        //如果有登入
+        # 如果有登入
         if (!is_null($user_id)) {
             $User = User($user_id);
-            //並且資料庫非空值、使用者類型為管理者
+            # 並且資料庫非空值、使用者類型為管理者
             if (!is_null($User) && $User->type == 'A') {
                 return $next($request);
-    }
+            }
+        }
+
         return redirect('/user/auth/login');
     }
 }
