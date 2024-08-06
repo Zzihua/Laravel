@@ -31,7 +31,9 @@ Route::group(['prefix' => 'merchandise'], function () {
     Route::get('create', 'App\Http\Controllers\MerchandiseController@MerchandiseCreate')->middleware(AuthUserAdminMiddleware::class);
 
     Route::group(['prefix' => '{merchandise_id}'], function(){
-        Route::get('edit','App\Http\Controllers\MerchandiseController@MerchandiseEdit');
+        Route::get('/', 'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess');
+
+        Route::get('edit','App\Http\Controllers\MerchandiseController@MerchandiseEdit')->middleware(AuthUserAdminMiddleware::class);
     });
 });
 
