@@ -68,22 +68,22 @@ class MerchandiseController extends Controller
         // }
         
         
-        // if (isset($input['photo'])){
-        //     // 有上傳圖片
-        //     $photo = $input['photo'];
-        //     // 檔案副檔名
-        //     $file_extension = $photo->getClientOriginalExtension();
-        //     // 產生自訂隨機檔案名稱
-        //     $file_name = uniqid() . '.' . $file_extension;
-        //     // 檔案相對路徑
-        //     $file_relative_path = 'images/merchandise/' . $file_name;
-        //     // 檔案存放目錄為對外公開 public 目錄下的相對位置
-        //     $file_path = public_path($file_relative_path);
-        //     // 裁切圖片
-        //     $image = Image::make($photo)->fit(450, 300)->save($file_path);
-        //     // 設定圖片檔案相對位置
-        //     $input['photo'] = $file_relative_path;
-        // }
+        if (isset($input['photo'])){
+            // 有上傳圖片
+            $photo = $input['photo'];
+            // 檔案副檔名
+            $file_extension = $photo->getClientOriginalExtension();
+            // 產生自訂隨機檔案名稱
+            $file_name = uniqid() . '.' . $file_extension;
+            // 檔案相對路徑
+            $file_relative_path = 'assets/images/merchandise/' . $file_name;
+            // 檔案存放目錄為對外公開 public 目錄下的相對位置
+            $file_path = public_path($file_relative_path);
+            // 裁切圖片
+            $photo->move($file_path, $file_name);
+            // 設定圖片檔案相對位置
+            $input['photo'] = $file_relative_path;
+        }
     
         // 商品資料更新
         $Merchandise->update($input);
