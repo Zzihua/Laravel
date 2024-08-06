@@ -210,12 +210,9 @@
                                value="{{ old('remain_count', $Merchandise->remain_count) }}"
                         >
                     </div> -->
-					<div class="input-group mx-auto">
-						<button type="button" id="calories-trigger" class="btn btn-secondary">取消</button>
-						<button type="submit" name="fitness-form-submit" class="btn btn-success ms-2">更新</button>
-					</div>
-                    <!-- <button type="button" id="calories-trigger" class="btn btn-secondary">取消</button>
-					<button type="submit" name="fitness-form-submit" class="btn btn-success ms-2">更新</button> -->
+					
+                    <button type="button" id="calories-trigger" class="btn btn-secondary">取消</button>
+					<button type="submit" name="fitness-form-submit" class="btn btn-success ms-2">更新</button>
                     {{-- CSRF 欄位--}}
                     {{ csrf_field() }}
                 </form>
