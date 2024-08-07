@@ -29,11 +29,11 @@
                 <!-- Replace with your dynamic product data -->
                 <div class="col-md-3 product-item">
                     <div class="card">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product">
+                        <img src="{{asset('assets/images/愛戀巧克力.png')}}" class="card-img-top" alt="Product">
                         <div class="card-body">
-                            <h5 class="card-title">Product Name</h5>
-                            <p class="card-text">Product Description</p>
-                            <a href="#" class="btn btn-primary">$10.00</a>
+                            <h5 class="card-title">愛戀巧克力蛋糕</h5>
+                            <p class="card-text">產品介紹</p>
+                            <a href="#" class="btn btn-primary">$550</a>
                         </div>
                     </div>
                 </div>

@@ -51,10 +51,10 @@ class UserAuthController extends Controller
 
     public function Home()
     {
-        $binding = [
-            'title' => 'Home',
-        ];
-        return view( 'auth.home', $binding);
+        // $binding = [
+        //     'title' => 'Home',
+        // ];
+        return view( 'auth.home');
     }
 
     public function SignUpProcess()
