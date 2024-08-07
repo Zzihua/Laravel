@@ -15,7 +15,7 @@
 			<div class="container">
 
 				<div class="heading-block border-bottom-0 mb-4">
-					<h2 class="font-secondary color text-transform-none" style="font-size: 52px;">How We Work</h2>
+					<h2 class="font-secondary color text-transform-none" style="font-size: 52px;">What do we have?</h2>
 				</div>
 
 				<div class="row col-mb-50">
@@ -59,7 +59,7 @@
 			</div>
 		</div>
 
-		<div class="section mb-0" style="background: #FFF url({{asset('assets/demos/restaurant/images/sections/5.jpg')}}) no-repeat top left / cover; padding: 60px 0; border-top: 1px solid #EEE;">
+		<!-- <div class="section mb-0" style="background: #FFF url({{asset('assets/demos/restaurant/images/sections/5.jpg')}}) no-repeat top left / cover; padding: 60px 0; border-top: 1px solid #EEE;">
 			<div class="container">
 				<div class="heading-block text-center mb-0 border-bottom-0">
 					<span class="font-primary" style="font-size: 16px; color: #888">Tasty &amp; Healthy</span>
@@ -211,7 +211,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="section mb-0 bg-transparent">
 			<div class="container">

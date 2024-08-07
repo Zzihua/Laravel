@@ -98,8 +98,9 @@
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.shop')}}"><div><b>商城</b></div></a></li>
                               </ul>
                         </nav>
-                        <nav class="primary-menu col-lg-4 order-lg-3">
+                        <nav class="primary-menu col-lg-4 order-lg-3">                            
                               <ul class="menu-container justify-content-lg-end">
+                                    <a  class="menu-link" href="#" id="top-cart-trigger"><i class="fa-solid fa-shopping-bag"></i></a>
                                     <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.login')}}"><div><b>登入</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signup')}}"><div><b>註冊</b></div></a></li>
                               </ul>
@@ -128,44 +129,40 @@
                                     <div class="container dark" data-bs-theme="dark">
                                           <div class="slider-caption">
                                                 <div>
-                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none not-animated" data-animate="fadeIn">Taste from Italy.</h2>
-                                                      <p class="d-none d-sm-block font-primary not-animated" data-animate="fadeIn" data-delay="400">Who Needs a Boyfriend if there Pizza And WiFi are both available.</p>
+                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none not-animated" data-animate="fadeIn">Make your Chocolate.</h2>
+                                                      <p class="d-none d-sm-block font-primary not-animated" data-animate="fadeIn" data-delay="400">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
                                                       <div class="static-content position-relative d-flex justify-content-start mt-5 not-animated" data-animate="fadeIn" data-delay="800">
-                                                            <img src="demos/restaurant/images/icons/bowl-white.svg" width="42" height="42" alt="Image">
+                                                            <img src="{{asset('assets/demos/restaurant/images/icons/bowl-white.svg')}}" width="42" height="42" alt="Image">
                                                             <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/spoon-white.svg')}}" width="42" height="42" alt="Image">
-                                                            <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/glass-white.svg')}}" width="42" height="42" alt="Image">
-                                                            <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/wifi-white.svg')}}" width="42" height="42" alt="Image">
                                                       </div>
                                                 </div>
                                           </div>
                                     </div>
-                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/demos/restaurant/images/slider/1.jpg')}});"></div>
+                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/chocolate.png')}});"></div>
                               </div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 366px; opacity: 1; transform: translate3d(-366px, 0px, 0px); transition-duration: 0ms;">
                                     <div class="container dark" data-bs-theme="dark">
                                           <div class="slider-caption slider-caption-center" style="margin-top: -30px;">
                                                 <div>
-                                                      <img data-animate="fadeIn" src="{{asset('assets/demos/restaurant/images/slider-logo.png')}}" alt="Image" style="width: 120px; margin-bottom: 10px;" class="not-animated">
-                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none not-animated" data-animate="fadeIn" data-delay="400">Make your Chocolate.</h2>
-                                                      <p class="d-none d-sm-block font-primary not-animated" data-animate="fadeIn" data-delay="800">You'll be surprised to see the Final Results of your<br>Creation &amp; would crave for more.</p>
+                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none not-animated " data-animate="fadeIn" data-delay="400">Bread</h2>
+                                                      <p class="d-none d-sm-block font-primary not-animated" data-animate="fadeIn" data-delay="800">We have a variety of breads  for you to choose from</p>
                                                       <div class="static-content position-relative d-flex justify-content-center mt-5 not-animated" data-animate="fadeIn" data-delay="1000">
-                                                            <img src="{{asset('assets/demos/restaurant/images/icons/bowl-white.svg')}}" width="42" height="42" alt="Image">
                                                             <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/spoon-white.svg')}}" width="42" height="42" alt="Image">
-                                                            <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/glass-white.svg')}}" width="42" height="42" alt="Image">
                                                       </div>
                                                 </div>
                                           </div>
                                     </div>
-                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/demos/restaurant/images/slider/3.jpg')}});"></div>
+                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/bread.png')}});"></div>
                               </div><div class="swiper-slide swiper-slide-visible swiper-slide-active" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 366px; opacity: 1; transform: translate3d(-732px, 0px, 0px); transition-duration: 0ms;">
                                     <div class="container dark" data-bs-theme="dark">
                                           <div class="slider-caption slider-caption-right">
                                                 <div>
-                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none fadeIn animated" data-animate="fadeIn">Hello &amp; Welcome.</h2>
+                                  
+                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none fadeIn animated" data-animate="fadeIn"><img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/glass-white.svg')}}" width="42" height="42" alt="Image"> Coffee</h2>
                                                       <p class="d-none d-sm-block font-primary fadeIn animated" data-animate="fadeIn" data-delay="400">Coffee drinkers make better Lovers. Everything starts with a great Coffee.</p>
                                                 </div>
                                           </div>
                                     </div>
-                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/demos/restaurant/images/slider/2.jpg')}}); background-position: center bottom;"></div>
+                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/coffee.png')}}); background-position: center bottom;"></div>
                               </div></div>
 
                         <div class="slider-arrow-left" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-24db123e459134d3"><i class="uil uil-angle-left-b"></i></div>

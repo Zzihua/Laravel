@@ -1,46 +1,258 @@
 <!-- 指定繼承 layout.master 母模板 --> 
-@extends('layout.master') 
-
-<!-- 傳送資料到母模板，並指定變數為 title --> 
-@section('title', $title) 
+@extends('layout.shopmaster') 
 
 <!-- 傳送資料到母模板，並指定變數為 content -->
 @section('content') 
 
 
-<section class="hero-section">
-        <div class="container">
-            <h1>商品</h1>
-            <p>開始溝物吧~</p>
-            <div class="search-box">
-                <form action="#" method="GET">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <button class="btn btn-success" type="submit">Search</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+<section id="content">
+			<div class="content-wrap pb-0">
 
-    <section class="product-list">
-        <div class="container">
-            <div class="row">
-                <!-- Replace with your dynamic product data -->
-                <div class="col-md-3 product-item">
-                    <div class="card">
-                        <img src="{{asset('assets/images/愛戀巧克力.png')}}" class="card-img-top" alt="Product">
-                        <div class="card-body">
-                            <h5 class="card-title">愛戀巧克力蛋糕</h5>
-                            <p class="card-text">產品介紹</p>
-                            <a href="#" class="btn btn-primary">$550</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more products as needed -->
-            </div>
-        </div>
-    </section>
+				<div class="container">
 
+					<a href="{{asset('assets/demo-skincare-login.html')}}"><img src="{{asset('assets/demos/skincare/images/banner.jpg')}}" alt=".." class="mb-3 mb-md-5 mb-xl-6 border border-color border-width-2"></a>
+
+					<div class="row mb-3 mb-md-5 justify-content-md-between">
+
+						<div class="col-md-3 order-2 order-md-1">
+
+							<button type="button" class="button-filter button button-border border-color m-0 color h-bg-color h-text-light w-100">
+								<span>Show Filter <i class="bi-arrow-down me-0 ms-2"></i> </span>
+								<span><i class="bi-arrow-up"></i> Hide Filter</span>
+							</button>
+
+						</div>
+
+						<div class="col-12 col-md-auto order-1 order-md-2 mb-2 mb-md-0">
+							<div id="shop-filter-sorting" class="dropdown border-0">
+								<button type="button" id="shop-filter-btn" class="button button-border border-color m-0 color h-bg-color h-text-light dropdown-toggle px-5 w-100 text-center" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true" data-bs-offset="0, -1">
+									Sorting
+								</button>
+
+								<ul class="shop-sorting dropdown-menu dropdown-menu-end shadow-sm border-0 w-100 py-0 rounded-0" aria-labelledby="shop-filter-btn">
+									<li><a href="#" class="dropdown-item" data-sort-by="name_az"><span>A - Z Alphabetically</span></a></li>
+									<li><a href="#" class="dropdown-item" data-sort-by="name_za"><span>Z - A Alphabetically</span></a></li>
+									<li><a href="#" class="dropdown-item" data-sort-by="price_lh"><span>Least Expensive</span></a></li>
+									<li><a href="#" class="dropdown-item" data-sort-by="price_hl"><span>Most Expensive</span></a></li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="col-md-3 skincare-filter sticky-sidebar-wrap">
+							<ul class="list-unstyled items-nav sticky-sidebar">
+								<li><a href="#" class="text-dark font-body">Men</a></li>
+								<li><a href="#" class="text-dark font-body">Women</a></li>
+							</ul>
+							<hr>
+							<ul class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body" data-container="#shop" data-active-class="active-filter">
+								<li class="widget-filter-reset active-filter"><a href="#" class="text-danger" data-filter="*">Clear</a></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-face">Face</a><div class="shop-filter-count"></div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-body">Body</a><div class="shop-filter-count"></div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-eyes">Eyes</a><div class="shop-filter-count"></div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-makeup">Makeup</a><div class="shop-filter-count"></div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-ayurvedic">Ayurvedic</a><div class="shop-filter-count"></div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-hair">Hair</a><div class="shop-filter-count"></div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lotions">Moisturizers &amp; Lotions</a><div class="shop-filter-count"></div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lips">Lips</a><div class="shop-filter-count"></div></li>
+							</ul>
+
+							<hr class="my-5">
+
+
+							<div class="d-flex align-items-center mt-5">
+								<h5 class="mb-0 h6 font-body fw-normal">Filter by Price:</h5>
+								<div class="d-flex text-smaller ms-auto op-07">
+									<div class="price-range-from"></div>
+									<span class="mx-1"> - </span>
+									<div class="price-range-to"></div>
+								</div>
+							</div>
+							<input class="price-range">
+
+						</div>
+
+						<div class="col-md-9">
+							<div id="shop" class="row shop grid-container" data-layout="fitRows">
+
+								<!-- Shop Item 1
+								============================================= -->
+								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips">
+									<div class="grid-inner">
+										<div class="product-image">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/10.jpg')}}" alt="..."></a>
+											<div class="sale-flash badge bg-color rounded-0 fw-normal p-2">50% Off*</div>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="demo-skincare-single.html" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Mitzee Cream</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-0"><del class="op-07">$24.99</del> <ins>$12.49</ins></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
+									<div class="grid-inner">
+										<div class="product-image mb-2">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/11.jpg')}}" alt="..."></a>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="demo-skincare-single.html" class="color">Clove Tonka Oil</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$39.99</ins></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-ayurvedic sf-makeup">
+									<div class="grid-inner">
+										<div class="product-image mb-2">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/12.jpg')}}" alt="..."></a>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Stockholm Hair Oil</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$19.95</ins></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-6 mb-4 product sf-body sf-hair">
+									<div class="grid-inner">
+										<div class="product-image mb-2">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/13.jpg')}}" alt="..."></a>
+											<div class="sale-flash badge bg-color rounded-0 fw-normal p-2">Sale!</div>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Romi Moisture</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><del class="op-07">$19.99</del> <ins>$11.99</ins></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-6 mb-4 product sf-eyes sf-hair">
+									<div class="grid-inner">
+										<div class="product-image mb-2">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/14.jpg')}}" alt="..."></a>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Ouiao Super Serum</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$9.99</ins></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-6 mb-4 product sf-lips sf-lotions sf-body">
+									<div class="grid-inner">
+										<div class="product-image mb-2">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/5.jpg')}}" alt="..."></a>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Tainyc Polish</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$129.99</ins></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-6 mb-4 product sf-body sf-hair">
+									<div class="grid-inner">
+										<div class="product-image mb-2">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/15.jpg')}}" alt="..."></a>
+											<div class="sale-flash badge bg-color rounded-0 fw-normal p-2">Sale!</div>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Kalos Serum</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><del class="op-07">$39.99</del> <ins>$29.99</ins></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-6 mb-4 product sf-eyes sf-face">
+									<div class="grid-inner">
+										<div class="product-image mb-2">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/1.jpg')}}" alt="..."></a>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Gonja Face Serum</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$55.99</ins></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4 col-md-6 mb-4 product sf-hair sf-ayurvedic sf-makeup">
+									<div class="grid-inner">
+										<div class="product-image mb-2">
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/3.jpg')}}" alt="..."></a>
+											<div class="bg-overlay">
+												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+												</div>
+											</div>
+										</div>
+										<div class="product-desc text-center">
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Hair Oil</a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$79.99</ins></div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				</div>
+
+			</div>
+		</section>
 @endsection  
 
