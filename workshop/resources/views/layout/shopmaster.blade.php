@@ -108,21 +108,7 @@
             <div class="header-wrap-clone"></div>
       </header><!-- #header end -->
 
-            <!-- Page Title
-            ============================================= -->
-		<section class="page-title page-title-parallax parallax py-lg-6">
-			<img src="{{asset('assets/demos/skincare/images/shop-page/page-title.jpg')}}" class="parallax-bg">
-			<div class="container">
-				<div class="page-title-row py-5">
-
-					<div class="page-title-content mw-xs">
-						<h1>Products</h1>
-						<p class="color text-larger mt-4 mb-0">Dynamic ways to display under-the-fold Media Uniquely aggregate cross-media expertise.</p>
-					</div>
-
-				</div>
-			</div>
-		</section><!-- .page-title end -->
+	  @yield('title')
 
       @yield('content') 
       <!-- Footer
@@ -158,6 +144,10 @@
       <!-- <script src="/js/functions.js"></script> -->
       <script src="{{asset('assets/js/functions.js')}}"></script>
       <script src="{{asset('assets/js/jquery.js')}}"></script>
+
+      <!-- Range Slider Plugin -->
+	<script src="{{asset('assets/js/components/rangeslider.min.js')}}"></script>
+
       <!-- Custom Carousel JS File -->
       <script>
             var carouselRTL = false;
@@ -185,6 +175,147 @@
                         rtl: carouselRTL
                   });
             });
+
+            jQuery(".button-filter").click(function(){
+			jQuery(".skincare-filter").toggleClass("skincare-filter-hide");
+			jQuery(this).toggleClass("button-filter-active-hide");
+			SEMICOLON.Modules.gridInit();
+		});
+
+		var priceRangefrom = 0,
+			priceRangeto = 0,
+			$container = jQuery('#shop');
+
+		jQuery(window).on( 'load', function(){
+
+			jQuery(window).resize(function() {
+				$container.isotope('layout');
+			});
+
+		});
+
+		jQuery(document).ready( function($){
+
+			var $priceRange = jQuery(".price-range"),
+				$priceInputFrom = jQuery(".price-range-from"),
+				$priceInputTo = jQuery(".price-range-to"),
+				min = 9.99,
+				max = 139.99,
+				prefix = '$';
+
+			$priceRange.ionRangeSlider({
+				skin: "round",
+				type: "double",
+				min: min,
+				max: max,
+				from: min,
+				to: max,
+				prefix: prefix,
+				hide_min_max: true,
+				hide_from_to: true,
+				onStart: updateInputs,
+				function (data) {
+					priceRangefrom = data.from;
+					priceRangeto = data.to;
+				},
+				onChange: updateInputs,
+				onFinish: function (data) {
+					priceRangefrom = data.from;
+					priceRangeto = data.to;
+
+					$container.isotope({
+						filter: function() {
+
+							if( jQuery(this).find('.product-price').find('ins').length > 0 ) {
+								var price = jQuery(this).find('.product-price ins').text();
+							} else {
+								var price = jQuery(this).find('.product-price').text();
+							}
+
+							priceNum = price.split("$");
+
+							return ( priceRangefrom <= priceNum[1] && priceRangeto >= priceNum[1] );
+						}
+					});
+
+				}
+			});
+
+			function updateInputs (data) {
+				from = data.from;
+				to = data.to;
+
+				$priceInputFrom.text(prefix + from);
+				$priceInputTo.text(prefix + to);
+			}
+
+			jQuery(".dropdown-item span").on( 'click', function(){
+
+				var displayText = jQuery(this).text();
+
+				jQuery("#shop-filter-btn").html(displayText);
+
+				jQuery(this).parents('.dropdown').find('.show').toggleClass('show', false);
+
+			});
+
+		});
+
+		jQuery(window).on( 'pluginIsotopeReady', function(){
+			jQuery('.shop-filter').find('li:not(.custom-filter-reset)').each( function(){
+				var element = jQuery(this),
+					elementFilter = element.children().attr('data-filter'),
+					elementFilterContainer = element.parents('.custom-filter').attr('data-container');
+
+				elementFilterCount = Number( jQuery(elementFilterContainer).find( '.product' ).filter( elementFilter ).length );
+
+				element.find('.shop-filter-count').text(elementFilterCount);
+
+			});
+
+			jQuery('#shop').isotope({
+				getSortData: {
+					name_az: '.product-title',
+					name_za: '.product-title',
+					price_lh: function( itemElem ) {
+						if( jQuery(itemElem).find('.product-price').find('ins').length > 0 ) {
+							var price = jQuery(itemElem).find('.product-price ins').text();
+						} else {
+							var price = jQuery(itemElem).find('.product-price').text();
+						}
+
+						priceNum = price.split("$");
+
+						return parseFloat( priceNum[1] );
+					},
+					price_hl: function( itemElem ) {
+						if( jQuery(itemElem).find('.product-price').find('ins').length > 0 ) {
+							var price = jQuery(itemElem).find('.product-price ins').text();
+						} else {
+							var price = jQuery(itemElem).find('.product-price').text();
+						}
+
+						priceNum = price.split("$");
+
+						return parseFloat( priceNum[1] );
+					}
+				},
+				sortAscending: {
+					name_az: true,
+					name_za: false,
+					price_lh: true,
+					price_hl: false
+				}
+			});
+
+			jQuery('.shop-sorting li').on( 'click', function() {
+				jQuery('.shop-sorting').find('li').removeClass( 'active-filter' );
+				jQuery(this).addClass( 'active-filter' );
+				var sortByValue = jQuery(this).find('a').attr('data-sort-by');
+				jQuery('#shop').isotope({ sortBy: sortByValue });
+				return false;
+			});
+		});
       </script>
       <script id="canvas-gototop-fn" src="{{asset('assets/js/modules/gototop.js')}}" async="" defer=""></script><script id="canvas-stickfooteronsmall-fn" src="{{asset('assets/js/modules/stickfooteronsmall.js')}}" async="" defer=""></script><script id="canvas-logo-fn" src="{{asset('assets/js/modules/logo.js')}}" async="" defer=""></script><script id="canvas-headers-fn" src="{{asset('assets/js/modules/headers.js')}}" async="" defer=""></script><script id="canvas-menus-fn" src="{{asset('assets/js/modules/menus.js')}}" async="" defer=""></script><script id="canvas-sliderdimensions-fn" src="{{asset('assets/js/modules/sliderdimensions.js')}}" async="" defer=""></script><script id="canvas-slidermenuclass-fn" src="{{asset('assets/js/modules/slidermenuclass.js')}}" async="" defer=""></script><script id="canvas-bootstrap-fn" src="{{asset('assets/js/modules/bootstrap.js')}}" async="" defer=""></script><script id="canvas-pagetransition-fn" src="{{asset('assets/js/modules/pagetransition.js')}}" async="" defer=""></script><script id="canvas-lightbox-fn" src="{{asset('assets/js/modules/lightbox.js')}}" async="" defer=""></script><script id="canvas-animations-fn" src="{{asset('assets/js/modules/animations.js')}}" async="" defer=""></script><script id="canvas-canvasslider-fn" src="{{asset('assets/js/modules/canvasslider.js')}}" async="" defer=""></script><script id="canvas-carousel-fn" src="{{asset('assets/js/modules/carousel.js')}}" async="" defer=""></script><script id="canvas-bootstrap-js" src="{{asset('assets/js/plugins.bootstrap.js')}}" async="" defer=""></script><script id="canvas-lightbox-js" src="{{asset('assets/js/plugins.lightbox.js')}}" async="" defer=""></script><script id="canvas-swiper-js" src="{{asset('assets/js/plugins.swiper.js')}}" async="" defer=""></script><script id="canvas-carousel-js" src="{{asset('assets/js/plugins.carousel.js')}}" async="" defer=""></script></body>
 

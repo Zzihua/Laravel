@@ -113,65 +113,7 @@
       </header><!-- #header end -->
 
 
-     	<!-- Slider
-      ============================================= -->
-      <section id="slider" class="slider-element swiper_wrapper min-vh-60 min-vh-md-100 include-header" data-effect="fade" data-loop="true" data-autoplay="6000" data-speed="1400" style="">
-            <div class="slider-inner">
-
-                  <div class="swiper-container swiper-parent swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
-                        <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms;" id="swiper-wrapper-24db123e459134d3" aria-live="off">
-                              
-
-                              
-
-                              
-                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="1 / 3" data-swiper-slide-index="0" style="width: 366px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                                    <div class="container dark" data-bs-theme="dark">
-                                          <div class="slider-caption">
-                                                <div>
-                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none not-animated" data-animate="fadeIn">Make your Chocolate.</h2>
-                                                      <p class="d-none d-sm-block font-primary not-animated" data-animate="fadeIn" data-delay="400">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
-                                                      <div class="static-content position-relative d-flex justify-content-start mt-5 not-animated" data-animate="fadeIn" data-delay="800">
-                                                            <img src="{{asset('assets/demos/restaurant/images/icons/bowl-white.svg')}}" width="42" height="42" alt="Image">
-                                                            <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/spoon-white.svg')}}" width="42" height="42" alt="Image">
-                                                      </div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/chocolate.png')}});"></div>
-                              </div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 366px; opacity: 1; transform: translate3d(-366px, 0px, 0px); transition-duration: 0ms;">
-                                    <div class="container dark" data-bs-theme="dark">
-                                          <div class="slider-caption slider-caption-center" style="margin-top: -30px;">
-                                                <div>
-                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none not-animated " data-animate="fadeIn" data-delay="400">Bread</h2>
-                                                      <p class="d-none d-sm-block font-primary not-animated" data-animate="fadeIn" data-delay="800">We have a variety of breads  for you to choose from</p>
-                                                      <div class="static-content position-relative d-flex justify-content-center mt-5 not-animated" data-animate="fadeIn" data-delay="1000">
-                                                            <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/spoon-white.svg')}}" width="42" height="42" alt="Image">
-                                                      </div>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/bread.png')}});"></div>
-                              </div><div class="swiper-slide swiper-slide-visible swiper-slide-active" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 366px; opacity: 1; transform: translate3d(-732px, 0px, 0px); transition-duration: 0ms;">
-                                    <div class="container dark" data-bs-theme="dark">
-                                          <div class="slider-caption slider-caption-right">
-                                                <div>
-                                  
-                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none fadeIn animated" data-animate="fadeIn"><img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/glass-white.svg')}}" width="42" height="42" alt="Image"> Coffee</h2>
-                                                      <p class="d-none d-sm-block font-primary fadeIn animated" data-animate="fadeIn" data-delay="400">Coffee drinkers make better Lovers. Everything starts with a great Coffee.</p>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/coffee.png')}}); background-position: center bottom;"></div>
-                              </div></div>
-
-                        <div class="slider-arrow-left" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-24db123e459134d3"><i class="uil uil-angle-left-b"></i></div>
-                        <div class="slider-arrow-right" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-24db123e459134d3"><i class="uil uil-angle-right-b"></i></div>
-
-                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-
-            </div>
-      </section>
+      @yield('slider') 
 
 
       @yield('content') 

@@ -3,12 +3,32 @@
 
 <!-- 傳送資料到母模板，並指定變數為 content -->
 @section('content') 
+@section('title') 
 
 
-<section id="content">
-			<div class="content-wrap pb-0">
 
-				<div class="container">
+
+ <!-- Page Title
+============================================= -->
+<section class="page-title page-title-parallax parallax py-lg-6" id="id">
+		<div class="simpleParallax" style="overflow: hidden;"><img src="{{asset('assets/demos/skincare/images/shop-page/page-title.jpg')}}" class="parallax-bg" style="transform: translate3d(0px, 13px, 0px) scale(1.25); will-change: transform; transition: transform 0.4s cubic-bezier(0, 0, 0, 1);"></div>
+		<div class="container">
+	<div class="page-title-row py-5">
+
+		<div class="page-title-content mw-xs">
+			<h1>Products</h1>
+			<p class="color text-larger mt-4 mb-0">Dynamic ways to display under-the-fold Media Uniquely aggregate cross-media expertise.</p>
+		</div>
+
+	</div>
+	</div>
+</section><!-- .page-title end -->
+
+
+<section id="content" style="transform: none;">
+			<div class="content-wrap pb-0" style="transform: none;">
+
+				<div class="container" style="transform: none;">
 
 					<a href="{{asset('assets/demo-skincare-login.html')}}"><img src="{{asset('assets/demos/skincare/images/banner.jpg')}}" alt=".." class="mb-3 mb-md-5 mb-xl-6 border border-color border-width-2"></a>
 
@@ -42,41 +62,31 @@
 					</div>
 
 					<div class="row">
-						<div class="col-md-3 skincare-filter sticky-sidebar-wrap">
-							<ul class="list-unstyled items-nav sticky-sidebar">
+						<div class="col-md-3 skincare-filter sticky-sidebar-wrap" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+						<div class="scwStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><ul class="list-unstyled items-nav sticky-sidebar">
 								<li><a href="#" class="text-dark font-body">Men</a></li>
 								<li><a href="#" class="text-dark font-body">Women</a></li>
-							</ul>
-							<hr>
-							<ul class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body" data-container="#shop" data-active-class="active-filter">
+							</ul><hr><ul class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body" data-container="#shop" data-active-class="active-filter">
 								<li class="widget-filter-reset active-filter"><a href="#" class="text-danger" data-filter="*">Clear</a></li>
-								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-face">Face</a><div class="shop-filter-count"></div></li>
-								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-body">Body</a><div class="shop-filter-count"></div></li>
-								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-eyes">Eyes</a><div class="shop-filter-count"></div></li>
-								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-makeup">Makeup</a><div class="shop-filter-count"></div></li>
-								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-ayurvedic">Ayurvedic</a><div class="shop-filter-count"></div></li>
-								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-hair">Hair</a><div class="shop-filter-count"></div></li>
-								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lotions">Moisturizers &amp; Lotions</a><div class="shop-filter-count"></div></li>
-								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lips">Lips</a><div class="shop-filter-count"></div></li>
-							</ul>
-
-							<hr class="my-5">
-
-
-							<div class="d-flex align-items-center mt-5">
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-face">Face</a><div class="shop-filter-count">3</div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-body">Body</a><div class="shop-filter-count">3</div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-eyes">Eyes</a><div class="shop-filter-count">2</div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-makeup">Makeup</a><div class="shop-filter-count">3</div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-ayurvedic">Ayurvedic</a><div class="shop-filter-count">2</div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-hair">Hair</a><div class="shop-filter-count">4</div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lotions">Moisturizers &amp; Lotions</a><div class="shop-filter-count">2</div></li>
+								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lips">Lips</a><div class="shop-filter-count">2</div></li>
+							</ul><hr class="my-5"><div class="d-flex align-items-center mt-5">
 								<h5 class="mb-0 h6 font-body fw-normal">Filter by Price:</h5>
 								<div class="d-flex text-smaller ms-auto op-07">
-									<div class="price-range-from"></div>
+									<div class="price-range-from">$9.99</div>
 									<span class="mx-1"> - </span>
-									<div class="price-range-to"></div>
+									<div class="price-range-to">$139.99</div>
 								</div>
-							</div>
-							<input class="price-range">
-
-						</div>
+							</div><span class="irs irs--round js-irs-0"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="display: none;">0</span><span class="irs-max" style="display: none;">1</span><span class="irs-from" style="display: none; left: 0%;">0</span><span class="irs-to" style="display: none; left: 0%;">0</span><span class="irs-single" style="display: none; left: 0%;">0</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 3.50467%; width: 92.9907%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 0%;"><i></i><i></i><i></i></span><span class="irs-handle to" style="left: 92.9907%;"><i></i><i></i><i></i></span></span><input class="price-range irs-hidden-input" tabindex="-1" readonly=""><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 376px; height: 521px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div></div>
 
 						<div class="col-md-9">
-							<div id="shop" class="row shop grid-container" data-layout="fitRows">
+							<div id="shop" class="row shop grid-container has-init-isotope grid-container-filterable" data-layout="fitRows" style="position: relative; height: 5025.12px;">
 
 								<!-- Shop Item 1
 								============================================= -->
@@ -87,7 +97,7 @@
 											<div class="sale-flash badge bg-color rounded-0 fw-normal p-2">50% Off*</div>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="demo-skincare-single.html" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>

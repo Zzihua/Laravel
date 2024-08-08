@@ -2,7 +2,82 @@
 @extends('layout.master') 
 
 <!-- 傳送資料到母模板，並指定變數為 content -->
+@section('slider') 
 @section('content') 
+
+  	<!-- Slider
+      ============================================= -->
+      <section id="slider" class="slider-element swiper_wrapper min-vh-60 min-vh-md-100 include-header" data-effect="fade" data-loop="true" data-autoplay="6000" data-speed="1400" style="">
+            <div class="slider-inner">
+
+                  <div class="swiper-container swiper-parent swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
+                        <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms;" id="swiper-wrapper-24db123e459134d3" aria-live="off">
+                              
+
+                              
+
+                              
+                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="1 / 3" data-swiper-slide-index="0" style="width: 366px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                    <div class="container dark" data-bs-theme="dark">
+                                          <div class="slider-caption">
+                                                <div>
+                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none not-animated" data-animate="fadeIn">Make your Chocolate.</h2>
+                                                      <p class="d-none d-sm-block font-primary not-animated" data-animate="fadeIn" data-delay="400">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
+                                                      <div class="static-content position-relative d-flex justify-content-start mt-5 not-animated" data-animate="fadeIn" data-delay="800">
+                                                            <img src="{{asset('assets/demos/restaurant/images/icons/bowl-white.svg')}}" width="42" height="42" alt="Image">
+                                                            <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/spoon-white.svg')}}" width="42" height="42" alt="Image">
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/chocolate.png')}});"></div>
+                              </div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 366px; opacity: 1; transform: translate3d(-366px, 0px, 0px); transition-duration: 0ms;">
+                                    <div class="container dark" data-bs-theme="dark">
+                                          <div class="slider-caption slider-caption-center" style="margin-top: -30px;">
+                                                <div>
+                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none not-animated " data-animate="fadeIn" data-delay="400">Bread</h2>
+                                                      <p class="d-none d-sm-block font-primary not-animated" data-animate="fadeIn" data-delay="800">We have a variety of breads  for you to choose from</p>
+                                                      <div class="static-content position-relative d-flex justify-content-center mt-5 not-animated" data-animate="fadeIn" data-delay="1000">
+                                                            <img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/spoon-white.svg')}}" width="42" height="42" alt="Image">
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/bread.png')}});"></div>
+                              </div><div class="swiper-slide swiper-slide-visible swiper-slide-active" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 366px; opacity: 1; transform: translate3d(-732px, 0px, 0px); transition-duration: 0ms;">
+                                    <div class="container dark" data-bs-theme="dark">
+                                          <div class="slider-caption slider-caption-right">
+                                                <div>
+                                  
+                                                      <h2 class="font-secondary ls-0 fw-normal text-transform-none fadeIn animated" data-animate="fadeIn"><img class="ms-4" src="{{asset('assets/demos/restaurant/images/icons/glass-white.svg')}}" width="42" height="42" alt="Image"> Coffee</h2>
+                                                      <p class="d-none d-sm-block font-primary fadeIn animated" data-animate="fadeIn" data-delay="400">Coffee drinkers make better Lovers. Everything starts with a great Coffee.</p>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="swiper-slide-bg" style="background-image: url({{asset('assets/images/coffee.png')}}); background-position: center bottom;"></div>
+                              </div></div>
+
+                        <div class="slider-arrow-left" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-24db123e459134d3"><i class="uil uil-angle-left-b"></i></div>
+                        <div class="slider-arrow-right" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-24db123e459134d3"><i class="uil uil-angle-right-b"></i></div>
+
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+            </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	<section id="content">
@@ -213,7 +288,7 @@
 			</div>
 		</div> -->
 
-		<div class="section mb-0 bg-transparent">
+		<!-- <div class="section mb-0 bg-transparent">
 			<div class="container">
 
 				<div class="row col-mb-50">
@@ -255,263 +330,17 @@
 				</div>
 
 			</div>
-		</div>
+		</div> -->
 
-		<div class="section mb-0" style="background: #fee749 url({{asset('assets/demos/restaurant/images/sections/4.jpg')}}) no-repeat center right; background-size: cover; padding: 60px 0;">
-			<div class="heading-block text-center mb-0 border-bottom-0">
-				<span class="font-primary ls-1" style="font-size: 14px; color: #AAA">Sweet &amp; Sexy</span>
-				<h3 class="text-transform-none font-secondary ls-0" style="font-size: 60px;line-height: 1.3;">Our Dessert Menu</h3>
-			</div>
-		</div>
-
-		<div class="section dessert-menu m-0 p-0">
-			<div class="container-fluid">
-
-				<div class="row align-items-stretch">
-					<div class="col-lg-5" style="background-color: #FFF; padding: 0; box-shadow: -4px 1px 15px 3px rgba(0,0,0,0.07);">
-						<div id="dessert-menu-carousel" class="menu-carousel owl-carousel image-carousel carousel-widget customjs">
-
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/1.jpg')}}" alt="Image 1">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Chocolate Cupcakes.</h3>
-										<div class="food-info">Chocolate, Caramel, Hazelnut, Coffee, Strawberry</div>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;19.99</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur!<br><br>Credibly maximize orthogonal e-services and technically sound communities. Seamlessly procrastinate holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/2.jpg')}}" alt="Image 2">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Caramel Cake.</h3>
-										<div class="food-info">Egg, Caramel</div>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;11.59</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur!<br><br>Credibly maximize orthogonal e-services and technically sound communities. Seamlessly procrastinate holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/3.jpg')}}" alt="Image 3">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Choco Strawberry Waffle.</h3>
-											<div class="food-info">Strawberry, Chocolate Syrup, Vanilla Icecream</div>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;8.99</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur!<br><br>Credibly maximize orthogonal e-services and technically sound communities. Seamlessly procrastinate holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/4.jpg')}}" alt="Image 4">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Tuffle Cake.</h3>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;22.99</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur!<br><br>Credibly maximize orthogonal e-services and technically sound communities. Seamlessly procrastinate holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/5.jpg')}}" alt="Image 1">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Chocolate Croissant.</h3>
-											<div class="food-info">Chocolate Syrup</div>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;19.99</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur. Holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/6.jpg')}}" alt="Image 2">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Delicious Cookies.</h3>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;14.99</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur!<br><br>Credibly maximize orthogonal e-services and technically sound communities. Seamlessly procrastinate holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/7.jpg')}}" alt="Image 3">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Strawberry Pastry.</h3>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;11.99</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur!<br><br>Credibly maximize orthogonal e-services and technically sound communities. Seamlessly procrastinate holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/8.jpg')}}" alt="Image 4">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Fruity Bowl.</h3>
-											<div class="food-info">Fruits, Yogurt, Strawberries, Banana, Cherries</div>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;33.99</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur!<br><br>Credibly maximize orthogonal e-services and technically sound communities. Seamlessly procrastinate holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="oc-item">
-								<img class="mt-4" src="{{asset('assets/demos/restaurant/images/items/desserts/9.jpg')}}" alt="Image 4">
-								<div class="food-content">
-									<div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-4">
-										<div class="heading-block border-bottom-0 mb-0">
-											<h3 class="font-secondary text-transform-none">Jelly Cake.</h3>
-										</div>
-										<div class="food-price color font-primary mt-3">&dollar;7.99</div>
-									</div>
-									<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eveniet cum explicabo iure quasi impedit commodi nobis doloremque quas consequuntur!<br><br>Credibly maximize orthogonal e-services and technically sound communities. Seamlessly procrastinate holistic partnerships. Distinctively disseminate stand-alone process improvements after efficient total linkage. Efficiently syndicate.</p>
-									<a href="{{asset('assets/demos/restaurant/menu.html')}}" class="more-link">See More Details <i class="bi-arrow-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-7">
-						<div class="vertical-middle">
-							<div class="col-padding">
-								<div><div id="item-thumb1" class="item-thumb"></div></div>
-								<div class="text-center mx-auto"><a class="button button-border button-small button-black button-dark button-circle ms-0" style="margin-top: 0px;">See All Menu</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
 
 		<div class="clear"></div>
 
-		<div class="section bg-transparent">
-			<div class="d-none d-lg-block" style="background: #FFF url({{asset('assets/demos/restaurant/images/sections/3.jpg')}}) no-repeat center center / cover; height: 100%;position: absolute; top: 0; left: 0; width: 100%"></div>
-			<div class="container">
-
-				<div class="heading-block border-bottom-0">
-					<span class="font-primary ls-1" style="font-size: 14px; color: #AAA">Services</span>
-					<h3 class="text-transform-none font-secondary ls-0" style="font-size: 60px; line-height: 1.3;">What We Do</h3>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-12"><img src="{{asset('assets/demos/restaurant/images/sections/1.jpg')}}" alt="Image"></div>
-					<div class="col-lg-4 col-md-6 col-12">
-						<a href="{{asset('assets/demos/restaurant/about-us.html')}}" class="button button-border button-large button-black button-dark button-rounded text-transform-none ls-0 font-primary service-button">Our Service</a>
-						<img src="{{asset('assets/demos/restaurant/images/sections/2.jpg')}}" alt="Image" class="d-none d-md-block" style="margin: 0 0 0 -80px;">
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="section mb-0" style="padding: 80px 0; background: #F5F5F5 url({{asset('assets/demos/restaurant/images/food-pattern.png')}}) repeat center center;">
+		<div style="background: #FFF  no-repeat top right; background-size: 100% auto; padding-top: 50px">
 			<div class="container">
 
 				<div class="heading-block text-center border-bottom-0">
-					<span class="font-primary ls-1" style="font-size: 14px; color: #AAA">Expert &amp; Skillful</span>
-					<h3 class="text-transform-none font-secondary ls-0" style="font-size: 60px; line-height: 1.3;">Our Chefs</h3>
-				</div>
-
-				<div class="row">
-
-					<div class="col-lg-3 col-md-6">
-						<div class="team">
-							<div class="team-image imagescalein">
-								<a href="{{asset('assets/demos/restaurant/about-us.html')}}"><img src="{{asset('assets/demos/restaurant/images/chefs/1.jpg')}}" alt="John Doe"></a>
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="font-primary fw-normal ls-2">Fig Nelson</h4>
-									<span>Chef</span>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum dolor sequi quaerat, deleniti beatae ratione.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="team">
-							<div class="team-image imagescalein">
-								<a href="{{asset('assets/demos/restaurant/about-us.html')}}"><img src="{{asset('assets/demos/restaurant/images/chefs/2.jpg')}}" alt="Josh Clark"></a>
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="font-primary fw-normal ls-2">Josh Clark</h4>
-									<span>Chef</span>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eveniet magnam nam, atqu.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="team">
-							<div class="team-image imagescalein">
-								<a href="{{asset('assets/demos/restaurant/about-us.html')}}"><img src="{{asset('assets/demos/restaurant/images/chefs/3.jpg')}}" alt="Mary Jane"></a>
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="font-primary fw-normal ls-2">Mary Jane</h4>
-									<span>Manager</span>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis cum minima mollitia, velit.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="team">
-							<div class="team-image imagescalein">
-								<a href="{{asset('assets/demos/restaurant/about-us.html')}}"><img src="{{asset('assets/demos/restaurant/images/chefs/4.jpg')}}" alt="Nix Maxwell"></a>
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="font-primary fw-normal ls-2">Nix Maxwell</h4>
-									<span>Staff</span>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolore ipsam nemo, similique.</p>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="clear"></div>
-
-		<div style="background: #FFF url({{asset('assets/demos/restaurant/images/sections/7.jpg')}}) no-repeat top right; background-size: 100% auto; padding-top: 50px">
-			<div class="container">
-
-				<div class="heading-block text-center border-bottom-0">
-					<span class="font-primary ls-1" style="font-size: 14px; color: #AAA">Our Latest News</span>
-					<h3 class="text-transform-none font-secondary ls-0" style="font-size: 60px; line-height: 1.2;">News Feed</h3>
+					<span class="font-primary ls-1" style="font-size: 14px; color: #AAA">Hot</span>
+					<h3 class="font-primary ls-1" style="font-size: 50px; line-height: 1.2;">熱門商品</h3>
 				</div>
 
 				<div class="row posts-md col-mb-30 mb-0">
@@ -574,6 +403,51 @@
 
 			</div>
 		</div>
+
+
+
+
+		<div class="clear"></div>
+
+
+		<div class="section mb-0" style="padding: 80px 0; background: #F5F5F5 url({{asset('assets/demos/restaurant/images/food-pattern.png')}}) repeat center center;">
+			<div class="container">
+
+				<div class="heading-block text-center border-bottom-0">
+					<h3 class="text-transform-none font-secondary ls-0" style="font-size: 60px; line-height: 1.3;">Our Team						
+					</h3>
+				</div>
+
+				<div class="row">
+
+					<div class="col-lg-4 col-md-6">
+						<div class="team">
+							<div class="team-image imagescalein">
+								<img src="{{asset('assets/images/1.png')}}" alt="Xuyun">
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6">
+						<div class="team">
+							<div class="team-image imagescalein">
+								<img src="{{asset('assets/images/3.png')}}" alt="Zihua">
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6">
+						<div class="team">
+							<div class="team-image imagescalein">
+								<img src="{{asset('assets/images/2.png')}}" alt="Chinlin">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
 
 		<div class="line clear"></div>
 
