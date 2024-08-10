@@ -2,7 +2,7 @@
 <html dir="ltr" lang="en-US">
 <head>
 
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
 	<meta name="author" content="SemiColonWeb">
 	<meta name="description" content="Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today.">
@@ -12,14 +12,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,900;1,400;1,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.typekit.net/aay8rzy.css">
+	
 
 	<!-- Core Style -->
 	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-      <link rel="stylesheet" href="{{asset('assets/css/font-icons.css')}}">
-      <link rel="stylesheet" href="{{asset('assets/one-page/css/et-line.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/font-icons.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('assets/one-page/css/et-line.css')}}"> -->
 
 	<!-- Font Icons -->
 	<link rel="stylesheet" href="{{asset('assets/css/font-icons.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/one-page/css/et-line.css')}}">
 
 	<!-- Plugins/Components CSS -->
 	<link rel="stylesheet" href="{{asset('assets/css/swiper.css')}}">
@@ -27,11 +29,12 @@
 
 	<!-- Niche Demos -->
 	<link rel="stylesheet" href="{{asset('assets/demos/skincare/skincare.css')}}">
-      <link rel="stylesheet" href="{{asset('assets/demos/restaurant/restaurant.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/demos/restaurant/restaurant.css')}}">
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
       
 
       <!-- Document Title
@@ -39,6 +42,7 @@
       <title>Products - Demo Skincare | Canvas</title>
 
 </head>
+
 
 <body class="stretched sticky-footer device-up-xs has-plugin-pagetransition has-plugin-animations has-plugin-bootstrap has-plugin-lightbox has-plugin-swiper has-plugin-carousel device-down-xxl device-down-xl device-down-lg device-down-md device-xs device-down-sm" data-loader-html="<span class='pizza'> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> </span>">
 
@@ -74,29 +78,28 @@
                   @if (session()->has('user_id'))
                         <nav class="primary-menu col-lg-4 order-lg-1">
                               <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="#"><div><b>熱門</b></div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#"><div><b>關於</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#hot" target="_self"><div><b>熱門</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#team"><div><b>關於</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.shop')}}"><div><b>商城</b></div></a></li>
                               </ul>
                         </nav>
                         <nav class="primary-menu col-lg-4 order-lg-3">
                               <ul class="menu-container justify-content-lg-end">
-                                    <li class="menu-item"><a class="menu-link" href="#"><div>Gallery</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#"><div>Blog</div></a></li>
-                                    <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signout')}}"><div>signout</div></a></li>
+							  <a  class="menu-link" href="{{asset('resources/views/component/cart.blade.php')}}" id="top-cart-trigger"><i class="bi-basket"></i></a>
+							  <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signout')}}"><div>登出</div></a></li>
                               </ul>
                         </nav>
                   @else
                         <nav class="primary-menu col-lg-4 order-lg-1">
                               <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="#"><div><b>熱門</b></div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#"><div><b>關於</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#hot" target="_self"><div><b>熱門</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#team"><div><b>關於</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.shop')}}"><div><b>商城</b></div></a></li>
                               </ul>
                         </nav>
                         <nav class="primary-menu col-lg-4 order-lg-3">                            
                               <ul class="menu-container justify-content-lg-end">
-                                    <a  class="menu-link" href="#" id="top-cart-trigger"><i class="fa-solid fa-shopping-bag"></i></a>
+							  		<a  class="menu-link" href="{{asset('resources/views/component/cart.blade.php')}}" id="top-cart-trigger"><i class="bi-basket"></i></a>
                                     <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.login')}}"><div><b>登入</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signup')}}"><div><b>註冊</b></div></a></li>
                               </ul>
@@ -108,9 +111,12 @@
             <div class="header-wrap-clone"></div>
       </header><!-- #header end -->
 
-	  @yield('title')
+
+      @yield('title') 
 
       @yield('content') 
+      
+ 
       <!-- Footer
       ============================================= -->
       <footer id="footer" class="dark" style="background: url({{asset('assets/demos/restaurant/images/footer-bg.jpg')}})  repeat center center / cover; background-size: auto 100%;; padding: 20px 0 22px">
@@ -142,12 +148,10 @@
       <!-- JavaScripts
       ============================================= -->
       <!-- <script src="/js/functions.js"></script> -->
+
+	  <!-- Range Slider Plugin -->
       <script src="{{asset('assets/js/functions.js')}}"></script>
       <script src="{{asset('assets/js/jquery.js')}}"></script>
-
-      <!-- Range Slider Plugin -->
-	<script src="{{asset('assets/js/components/rangeslider.min.js')}}"></script>
-
       <!-- Custom Carousel JS File -->
       <script>
             var carouselRTL = false;
@@ -175,8 +179,13 @@
                         rtl: carouselRTL
                   });
             });
+      </script>
 
-            jQuery(".button-filter").click(function(){
+
+	  <!-- <script src="{{asset('assets/js/components/rangeslider.min.js')}}"></script> -->
+
+	  <script>
+		jQuery(".button-filter").click(function(){
 			jQuery(".skincare-filter").toggleClass("skincare-filter-hide");
 			jQuery(this).toggleClass("button-filter-active-hide");
 			SEMICOLON.Modules.gridInit();
@@ -316,8 +325,8 @@
 				return false;
 			});
 		});
-      </script>
-      <script id="canvas-gototop-fn" src="{{asset('assets/js/modules/gototop.js')}}" async="" defer=""></script><script id="canvas-stickfooteronsmall-fn" src="{{asset('assets/js/modules/stickfooteronsmall.js')}}" async="" defer=""></script><script id="canvas-logo-fn" src="{{asset('assets/js/modules/logo.js')}}" async="" defer=""></script><script id="canvas-headers-fn" src="{{asset('assets/js/modules/headers.js')}}" async="" defer=""></script><script id="canvas-menus-fn" src="{{asset('assets/js/modules/menus.js')}}" async="" defer=""></script><script id="canvas-sliderdimensions-fn" src="{{asset('assets/js/modules/sliderdimensions.js')}}" async="" defer=""></script><script id="canvas-slidermenuclass-fn" src="{{asset('assets/js/modules/slidermenuclass.js')}}" async="" defer=""></script><script id="canvas-bootstrap-fn" src="{{asset('assets/js/modules/bootstrap.js')}}" async="" defer=""></script><script id="canvas-pagetransition-fn" src="{{asset('assets/js/modules/pagetransition.js')}}" async="" defer=""></script><script id="canvas-lightbox-fn" src="{{asset('assets/js/modules/lightbox.js')}}" async="" defer=""></script><script id="canvas-animations-fn" src="{{asset('assets/js/modules/animations.js')}}" async="" defer=""></script><script id="canvas-canvasslider-fn" src="{{asset('assets/js/modules/canvasslider.js')}}" async="" defer=""></script><script id="canvas-carousel-fn" src="{{asset('assets/js/modules/carousel.js')}}" async="" defer=""></script><script id="canvas-bootstrap-js" src="{{asset('assets/js/plugins.bootstrap.js')}}" async="" defer=""></script><script id="canvas-lightbox-js" src="{{asset('assets/js/plugins.lightbox.js')}}" async="" defer=""></script><script id="canvas-swiper-js" src="{{asset('assets/js/plugins.swiper.js')}}" async="" defer=""></script><script id="canvas-carousel-js" src="{{asset('assets/js/plugins.carousel.js')}}" async="" defer=""></script></body>
+	</script>
+	<script id="canvas-gototop-fn" src="{{asset('assets/js/modules/gototop.js')}}" async="" defer=""></script><script id="canvas-stickfooteronsmall-fn" src="{{asset('assets/js/modules/stickfooteronsmall.js')}}" async="" defer=""></script><script id="canvas-logo-fn" src="{{asset('assets/js/modules/logo.js')}}" async="" defer=""></script><script id="canvas-headers-fn" src="{{asset('assets/js/modules/headers.js')}}" async="" defer=""></script><script id="canvas-menus-fn" src="{{asset('assets/js/modules/menus.js')}}" async="" defer=""></script><script id="canvas-sliderdimensions-fn" src="{{asset('assets/js/modules/sliderdimensions.js')}}" async="" defer=""></script><script id="canvas-slidermenuclass-fn" src="{{asset('assets/js/modules/slidermenuclass.js')}}" async="" defer=""></script><script id="canvas-bootstrap-fn" src="{{asset('assets/js/modules/bootstrap.js')}}" async="" defer=""></script><script id="canvas-pagetransition-fn" src="{{asset('assets/js/modules/pagetransition.js')}}" async="" defer=""></script><script id="canvas-lightbox-fn" src="{{asset('assets/js/modules/lightbox.js')}}" async="" defer=""></script><script id="canvas-animations-fn" src="{{asset('assets/js/modules/animations.js')}}" async="" defer=""></script><script id="canvas-canvasslider-fn" src="{{asset('assets/js/modules/canvasslider.js')}}" async="" defer=""></script><script id="canvas-carousel-fn" src="{{asset('assets/js/modules/carousel.js')}}" async="" defer=""></script><script id="canvas-bootstrap-js" src="{{asset('assets/js/plugins.bootstrap.js')}}" async="" defer=""></script><script id="canvas-lightbox-js" src="{{asset('assets/js/plugins.lightbox.js')}}" async="" defer=""></script><script id="canvas-swiper-js" src="{{asset('assets/js/plugins.swiper.js')}}" async="" defer=""></script><script id="canvas-carousel-js" src="{{asset('assets/js/plugins.carousel.js')}}" async="" defer=""></script></body>
 
 </body>
 </html>

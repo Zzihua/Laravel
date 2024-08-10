@@ -2,35 +2,63 @@
 @extends('layout.shopmaster') 
 
 <!-- 傳送資料到母模板，並指定變數為 content -->
-@section('content') 
 @section('title') 
 
 
 
 
- <!-- Page Title
+
+<!-- Page Title
 ============================================= -->
-<section class="page-title page-title-parallax parallax py-lg-6" id="id">
-		<div class="simpleParallax" style="overflow: hidden;"><img src="{{asset('assets/demos/skincare/images/shop-page/page-title.jpg')}}" class="parallax-bg" style="transform: translate3d(0px, 13px, 0px) scale(1.25); will-change: transform; transition: transform 0.4s cubic-bezier(0, 0, 0, 1);"></div>
-		<div class="container">
-	<div class="page-title-row py-5">
+<section id="content">
+			<div class="content-wrap">
 
-		<div class="page-title-content mw-xs">
-			<h1>Products</h1>
-			<p class="color text-larger mt-4 mb-0">Dynamic ways to display under-the-fold Media Uniquely aggregate cross-media expertise.</p>
-		</div>
+				<div class="container">
 
-	</div>
-	</div>
-</section><!-- .page-title end -->
+					<h2 class="text-center">SHOP</h2>
+			<div class="block-expand-categories flex-column flex-lg-row d-flex justify-content-center">
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/1.jpg')}});">
+					<h4><a href="#" class="text-light">Breakfast</a></h4>
+				</div>
 
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/2.jpg')}});">
+					<h4><a href="#" class="text-light">Lunch</a></h4>
+				</div>
+
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/3.jpg')}});">
+					<h4><a href="#" class="text-light">Dinner</a></h4>
+				</div>
+
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/4.jpg')}});">
+					<h4><a href="#" class="text-light">Desserts</a></h4>
+				</div>
+
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/5.jpg')}});">
+					<h4><a href="#" class="text-light">Vegan</a></h4>
+				</div>
+
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/6.jpg')}});">
+					<h4><a href="#" class="text-light">Seafood</a></h4>
+				</div>
+
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/7.jpg')}});">
+					<h4><a href="#" class="text-light">Beverages</a></h4>
+				</div>
+			</div>
+			</div>
+			</div>
+		</section><!-- .page-title end -->
+@endsection 
+
+
+@section('content') 
 
 <section id="content" style="transform: none;">
 			<div class="content-wrap pb-0" style="transform: none;">
 
 				<div class="container" style="transform: none;">
 
-					<a href="{{asset('assets/demo-skincare-login.html')}}"><img src="{{asset('assets/demos/skincare/images/banner.jpg')}}" alt=".." class="mb-3 mb-md-5 mb-xl-6 border border-color border-width-2"></a>
+					<!-- <a href="{{asset('assets/demo-skincare-login.html')}}"><img src="{{asset('assets/demos/skincare/images/banner.jpg')}}" alt=".." class="mb-3 mb-md-5 mb-xl-6 border border-color border-width-2"></a> -->
 
 					<div class="row mb-3 mb-md-5 justify-content-md-between">
 
@@ -76,7 +104,9 @@
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-hair">Hair</a><div class="shop-filter-count">4</div></li>
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lotions">Moisturizers &amp; Lotions</a><div class="shop-filter-count">2</div></li>
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lips">Lips</a><div class="shop-filter-count">2</div></li>
-							</ul><hr class="my-5"><div class="d-flex align-items-center mt-5">
+							</ul>
+							<hr class="my-5">
+							<div class="d-flex align-items-center mt-5">
 								<h5 class="mb-0 h6 font-body fw-normal">Filter by Price:</h5>
 								<div class="d-flex text-smaller ms-auto op-07">
 									<div class="price-range-from">$9.99</div>
@@ -86,7 +116,7 @@
 							</div><span class="irs irs--round js-irs-0"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="display: none;">0</span><span class="irs-max" style="display: none;">1</span><span class="irs-from" style="display: none; left: 0%;">0</span><span class="irs-to" style="display: none; left: 0%;">0</span><span class="irs-single" style="display: none; left: 0%;">0</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 3.50467%; width: 92.9907%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 0%;"><i></i><i></i><i></i></span><span class="irs-handle to" style="left: 92.9907%;"><i></i><i></i><i></i></span></span><input class="price-range irs-hidden-input" tabindex="-1" readonly=""><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 376px; height: 521px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div></div>
 
 						<div class="col-md-9">
-							<div id="shop" class="row shop grid-container has-init-isotope grid-container-filterable" data-layout="fitRows" style="position: relative; height: 5025.12px;">
+							<div id="shop" class="row shop grid-container" data-layout="fitRows">
 
 								<!-- Shop Item 1
 								============================================= -->
@@ -259,10 +289,7 @@
 						</div>
 					</div>
 				</div>
-
-				</div>
-
-			</div>
-		</section>
+		
+</section>
 @endsection  
 

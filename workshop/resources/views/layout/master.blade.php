@@ -78,8 +78,8 @@
                   @if (session()->has('user_id'))
                         <nav class="primary-menu col-lg-4 order-lg-1">
                               <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="#"><div><b>熱門</b></div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#"><div><b>關於</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#hot" target="_self"><div><b>熱門</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#team"><div><b>關於</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.shop')}}"><div><b>商城</b></div></a></li>
                               </ul>
                         </nav>
@@ -93,8 +93,8 @@
                   @else
                         <nav class="primary-menu col-lg-4 order-lg-1">
                               <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="#"><div><b>熱門</b></div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#"><div><b>關於</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#hot" target="_self"><div><b>熱門</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#team"><div><b>關於</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.shop')}}"><div><b>商城</b></div></a></li>
                               </ul>
                         </nav>
@@ -115,8 +115,9 @@
 
       @yield('slider') 
 
-
       @yield('content') 
+      
+ 
       <!-- Footer
       ============================================= -->
       <footer id="footer" class="dark" style="background: url({{asset('assets/demos/restaurant/images/footer-bg.jpg')}})  repeat center center / cover; background-size: auto 100%;; padding: 20px 0 22px">
