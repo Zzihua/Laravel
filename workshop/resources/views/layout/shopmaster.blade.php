@@ -12,6 +12,14 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,900;1,400;1,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.typekit.net/aay8rzy.css">
+	<!-- 在 <head> 中引入 CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
+
+	<!-- 在 </body> 之前引入 JS（确保在 jQuery 之后） -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+
+
 	
 
 	<!-- Core Style -->
@@ -34,6 +42,66 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+
+		.block-expand-categories h1,
+		.block-expand-categories h2,
+		.block-expand-categories h3 { font-family: Playfair Display, serif !important; }
+
+		.block-expand-categories .expand-category {
+			--height: 50vh;
+			--responsive-height: 60px;
+			--hover-flex: 10;
+
+			position: relative;
+			background-position: center center;
+			background-size: cover;
+			border-radius: 20px;
+			margin: 10px 0;
+			min-height: var(--responsive-height);
+			cursor: pointer;
+		}
+
+		.block-expand-categories .expand-category h4 {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			text-align: center;
+			margin: 0;
+			transform: translateY(-50%);
+		}
+
+		/* Larger Device */
+		@media (min-width: 992px) {
+
+			.block-expand-categories .expand-category {
+				height: var(--height);
+				flex: 1;
+				margin: 0 10px;
+				transition: flex 1s ease;
+				-webkit-backface-visibility: hidden;
+				transform: translate3d(0,0,0);
+			}
+
+			.block-expand-categories:not(.on-click) .expand-category:hover,
+			.block-expand-categories.on-click .expand-category.active { flex: var(--hover-flex); }
+
+			.block-expand-categories .expand-category h4 {
+				opacity: 1;
+				top: auto;
+				bottom: 10px;
+				transform: none;
+				transition: opacity .4s ease;
+			}
+
+			.block-expand-categories:hover .expand-category:not(.active):not(:hover) h4,
+			.block-expand-categories.on-click .expand-category:not(.active) h4 { opacity: 0; }
+
+		}
+
+
+	</style>
 	
       
 
@@ -85,8 +153,8 @@
                         </nav>
                         <nav class="primary-menu col-lg-4 order-lg-3">
                               <ul class="menu-container justify-content-lg-end">
-							  <a  class="menu-link" href="{{asset('resources/views/component/cart.blade.php')}}" id="top-cart-trigger"><i class="bi-basket"></i></a>
-							  <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signout')}}"><div>登出</div></a></li>
+								@include('component.cart')
+								<li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signout')}}"><div>signout</div></a></li>
                               </ul>
                         </nav>
                   @else
@@ -99,8 +167,8 @@
                         </nav>
                         <nav class="primary-menu col-lg-4 order-lg-3">                            
                               <ul class="menu-container justify-content-lg-end">
-							  		<a  class="menu-link" href="{{asset('resources/views/component/cart.blade.php')}}" id="top-cart-trigger"><i class="bi-basket"></i></a>
-                                    <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.login')}}"><div><b>登入</b></div></a></li>
+									@include('component.cart')		
+							  		<li class="menu-item"><a class="menu-link color" href="{{route('user.auth.login')}}"><div><b>登入</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signup')}}"><div><b>註冊</b></div></a></li>
                               </ul>
                         </nav>
@@ -152,6 +220,13 @@
 	  <!-- Range Slider Plugin -->
       <script src="{{asset('assets/js/functions.js')}}"></script>
       <script src="{{asset('assets/js/jquery.js')}}"></script>
+	  <script src="{{asset('assets/js/modules/grid.js')}}"></script>
+	  <script src="{{asset('assets/js/modules/hoveranimations.js')}}"></script>
+	  <script src="{{asset('assets/js/modules/stickysidebar.js')}}"></script>
+	  <script src="{{asset('assets/js/modules/topcart.js')}}"></script>
+	  <script src="{{asset('assets/js/modules/filter.js')}}"></script>
+
+
       <!-- Custom Carousel JS File -->
       <script>
             var carouselRTL = false;

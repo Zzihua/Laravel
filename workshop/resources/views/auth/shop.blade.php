@@ -92,8 +92,9 @@
 					<div class="row">
 						<div class="col-md-3 skincare-filter sticky-sidebar-wrap" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 						<div class="scwStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><ul class="list-unstyled items-nav sticky-sidebar">
-								<li><a href="#" class="text-dark font-body">Men</a></li>
-								<li><a href="#" class="text-dark font-body">Women</a></li>
+								<li><a href="#" class="text-dark font-body"><b>麵包</b></a></li>
+								<li><a href="#" class="text-dark font-body"><b>蛋糕</b></a></li>
+								<li><a href="#" class="text-dark font-body"><b>披薩</b></a></li>
 							</ul><hr><ul class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body" data-container="#shop" data-active-class="active-filter">
 								<li class="widget-filter-reset active-filter"><a href="#" class="text-danger" data-filter="*">Clear</a></li>
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-face">Face</a><div class="shop-filter-count">3</div></li>

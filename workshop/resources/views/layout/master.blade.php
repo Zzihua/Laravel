@@ -85,9 +85,8 @@
                         </nav>
                         <nav class="primary-menu col-lg-4 order-lg-3">
                               <ul class="menu-container justify-content-lg-end">
-                                    <li class="menu-item"><a class="menu-link" href="#"><div>Gallery</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#"><div>Blog</div></a></li>
-                                    <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signout')}}"><div>signout</div></a></li>
+                                    @include('component.cart')
+                                    <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signout')}}"><div>登出</div></a></li>
                               </ul>
                         </nav>
                   @else
@@ -100,7 +99,7 @@
                         </nav>
                         <nav class="primary-menu col-lg-4 order-lg-3">                            
                               <ul class="menu-container justify-content-lg-end">
-                                    <a  class="menu-link" href="#" id="top-cart-trigger"><i class="fa-solid fa-shopping-bag"></i></a>
+                                    @include('component.cart')
                                     <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.login')}}"><div><b>登入</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signup')}}"><div><b>註冊</b></div></a></li>
                               </ul>
