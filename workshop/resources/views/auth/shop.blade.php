@@ -17,33 +17,26 @@
 
 					<h2 class="text-center">SHOP</h2>
 			<div class="block-expand-categories flex-column flex-lg-row d-flex justify-content-center">
-				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/1.jpg')}});">
-					<h4><a href="#" class="text-light">Breakfast</a></h4>
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/bakery-1-4.jpg')}});">
+					<h4><a href="#" class="text-light">麵包/Bread</a></h4>
 				</div>
 
-				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/2.jpg')}});">
-					<h4><a href="#" class="text-light">Lunch</a></h4>
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/cake-1.jpg')}});">
+					<h4><a href="#" class="text-light">甜點/Dessert</a></h4>
 				</div>
 
-				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/3.jpg')}});">
-					<h4><a href="#" class="text-light">Dinner</a></h4>
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/fresh-food.jpg')}});">
+					<h4><a href="#" class="text-light">食材小舖/Fresh Food</a></h4>
 				</div>
 
-				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/4.jpg')}});">
-					<h4><a href="#" class="text-light">Desserts</a></h4>
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/joinus.jpg')}});">
+					<h4><a href="#" class="text-light">加入會員/Join Us</a></h4>
 				</div>
 
-				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/5.jpg')}});">
-					<h4><a href="#" class="text-light">Vegan</a></h4>
+				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/catering.jpg')}});">
+					<h4><a href="#" class="text-light">輕食餐盒自由配/Catering Box</a></h4>
 				</div>
 
-				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/6.jpg')}});">
-					<h4><a href="#" class="text-light">Seafood</a></h4>
-				</div>
-
-				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/blocks/preview/exp-cards/7.jpg')}});">
-					<h4><a href="#" class="text-light">Beverages</a></h4>
-				</div>
 			</div>
 			</div>
 			</div>
@@ -93,9 +86,11 @@
 						<div class="col-md-3 skincare-filter sticky-sidebar-wrap" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 						<div class="scwStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><ul class="list-unstyled items-nav sticky-sidebar">
 								<li><a href="#" class="text-dark font-body"><b>麵包</b></a></li>
-								<li><a href="#" class="text-dark font-body"><b>蛋糕</b></a></li>
+								<li><a href="#" class="text-dark font-body"><b>甜點</b></a></li>
+								<li><a href="#" class="text-dark font-body"><b>咖啡輕食</b></a></li>
+								<li><a href="#" class="text-dark font-body"><b>歐陸廚房</b></a></li>
 								<li><a href="#" class="text-dark font-body"><b>披薩</b></a></li>
-							</ul><hr><ul class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body" data-container="#shop" data-active-class="active-filter">
+							<!-- </ul><hr><ul class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body" data-container="#shop" data-active-class="active-filter">
 								<li class="widget-filter-reset active-filter"><a href="#" class="text-danger" data-filter="*">Clear</a></li>
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-face">Face</a><div class="shop-filter-count">3</div></li>
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-body">Body</a><div class="shop-filter-count">3</div></li>
@@ -105,7 +100,7 @@
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-hair">Hair</a><div class="shop-filter-count">4</div></li>
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lotions">Moisturizers &amp; Lotions</a><div class="shop-filter-count">2</div></li>
 								<li class="mb-1 d-flex justify-content-between align-items-center"><a href="#" data-filter=".sf-lips">Lips</a><div class="shop-filter-count">2</div></li>
-							</ul>
+							</ul> -->
 							<hr class="my-5">
 							<div class="d-flex align-items-center mt-5">
 								<h5 class="mb-0 h6 font-body fw-normal">Filter by Price:</h5>

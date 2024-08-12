@@ -32,10 +32,16 @@ Route::group(['prefix' => 'merchandise'], function () {
 
     // 商品管理
     Route::get('manage', 'App\Http\Controllers\MerchandiseController@MerchandiseManage')->name('merchandise.manage');
-    Route::get('create', 'App\Http\Controllers\MerchandiseController@MerchandiseCreate')->middleware(AuthUserAdminMiddleware::class);
+    // 显示创建商品的表单
+    Route::get('create','App\Http\Controllers\MerchandiseController@MerchandiseCreate')->name('merchandise.create');
+
+    // // 处理表单提交的路由
+    // Route::post('/', [App\Http\Controllers\MerchandiseController::class, 'CreateProcess'])->name('merchandise.create.process');
+        
 
     // 商品修改、刪除   
     Route::group(['prefix' => '{merchandise_id}'], function () {
+        Route::post('/', 'App\Http\Controllers\MerchandiseController@MerchandiseCreateProcess')->middleware(AuthUserAdminMiddleware::class);
         Route::get('edit', 'App\Http\Controllers\MerchandiseController@MerchandiseEdit')->middleware(AuthUserAdminMiddleware::class);
         Route::put('/', 'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess');
         Route::get('delete', 'App\Http\Controllers\MerchandiseController@MerchandiseDelete')->middleware(AuthUserAdminMiddleware::class);
@@ -44,6 +50,3 @@ Route::group(['prefix' => 'merchandise'], function () {
     // // 圖片上傳
     Route::post('upload', 'App\Http\Controllers\MerchandiseController@UploadImage')->middleware(AuthUserAdminMiddleware::class);
 });
-
-
-

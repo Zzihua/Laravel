@@ -41,6 +41,7 @@
                                     <th>狀態</th>
                                     <th>價格</th>
                                     <th>庫存數量</th>
+                                    <th>產品說明</th>
                                     <th>編輯</th>
                                     <th>刪除</th>
                                 </tr>
@@ -65,6 +66,7 @@
                                     </td>
                                     <td align='center'> {{ $Merchandise->price }} </td>
                                     <td align='center'> {{ $Merchandise->remain_count }}</td>
+                                    <td align='center'> {{ $Merchandise->introduction }}</td>
                                     <td align='center'>
                                         <a href="/merchandise/{{ $Merchandise->id }}/edit">
                                             <i class="fa fa-pencil" aria-hidden="true" style="color:black"></i>

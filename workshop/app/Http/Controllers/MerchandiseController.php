@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Shop\Entity\Merchandise;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -25,6 +25,34 @@ class MerchandiseController extends Controller
         // 重新導向至商品編輯頁
         return view('merchandise.create',$binding);
     }
+
+
+        public function MerchandiseCreateProcess(Request $request)
+        {
+            // 验证表单数据
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'price' => 'required|numeric',
+                'remain_count' => 'required|integer',
+                'status' => 'required|string',
+                'type' => 'required|string',
+                'introduction' => 'required|string',
+            ]);
+
+            // 如果验证失败，重定向回管理页面并附加错误信息
+            if ($validator->fails()) {
+                return redirect()->route('merchandise.create')
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            // 如果验证通过，创建商品
+            Merchandise::create($request->all());
+
+             // 重新導向到商品編輯頁
+            return redirect('/merchandise/manage')->with('success', '商品已成功创建！');
+        }
+
 
     public function MerchandiseEdit($merchandise_id){
 

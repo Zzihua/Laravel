@@ -127,11 +127,11 @@
                         <div class="container">
 
                               <div class="heading-block text-center border-bottom-0">
-                                    <span class="font-primary ls-1" style="font-size: 14px; color: #AAA">Hot</span>
-                                    <h3 class="font-primary ls-1" style="font-size: 50px; line-height: 1.2;">熱門商品</h3>
+                                    <span class="font-primary ls-1" style="font-size: 14px; color: #AAA">New</span>
+                                    <h3 class="font-primary ls-1" style="font-size: 50px; line-height: 1.2;">最新消息</h3>
                               </div>
 
-                              <div class="row posts-md col-mb-30 mb-0">
+                              <div class="row posts-md col-mb-30 mb-0" id="oc-images" data-items-xs="2" data-items-sm="3" data-items-lg="4" data-items-xl="5">
 
                                     <div class="col-lg-4 col-md-6">
                                           <div class="entry">
@@ -264,19 +264,19 @@
 
                               <div class="col-lg-3 col-md-6 text-center">
                                     <i class="i-plain i-xlarge mx-auto mb-0 icon-et-heart"></i>
-                                    <h3 class="text-uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Social Contact</h3>
+                                    <h3 class="text-uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">聯絡我們</h3>
                                     <div class="d-flex justify-content-center">
-                                          <a href="#" class="social-icon border-transparent h-bg-facebook">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                                <i class="fa-brands fa-facebook-f"></i>
+                                          <a href="https://linktr.ee/laone_kh" class="social-icon border-transparent h-bg-instagram">
+                                                <i class="fa-brands fa-instagram"></i>
+                                                <i class="fa-brands fa-instagram"></i>
                                           </a>
-                                          <a href="#" class="social-icon border-transparent h-bg-youtube">
+                                          <a href="https://www.youtube.com/channel/UCrKRgkFKx9g49zKqA2RoBAg" class="social-icon border-transparent h-bg-youtube">
                                                 <i class="fa-brands fa-youtube"></i>
                                                 <i class="fa-brands fa-youtube"></i>
                                           </a>
-                                          <a href="#" class="social-icon border-transparent h-bg-email3">
-                                                <i class="bi-envelope"></i>
-                                                <i class="bi-envelope"></i>
+                                          <a href="https://page.line.me/laone?openQrModal=true" class="social-icon border-transparent h-bg-line">
+                                                <i class="fa-brands fa-line"></i>
+                                                <i class="fa-brands fa-line"></i>
                                           </a>
                                     </div>
                               </div>
