@@ -1,226 +1,103 @@
-<!-- 指定繼承 layout.master 母模板 --> 
-@extends('layout.master') 
 
-<!-- 傳送資料到母模板，並指定變數為 title -->
-@section('title', $title)
+@extends('layout.master')
 
-<!-- 傳送資料到母模板，並指定變數為 content -->
-@section('content') 
+@section('content')
 
+<section id="content">
+    <div class="content-wrap">
+        <div class="container">
 
-<div class="container">
-        <h1>{{ $title }}</h1>
+            <h1>{{ $title }}</h1>
 
-        {{-- 錯誤訊息模板元件 --}}
-        @include('component.loginAlert')
+            {{-- 錯誤訊息模板元件 --}}
+            @include('component.errorMessage')
 
-        <div class="row">
-            <div class="col-md-12">
-                <form action="/merchandise/{{ $Merchandise->id }}"
-                      method="post"
-                      enctype="multipart/form-data"
-                >
-                    {{-- 隱藏方法欄位 --}}
-                    {{ method_field('PUT') }}
+            <div class="form-widget">
 
+                <div class="form-result"></div>
 
-					<div class="col-12">
-						<div class="card bg-light">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-6 form-group">
-										<label for="type"><b>狀態欄</b><small class="text-danger">*</small></label>
-										<select class="form-control"
-												name="status"
-												id="status"
-										>
-											<option value="C"
-													@if(old('status', $Merchandise->status)=='C') selected @endif
-											>
-												建立中
-											</option>
-											<option value="S"
-													@if(old('status', $Merchandise->status)=='S') selected @endif
-											>
-											銷售中
-											</option>
-										</select>
-									</div>
-									<div class="col-md-6 form-group">
-										<label for="name"><b>商品名稱</b><small class="text-danger">*</small></label>
-										<input type="text"
-											class="form-control"
-											id="name"
-											name="name"
-											placeholder="{{ trans('shop.merchandise.fields.name') }}"
-											value="{{ old('name', $Merchandise->name) }}"
-										>
-									</div>
-									<div class="col-6 form-group">
-										<label for="name_en"><b>商品英文名稱</b><small class="text-danger">*</small></label>
-										<input type="text"
-											class="form-control"
-											id="name_en"
-											name="name_en"
-											placeholder="{{ trans('shop.merchandise.fields.name-en') }}"
-											value="{{ old('name_en', $Merchandise->name_en) }}"
-										>
-									</div>
-									<div class="col-6 form-group">
-										<label for="introduction"><b>介紹</b><small class="text-danger">*</small></label>
-										<input type="text"
-											class="form-control"
-											id="introduction"
-											name="introduction"
-											placeholder="介紹"
-											value="{{ old('introduction', $Merchandise->introduction) }}"
-										>
-									</div>
-									<div class="col-6 form-group">
-										<label for="introduction_en"><b>英文介紹</b><small class="text-danger">*</small></label>
-										<input type="text"
-											class="form-control"
-											id="introduction_en"
-											name="introduction_en"
-											placeholder="英文介紹"
-											value="{{ old('introduction_en', $Merchandise->introduction_en) }}"
-										>
-									</div>
-									<div class="col-6 form-group">
-										<label for="photo"><b>商品照片</b><small class="text-danger">*</small></label>
-										<input type="file"
-											class="form-control"
-											id="photo"
-											name="photo"
-											placeholder="商品照片"
-										>
-										<img src="{{asset( $Merchandise->photo)}}"/>
-									</div>
-									<div class="col-6 form-group">
-										<label for="price"><b>價格</b><small class="text-danger">*</small></label>
-										<input type="text"
-											class="form-control"
-											id="price"
-											name="price"
-											placeholder="價格"
-											value="{{ old('price', $Merchandise->price) }}"
-										>
-									</div>
-									<div class="col-6 form-group">
-										<label for="remain_count"><b>庫存</b><small class="text-danger">*</small></label>
-										<input type="text"
-											class="form-control"
-											id="remain_count"
-											name="remain_count"
-											placeholder="庫存"
-											value="{{ old('remain_count', $Merchandise->remain_count) }}"
-										>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+                <div class="row shadow bg-light border">
+                    <form action="/merchandise/{{ $Merchandise->id }}"
+                        method="post"
+                        enctype="multipart/form-data">
 
-                    <!-- <div class="form-group">
-                        <label for="type">狀態欄</label>
-                        <select class="form-control"
-                                name="status"
-                                id="status"
-                        >
-                            <option value="C"
-                                    @if(old('status', $Merchandise->status)=='C') selected @endif
-                            >
-                                建立中
-                            </option>
-                            <option value="S"
-                                    @if(old('status', $Merchandise->status)=='S') selected @endif
-                            >
-                               銷售中
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">商品名稱</label>
-                        <input type="text"
-                               class="form-control"
-                               id="name"
-                               name="name"
-                               placeholder="{{ trans('shop.merchandise.fields.name') }}"
-                               value="{{ old('name', $Merchandise->name) }}"
-                        >
-                    </div>
-                    <div class="form-group">
-                        <label for="name_en">商品英文名稱</label>
-                        <input type="text"
-                               class="form-control"
-                               id="name_en"
-                               name="name_en"
-                               placeholder="{{ trans('shop.merchandise.fields.name-en') }}"
-                               value="{{ old('name_en', $Merchandise->name_en) }}"
-                        >
-                    </div> -->
-                    <!-- <div class="form-group">
-                        <label for="introduction">介紹</label>
-                        <input type="text"
-                               class="form-control"
-                               id="introduction"
-                               name="introduction"
-                               placeholder="介紹"
-                               value="{{ old('introduction', $Merchandise->introduction) }}"
-                        >
-                    </div>
-                    <div class="form-group">
-                        <label for="introduction_en">英文介紹</label>
-                        <input type="text"
-                               class="form-control"
-                               id="introduction_en"
-                               name="introduction_en"
-                               placeholder="英文介紹"
-                               value="{{ old('introduction_en', $Merchandise->introduction_en) }}"
-                        >
-                    </div> -->
-                    <!-- <div class="form-group">
-                        <label for="photo">商品照片</label>
-                        <input type="file"
-                               class="form-control"
-                               id="photo"
-                               name="photo"
-                               placeholder="商品照片"
-                        >
-                        <img src="{{ $Merchandise->photo or '/assets/images/default-merchandise.png' }}" />
-                    </div>
+                        @csrf
+                        {{ method_field('PUT') }}
 
-                    <div class="form-group">
-                        <label for="price">價格</label>
-                        <input type="text"
-                               class="form-control"
-                               id="price"
-                               name="price"
-                               placeholder="價格"
-                               value="{{ old('price', $Merchandise->price) }}"
-                        >
-                    </div>
-                    <div class="form-group">
-                        <label for="remain_count">庫存</label>
-                        <input type="text"
-                               class="form-control"
-                               id="remain_count"
-                               name="remain_count"
-                               placeholder="庫存"
-                               value="{{ old('remain_count', $Merchandise->remain_count) }}"
-                        >
-                    </div> -->
-					<div class="form-group text-center">
-                        <br>
-                        <a href="/merchandise/manage"><button type="button" id="calories-trigger" class="btn btn-secondary">取消</button></a>
-                        <button type="submit" name="fitness-form-submit" class="btn btn-success ms-2">更新</button>
+                        <!-- 圖片預覽 -->
+                        <div class="col-lg-4 dark" style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)) center center / cover; min-height: 400px;">
+                            <h3 class="text-center mt-5"></h3>
+                            <div class="image-container text-center w-100 px-2">
+                                <input type="file"
+                                            class="form-control"
+                                            id="photo"
+                                            name="photo"
+                                            placeholder="商品圖片"
+                                >
+                                <img src="{{ asset($Merchandise->photo)}}" width='300' height='300'/>
+                        </div>
+                        
+                        <div class="form-process">
+                            <div class="css3-spinner">
+                                <div class="css3-spinner-scaler"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row checkout-form-billing">
+                                <div class="col-12">
+                                    <h3>商品資訊</h3>
+                                </div>
+                                <div class="col-12 form-group">
+                                    <label>商品名稱:</label>
+                                    <input type="text"
+                                        class="form-control"
+                                        id="name"
+                                        name="name"
+                                        placeholder="{{ trans('shop.merchandise.fields.name') }}"
+                                        value="{{ old('name', $Merchandise->name) }}"
+                                        >
+                                </div>
+                                <div class="col-12 form-group">
+                                    <label>編號:</label>
+                                    <input type="email" name="checkout-form-billing-email" id="checkout-form-billing-email" class="form-control required" value="" placeholder="user@company.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="photo">商品圖片</label>
+                                    <input type="file"
+                                        class="form-control"
+                                        id="photo"
+                                        name="photo"
+                                        placeholder="商品圖片"
+                                    >
+                                    <img src="{{ $Merchandise->photo or '/assets/images/default-merchandise.png' }}" width='300' height='300'/>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label>代理商:</label><br>
+                                    <input type="text" name="checkout-form-billing-company" id="checkout-form-billing-company" class="form-control" value="" placeholder="Company Inc.">
+                                </div>
+                                <div class="col-12 form-group">
+                                    <label>商品價格:</label>
+                                    <input type="text" name="checkout-form-billing-street" id="checkout-form-billing-street" class="form-control required" value="" placeholder="修改金額$...">
+                                </div>
+                                <div class="form-group">
+                                    <label>商品說明:</label>
+                                    <textarea name="event-registration-bio" id="event-registration-bio" class="form-control required" cols="30" rows="5" placeholder="編輯說明..."></textarea>
+                                </div>
 
-                    </div>
-                    
-                    {{-- CSRF 欄位--}}
-                    {{ csrf_field() }}
-                </form>
+                        <!-- checkout按鈕 -->
+                        <div class="col-12">
+                            <div class="form-group text-center">
+                                <button type="submit" name="checkout-form-submit" class="btn btn-lg btn-secondary">確認修改</button>
+                            </div>
+                            <input type="hidden" name="prefix" value="checkout-form-">
+                        </div>
+                    </form>
+
+                </div>
+
             </div>
         </div>
-    </div>
+        </div>
+</section><!-- #content end -->
+
 @endsection

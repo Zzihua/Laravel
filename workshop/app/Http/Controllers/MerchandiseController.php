@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Shop\Entity\Merchandise;
 use Validator;
 use Image;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Http\Controllers\Controller;
 
@@ -16,22 +18,12 @@ class MerchandiseController extends Controller
 
     public function MerchandiseCreate(){
         
-        // 建立商品基本資訊
-        $merchandise_data = [
-            'status'          => 'C',   // 建立中
-            'name'            => '',    // 商品名稱
-            'name_en'         => '',    // 商品英文名稱
-            'introduction'    => '',    // 商品介紹
-            'introduction_en' => '',    // 商品英文介紹
-            'photo'           => null,  // 商品照片
-            'price'           => 0,     // 價格
-            'remain_count'    => 0,     // 商品剩餘數量
+        $binding = [
+            'title' => '新增商品',
         ];
-        $Merchandise = Merchandise::create($merchandise_data);
-        // dd($Merchandise);
         
         // 重新導向至商品編輯頁
-        return redirect('/merchandise/' . $Merchandise->id . '/edit');
+        return view('merchandise.create',$binding);
     }
 
     public function MerchandiseEdit($merchandise_id){
@@ -124,4 +116,18 @@ class MerchandiseController extends Controller
         return redirect(route('merchandise.manage'));
     }
 
+
+     // 處理圖片上傳的私有方法
+     private function handlePhotoUpload($photo)
+     {
+         // 產生自訂隨機檔案名稱
+         $file_name = uniqid() . '.' . $photo->getClientOriginalExtension();
+         // 檔案相對路徑
+         $file_relative_path = 'images/merchandise/';
+         // 將圖片存儲至 public 目錄中並取得存儲的相對路徑
+         $file_path = $photo->storeAs($file_relative_path, $file_name, 'public');
+ 
+         // 返回圖片的 URL
+         return Storage::url($file_path);
+     }
 }
