@@ -126,7 +126,9 @@
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
 													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
-													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2" data-product-id="{{ $product->id }}" onclick="addToCart(event, {{ $product->id }})">
+														<i class="bi-basket"></i>
+													</a>
 												</div>
 											</div>
 										</div>
@@ -292,6 +294,55 @@
 				</div>
 		
 </section>
+
+
+
+<script>document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.btn.bg-color.bg-opacity-75.text-light.me-2.z-2').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const productId = this.getAttribute('data-product-id');
+            
+            // 發送 AJAX 請求將商品添加到購物車
+            fetch('/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({ product_id: productId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 更新購物車預覽
+                updateCartPreview(data);
+            })
+            .catch(error => console.error('Error:', error));
+       	 });
+    	});
+	});
+
+	function updateCartPreview(data) {
+		// 更新購物車預覽邏輯
+		// 例如：
+		const cartPreview = document.getElementById('cart-preview');
+		cartPreview.innerHTML = ''; // 清空現有內容
+
+		data.cartItems.forEach(item => {
+			cartPreview.innerHTML += `<div class="cart-item">
+				<img src="${item.image}" alt="${item.name}" />
+				<p>${item.name}</p>
+				<p>${item.price}</p>
+				<p>Quantity: ${item.quantity}</p>
+			</div>`;
+		});
+
+		// 更新購物車總價
+		document.getElementById('cart-total').innerText = `Total: $${data.total}`;
+	}
+</script>
+
 
 <style>
 

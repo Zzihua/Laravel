@@ -12,7 +12,7 @@
             <h1>{{ $title }}</h1>
 
             <div class="form-widget">
-
+            <form action="/merchandise/{{ $Merchandise->id }}" method="post" enctype="multipart/form-data">
                 <div class="form-result"></div>
 
                 <div class="row shadow bg-light border">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="col-lg-8 p-5">
-                        <form action="/merchandise/{{ $Merchandise->id }}" method="post" enctype="multipart/form-data">
+                        
                             @csrf
                             {{ method_field('PUT') }}
 
@@ -140,28 +140,41 @@
 </section><!-- #content end -->
 
 <script>
-    function previewImage(event) {
-        const reader = new FileReader();
-        const previewImg = document.getElementById('preview-img');
-        const uploadIcon = document.getElementById('upload-icon');
-        reader.onload = function() {
-            previewImg.src = reader.result;
-            previewImg.style.display = 'block';
-            uploadIcon.style.display = 'none';
-        };
-        reader.readAsDataURL(event.target.files[0]);
-    }
+     function previewImage(event) {
+            const reader = new FileReader();
+            const previewImg = document.getElementById('preview-img');
 
-    // 加入圖片區域的動畫效果
-    const imagePreviewContainer = document.getElementById('image-preview-container');
-    imagePreviewContainer.addEventListener('mouseover', () => {
-        imagePreviewContainer.style.transition = 'transform 0.3s ease';
-        imagePreviewContainer.style.transform = 'scale(1.05)';
-    });
+            reader.onload = function() {
+                previewImg.src = reader.result;
+                previewImg.style.display = 'block';
+            };
 
-    imagePreviewContainer.addEventListener('mouseout', () => {
-        imagePreviewContainer.style.transform = 'scale(1)';
-    });
+            reader.readAsDataURL(event.target.files[0]);
+        }       
+
+        // 加入圖片區域的動畫效果
+        const imagePreviewContainer = document.getElementById('image-preview-container');
+            imagePreviewContainer.addEventListener('mouseover', () => {
+                imagePreviewContainer.style.transition = 'background-color 0.3s ease';
+                imagePreviewContainer.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; // 背景变淡且呈现白色
+            });
+
+            imagePreviewContainer.addEventListener('mouseout', () => {
+                imagePreviewContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.3)'; // 恢复原来的背景色
+            });
+
+            // 當圖片預覽被點擊時，允許用戶重新上傳圖片
+            imagePreviewContainer.addEventListener('click', () => {
+            if (!isDialogOpen) {
+                isDialogOpen = true;
+                document.getElementById('image-upload').click();
+                setTimeout(() => {
+                    isDialogOpen = false;
+                }, 500);  // 延遲500毫秒以避免多次觸發
+            }
+        });
+
+
 </script>
 
 <style>

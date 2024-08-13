@@ -29,6 +29,7 @@ class MerchandiseController extends Controller
 
     public function MerchandiseCreateProcess(Request $request)
     {
+        // dd($request->all()); // 用於除錯，查看提交的所有資料
         // 验证表单数据
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',

@@ -13,7 +13,7 @@
                 <h1>{{ $title }}</h1>
 
                 <div class="form-widget">
-
+                <form id="product-form" action="{{ route('merchandise.create.process') }}"  method="post" enctype="multipart/form-data">
                     <div class="form-result"></div>
 
                     <div class="row shadow bg-light border">
@@ -22,11 +22,11 @@
                             <div class="image-container text-center w-100 h-100 d-flex justify-content-center align-items-center position-relative" id="image-preview-container">
                                 <img id="preview-img" src="#" alt="圖片預覽" style="display:none; max-width: 100%; max-height: 100%;">
                                 <label for="image-upload" class="upload-icon position-absolute" id="upload-icon">+</label>
-                                <input type="file" id="image-upload" style="display: none;" accept="image/*" onchange="previewImage(event)">
-                            </div>
+                                <input type="file" id="image-upload" name="photo" style="display: none;" accept="image/*" onchange="previewImage(event)">
+                                </div>
                         </div>
                         <div class="col-lg-8 p-5">
-                            <form id="product-form" action="/merchandise/manage" method="post">
+                           
                                 @csrf
 
                                 <div class="form-process">
@@ -149,6 +149,8 @@
         function previewImage(event) {
             const reader = new FileReader();
             const previewImg = document.getElementById('preview-img');
+            
+            console.log(event.target.files[0]); // 檢查選擇的圖片文件
 
             reader.onload = function() {
                 previewImg.src = reader.result;
@@ -156,7 +158,8 @@
             };
 
             reader.readAsDataURL(event.target.files[0]);
-        }       
+        }
+
 
         // 加入圖片區域的動畫效果
         const imagePreviewContainer = document.getElementById('image-preview-container');

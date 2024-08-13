@@ -121,16 +121,16 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips">
 									<div class="grid-inner">
 										<div class="product-image">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/6620a53b18020b0020266bd5/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/6620a53b18020b0020266bd5/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
 										</div>
 										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.pizza')}}"><b>涮涮酸菜魚</b></a></h3></div>
+											<div class="product-title"><h3><a href="#"><b>涮涮酸菜魚</b></a></h3></div>
 											<div class="product-price fw-normal mt-0 mb-0"><ins>$350</ins></div>
 											
 										</div>
@@ -140,10 +140,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/66877bd04d576c0013665f8f/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/66877bd04d576c0013665f8f/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -158,10 +158,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/668768505541cd001cf96d9a/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/668768505541cd001cf96d9a/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -176,10 +176,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/668780ae5541cd001cf978b3/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/668780ae5541cd001cf978b3/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>

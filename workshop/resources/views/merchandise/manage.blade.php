@@ -53,7 +53,7 @@
                                     <td align='center'> {{ $Merchandise->name }}</td>
                                     <td align='center'>
                                         @if ($Merchandise->photo)
-                                            <img src="{{ $Merchandise->photo }}" alt="商品图片" style="max-width: 100%; height: auto;">
+                                            <img src="{{ $Merchandise->photo }}" alt="商品图片"  width='100' height='100'/>
                                         @else
                                             <img  alt="無圖片" style="max-width: 100%; height: auto;">
                                         @endif

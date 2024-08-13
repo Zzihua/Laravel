@@ -7,6 +7,7 @@ use App\Shop\Entity\User;
 use Hash;
 use Illuminate\Http\Request;
 use Mail;
+use Product;
 // use Validator;
 
 
@@ -17,13 +18,13 @@ class UserAuthController extends Controller
         return $id.'<br> my id:'.$id;
     }
 
-    public function SignUp()
-    {
-        $binding = [
-            'title' => '註冊',
-        ];
-        return view( 'auth.signup' , $binding);
-    }
+    // public function SignUp()
+    // {
+    //     $binding = [
+    //         'title' => '註冊',
+    //     ];
+    //     return view( 'auth.signup' , $binding);
+    // }
 
     public function Shop()
     {
@@ -136,23 +137,23 @@ class UserAuthController extends Controller
             if (isset($cart[$productId])) {
                 $cart[$productId]['quantity'] += $quantity; // 更新数量
             } else {
+                $product = Product::find($productId);
                 $cart[$productId] = [
-                    'quantity' => $quantity,
-                    'price' => $price
-                ]; // 添加新商品
+                    'name' => $product->name,
+                    'price' => $product->price,
+                    'quantity' => 1,
+                    'image' => $product->image
+                ];
             }
 
             session()->put('cart', $cart);
 
-            // 计算总金额
-            $total = 0;
-            foreach ($cart as $item) {
-                $total += $item['quantity'] * $item['price'];
-            }
-
-            // 返回购物车数据
+            $total = array_sum(array_map(function ($item) {
+                return $item['price'] * $item['quantity'];
+            }, $cart));
+        
             return response()->json([
-                'cart' => $cart,
+                'cartItems' => array_values($cart),
                 'total' => $total
             ]);
         }

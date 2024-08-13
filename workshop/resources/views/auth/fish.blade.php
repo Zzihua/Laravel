@@ -42,7 +42,7 @@
 								<input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty border-0">
 								<button type="button" class="plus"><i class="uil uil-plus"></i></button>
 							</div>
-							<button type="submit" class="add-to-cart button m-0 flex-fill text-white" style="--cnvs-btn-padding-y: 0.75rem">$390<i class="bi-circle-fill small mx-3"></i>加入購物車</button>
+							<button type="submit" class="add-to-cart button m-0 flex-fill text-white" style="--cnvs-btn-padding-y: 0.75rem">$390<i class="bi-circle-fill small mx-3">加入購物車</i></button>
 						</form><!-- Quantity & Cart Button End -->
 						<div class="line my-4" style="border-color: var(--cnvs-color);"></div>
 
@@ -88,46 +88,29 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
-			// 获取加号和减号按钮
+			// 獲取加號和減號按鈕
 			const minusButton = document.querySelector('.minus');
 			const plusButton = document.querySelector('.plus');
-			// 获取数量输入框
+			// 獲取數量輸入框
 			const quantityInput = document.querySelector('input[name="quantity"]');
-
-			// 初始化数量为1
-			let quantity = parseInt(quantityInput.value, 10);
-
-			// 减少数量
-			minusButton.addEventListener('click', function () {
-				if (quantity > 1) {
-					quantity--;
-					quantityInput.value = quantity;
-				}
-			});
-
-			// 增加数量
-			plusButton.addEventListener('click', function () {
-				quantity++;
-				quantityInput.value = quantity;
-			});
-		});
-
-		document.addEventListener('DOMContentLoaded', function () {
-			const minusButton = document.querySelector('.minus');
-			const plusButton = document.querySelector('.plus');
-			const quantityInput = document.querySelector('input[name="quantity"]');
+			// 獲取價格輸入框和加入購物車按鈕
 			const priceInput = document.querySelector('input[name="price"]');
 			const addToCartButton = document.querySelector('.add-to-cart');
-			const basePrice = 390; // 基础价格
+			const basePrice = 390; // 基本價格
+			const productId = 'product123'; // 替換為實際的產品ID
+			const productName = '核桃木煙燻鮭魚｜星級餐酒館'; // 替換為實際的產品名稱
+			const productImage = 'https://shoplineimg.com/5baaeb237afd880005c43ed5/62cbe15de264a300143378f3/800x.webp?source_format=jpg'; // 替換為實際的產品圖片URL
 
 			let quantity = parseInt(quantityInput.value, 10);
 
+			// 更新價格顯示
 			function updatePrice() {
 				const totalPrice = basePrice * quantity;
-				addToCartButton.innerHTML = `$${totalPrice}<i class="bi-circle-fill small mx-3"></i>加入购物车`;
-				priceInput.value = basePrice; // 根据需要更新为 totalPrice
+				addToCartButton.innerHTML = `$${totalPrice}<i class="bi-circle-fill small mx-3"></i>加入購物車`;
+				priceInput.value = totalPrice; // 更新為 totalPrice
 			}
 
+			// 減少數量
 			minusButton.addEventListener('click', function () {
 				if (quantity > 1) {
 					quantity--;
@@ -136,14 +119,37 @@
 				}
 			});
 
+			// 增加數量
 			plusButton.addEventListener('click', function () {
 				quantity++;
 				quantityInput.value = quantity;
 				updatePrice();
 			});
 
-			updatePrice(); // 初始化价格
+			// 點擊加入購物車按鈕時將商品添加到 localStorage
+			addToCartButton.addEventListener('click', function () {
+				const cartData = JSON.parse(localStorage.getItem('cart') || '{}');
+				
+				// 更新購物車數據
+				if (cartData[productId]) {
+					cartData[productId].quantity += quantity;
+				} else {
+					cartData[productId] = {
+						name: productName,
+						price: basePrice,
+						quantity: quantity,
+						image: productImage
+					};
+				}
+
+				localStorage.setItem('cart', JSON.stringify(cartData));
+				
+			});
+
+			// 初始化價格顯示
+			updatePrice();
 		});
+
 
 	</script>
 

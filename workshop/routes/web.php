@@ -18,11 +18,11 @@ Route::group(['prefix' => 'user'], function () {
         Route::get('shop', 'App\Http\Controllers\UserAuthController@Shop')->name('user.auth.shop');
         Route::get('login', 'App\Http\Controllers\UserAuthController@Login')->name('user.auth.login');
         Route::post('login', 'App\Http\Controllers\UserAuthController@LoginProcess');
-        Route::get('signup', 'App\Http\Controllers\UserAuthController@Signup') ->name('user.auth.signup');
+        // Route::get('signup', 'App\Http\Controllers\UserAuthController@Signup') ->name('user.auth.signup');
         Route::post('signup', 'App\Http\Controllers\UserAuthController@SignUpProcess');
         Route::get('signout', 'App\Http\Controllers\UserAuthController@Signout')->name('user.auth.signout');
         Route::get('profile/{id}', 'App\Http\Controllers\UserAuthController@Profile');
-        Route::get('fish','App\Http\Controllers\UserAuthController@Fish')->name('user.auth.fish');
+        Route::match(['get','post'],'fish','App\Http\Controllers\UserAuthController@Fish')->name('user.auth.fish');
         Route::get('cart1','App\Http\Controllers\UserAuthController@Cart1')->name('user.auth.cart1');
         Route::get('orderfinish','App\Http\Controllers\UserAuthController@OrderFinish')->name('user.auth.orderfinish');
 
@@ -47,6 +47,8 @@ Route::group(['prefix' => 'merchandise'], function () {
     Route::get('manage', 'App\Http\Controllers\MerchandiseController@MerchandiseManage')->name('merchandise.manage');
     // 显示创建商品的表单
     Route::get('create','App\Http\Controllers\MerchandiseController@MerchandiseCreate')->name('merchandise.create');
+    Route::post('/', 'App\Http\Controllers\MerchandiseController@MerchandiseCreateProcess')->name('merchandise.create.process');
+
 
     // // 处理表单提交的路由
     // Route::post('/', [App\Http\Controllers\MerchandiseController::class, 'CreateProcess'])->name('merchandise.create.process');
@@ -54,7 +56,6 @@ Route::group(['prefix' => 'merchandise'], function () {
 
     // 商品修改、刪除   
     Route::group(['prefix' => '{merchandise_id}'], function () {
-        Route::post('/', 'App\Http\Controllers\MerchandiseController@MerchandiseCreateProcess')->middleware(AuthUserAdminMiddleware::class);
         Route::get('edit', 'App\Http\Controllers\MerchandiseController@MerchandiseEdit')->middleware(AuthUserAdminMiddleware::class);
         Route::put('/', 'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess');
         Route::get('delete', 'App\Http\Controllers\MerchandiseController@MerchandiseDelete')->middleware(AuthUserAdminMiddleware::class);
