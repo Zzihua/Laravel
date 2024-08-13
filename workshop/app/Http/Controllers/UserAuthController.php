@@ -108,34 +108,72 @@ class UserAuthController extends Controller
 
     }
 
-    public function Pizza(){
+    public function Fish(){
         
         // 重新導向至商品編輯頁
-        return view('auth.pizza');
+        return view('auth.fish');
+    }
+
+    public function OrderFinish(){
+        
+        // 重新導向至商品編輯頁
+        return view('auth.orderfinish');
     }
 
     public function CartProcess(Request $request)
+        {
+            $productId = $request->input('product_id');
+            $quantity = $request->input('quantity', 1); // 默认数量为1
+            $price = $request->input('price'); // 从请求中获取商品价格
+
+            if (!$price) {
+                return response()->json(['error' => '价格信息缺失'], 400);
+            }
+
+            // 逻辑: 将商品添加到购物车
+            $cart = session()->get('cart', []);
+
+            if (isset($cart[$productId])) {
+                $cart[$productId]['quantity'] += $quantity; // 更新数量
+            } else {
+                $cart[$productId] = [
+                    'quantity' => $quantity,
+                    'price' => $price
+                ]; // 添加新商品
+            }
+
+            session()->put('cart', $cart);
+
+            // 计算总金额
+            $total = 0;
+            foreach ($cart as $item) {
+                $total += $item['quantity'] * $item['price'];
+            }
+
+            // 返回购物车数据
+            return response()->json([
+                'cart' => $cart,
+                'total' => $total
+            ]);
+        }
+
+
+    public function CartRemoveProcess(Request $request)
     {
-
-        $productId = $request->input('product_id');
-        $quantity = $request->input('quantity', 1); // 默认数量为1
-
-        // 逻辑: 将商品添加到购物车
-        // 假设你使用的是 Session 存储购物车
+        $productId = $request->input('productId');
+        
+        // 这里是从购物车中移除商品的逻辑
+        // 例如，从 session 中移除商品
+        
         $cart = session()->get('cart', []);
         if (isset($cart[$productId])) {
-            $cart[$productId] += $quantity; // 更新数量
-        } else {
-            $cart[$productId] = $quantity; // 添加新商品
+            unset($cart[$productId]);
+            session()->put('cart', $cart);
         }
-        session()->put('cart', $cart);
 
-        // 返回购物车数据
-        return response()->json([
-            'cart' => $cart,
-            'total' => array_sum($cart), // 示例: 计算总金额
-        ]);
+        return response()->json(['success' => true, 'cart' => $cart]);
     }
+
 
     public function Super(){
         
@@ -143,6 +181,28 @@ class UserAuthController extends Controller
         return view('component.super');
     }
 
+    public function Moon(){
+        
+        // 重新導向至商品編輯頁
+        return view('component.moon');
+    }
+
+    public function Summer(){
+        
+        // 重新導向至商品編輯頁
+        return view('component.summer');
+    }
+
+    public function Hotsale(){
+        
+        // 重新導向至商品編輯頁
+        return view('component.hotsale');
+    }
    
+    public function Cart1(){
+        
+        // 重新導向至商品編輯頁
+        return view('auth.cart1');
+    }
     
 }

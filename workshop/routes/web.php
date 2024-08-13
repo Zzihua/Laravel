@@ -22,10 +22,18 @@ Route::group(['prefix' => 'user'], function () {
         Route::post('signup', 'App\Http\Controllers\UserAuthController@SignUpProcess');
         Route::get('signout', 'App\Http\Controllers\UserAuthController@Signout')->name('user.auth.signout');
         Route::get('profile/{id}', 'App\Http\Controllers\UserAuthController@Profile');
-        Route::get('pizza','App\Http\Controllers\UserAuthController@Pizza')->name('user.auth.pizza');
-        Route::get('super','App\Http\Controllers\UserAuthController@Super')->name('user.auth.super');
-        Route::post('/', 'App\Http\Controllers\UserAuthController@CartProcess')->middleware(AuthUserAdminMiddleware::class);
+        Route::get('fish','App\Http\Controllers\UserAuthController@Fish')->name('user.auth.fish');
+        Route::get('cart1','App\Http\Controllers\UserAuthController@Cart1')->name('user.auth.cart1');
+        Route::get('orderfinish','App\Http\Controllers\UserAuthController@OrderFinish')->name('user.auth.orderfinish');
 
+
+        Route::get('super','App\Http\Controllers\UserAuthController@Super')->name('user.auth.super');
+        Route::get('moon','App\Http\Controllers\UserAuthController@Moon')->name('user.auth.moon');
+        Route::get('summer','App\Http\Controllers\UserAuthController@Summer')->name('user.auth.summer');
+        Route::get('hotsale','App\Http\Controllers\UserAuthController@Hotsale')->name('user.auth.hotsale');
+        
+        Route::get('/', 'App\Http\Controllers\UserAuthController@CartProcess')->middleware(AuthUserAdminMiddleware::class);
+        Route::post('/', 'App\Http\Controllers\UserAuthController@CartRemoveProcess')->middleware(AuthUserAdminMiddleware::class);
 
     });
 

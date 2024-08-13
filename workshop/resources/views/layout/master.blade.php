@@ -37,7 +37,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
       
-
+      <!-- <link rel="stylesheet" href="{{asset('assets/one-page/onepage.css')}}"> -->
       <!-- Document Title
       ============================================= -->
       <title>Restaurant | Canvas</title>

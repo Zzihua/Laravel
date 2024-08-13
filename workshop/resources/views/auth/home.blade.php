@@ -136,17 +136,17 @@
                                     <div class="col-lg-4 col-md-6">
                                           <div class="entry">
                                                 <div class="entry-image mb-0">
-                                                      <a href="{{asset('assets/demos/restaurant/images/blogs/1.jpg')}}" data-lightbox="image"><img src="{{asset('assets/demos/restaurant/images/blogs/1.jpg')}}" alt="Image 1"></a>
+                                                      <a href="https://www.laone.com.tw/news/image/pics/K_%E4%B8%83%E5%A4%95%E6%83%85%E4%BA%BA%E7%AF%80%E5%AE%98%E7%B6%B2%E6%96%B0%E8%A8%8A-1200x700_0.jpg" data-lightbox="image"><img src="https://www.laone.com.tw/news/image/pics/K_%E4%B8%83%E5%A4%95%E6%83%85%E4%BA%BA%E7%AF%80%E5%AE%98%E7%B6%B2%E6%96%B0%E8%A8%8A-1200x700_0.jpg" alt="Image 1"></a>
                                                 </div>
                                                 <div class="entry-title mt-0 p-4 title-xs text-transform-none">
                                                       <div class="entry-meta mt-0 mb-2">
                                                             <ul>
-                                                                  <li><a href="#">08th Apr 2021</a></li>
-                                                                  <li><a href="#">Video</a></li>
+                                                                  <li><a href="#">LA ONE Kitchen 歐陸廚房</a></li>
+                                                                  <li><a href="#">七夕情人節限定：8/10 </a></li>
                                                             </ul>
                                                       </div>
 
-                                                      <h2 class="mb-0"><a href="{{asset('assets/demos/restaurant/blog.html')}}">Make Ahead Super Green Vegan Quinoa Sandwich.</a></h2>
+                                                      <h2 class="mb-0"><a href="#">LA ONE Kitchen 2024 七夕浪漫晚宴</a></h2>
                                                 </div>
                                           </div>
                                     </div>
@@ -154,17 +154,17 @@
                                     <div class="col-lg-4 col-md-6">
                                           <div class="entry">
                                                 <div class="entry-image mb-0">
-                                                      <a href="{{asset('assets/demos/restaurant/images/blogs/2.jpg')}}" data-lightbox="image"><img src="{{asset('assets/demos/restaurant/images/blogs/2.jpg')}}" alt="Image 2"></a>
+                                                      <a href="https://www.laone.com.tw/news/image/pics/%E7%88%B6%E8%A6%AA%E7%AF%80_%E5%AE%98%E7%B6%B2_1200x700.jpg" data-lightbox="image"><img src="https://www.laone.com.tw/news/image/pics/%E7%88%B6%E8%A6%AA%E7%AF%80_%E5%AE%98%E7%B6%B2_1200x700.jpg" alt="Image 2"></a>
                                                 </div>
                                                 <div class="entry-title mt-0 p-4 title-xs text-transform-none">
                                                       <div class="entry-meta mt-0 mb-2">
                                                             <ul>
-                                                                  <li><a href="#">21th Mar 2021</a></li>
-                                                                  <li><a href="#">Book</a></li>
+                                                                  <li><a href="#">偶爸最暖！</a></li>
+                                                                  <li><a href="#"> 88 折</a></li>
                                                             </ul>
                                                       </div>
 
-                                                      <h2 class="mb-0"><a href="{{asset('assets/demos/restaurant/blog.html')}}">We Delivered Heart Shape Cornbread Waffles.</a></h2>
+                                                      <h2 class="mb-0"><a href="#">2024 偶爸最暖！父親節蛋糕 88 折</a></h2>
                                                 </div>
                                           </div>
                                     </div>
@@ -172,17 +172,17 @@
                                     <div class="col-lg-4 col-md-6">
                                           <div class="entry">
                                                 <div class="entry-image mb-0">
-                                                      <a href="{{asset('assets/demos/restaurant/images/blogs/3.jpg')}}" data-lightbox="image"><img src="{{asset('assets/demos/restaurant/images/blogs/3.jpg')}}" alt="Image 3"></a>
+                                                      <a href="https://www.laone.com.tw/news/image/pics/%E4%B8%AD%E7%A7%8B_%E5%AE%98%E7%B6%B2_1200x700.jpg" data-lightbox="image"><img src="https://www.laone.com.tw/news/image/pics/%E4%B8%AD%E7%A7%8B_%E5%AE%98%E7%B6%B2_1200x700.jpg" alt="Image 3"></a>
                                                 </div>
                                                 <div class="entry-title mt-0 p-4 title-xs text-transform-none">
                                                       <div class="entry-meta mt-0 mb-2">
                                                             <ul>
-                                                                  <li><a href="#">10th Feb 2021</a></li>
-                                                                  <li><a href="#">Recipe</a></li>
+                                                                  <li><a href="#">中秋禮盒預購起跑</a></li>
+                                                                  <li><a href="#">即日起 - 7/15 超早鳥</a></li>
                                                             </ul>
                                                       </div>
 
-                                                      <h2 class="mb-0"><a href="{{asset('assets/demos/restaurant/blog.html')}}">Top Delicious Recipes from world's Best Chefs.</a></h2>
+                                                      <h2 class="mb-0"><a href="https://www.laone.com.tw/news/image/pics/%E4%B8%AD%E7%A7%8B_%E5%AE%98%E7%B6%B2_1200x700.jpg">2024中秋獻禮 預購優惠起跑</a></h2>
                                                 </div>
                                           </div>
                                     </div>
