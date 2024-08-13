@@ -176,8 +176,7 @@
                         <nav class="primary-menu col-lg-4 order-lg-3">                            
                               <ul class="menu-container justify-content-lg-end">
 									@include('component.cart')		
-							  		<li class="menu-item"><a class="menu-link color" href="{{route('user.auth.login')}}"><div><b>登入</b></div></a></li>
-                                    <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signup')}}"><div><b>註冊</b></div></a></li>
+							  		<li class="menu-item"><a class="menu-link color" href="{{route('user.auth.login')}}"><div><b>登入/註冊</b></div></a></li>
                               </ul>
                         </nav>
                   @endif

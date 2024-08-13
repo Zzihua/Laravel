@@ -130,29 +130,6 @@
       @yield('content') 
       
  
-      <!-- Footer
-      ============================================= -->
-      <footer id="footer" class="dark" style="background: url({{asset('assets/demos/restaurant/images/footer-bg.jpg')}})  repeat center center / cover; background-size: auto 100%;; padding: 20px 0 22px">
-            <!-- Copyrights
-            ============================================= -->
-            <div id="copyrights" class="bg-transparent pb-4">
-                  <div class="container">
-
-                        <div class="row justify-content-between col-mb-30">
-                              <div class="col-12 col-md-auto text-center text-md-start">
-                                    <span class="font-primary">&copy; Canvas Inc. 2021. All Rights Reserved.</span>
-                              </div>
-
-                              <div class="col-12 col-md-auto text-center text-md-end">
-                                    <div class="copyrights-menu copyright-links">
-                                          <a href="#">熱門</a>/<a href="#">關於我們</a>/<a href="#">聯繫</a>
-                                    </div>
-                              </div>
-                        </div>
-
-                  </div>
-            </div><!-- #copyrights end -->
-      </footer><!-- #footer end -->
 
    <!-- Go To Top
 	============================================= -->
@@ -163,6 +140,10 @@
       <!-- <script src="/js/functions.js"></script> -->
       <script src="{{asset('assets/js/functions.js')}}"></script>
       <script src="{{asset('assets/js/jquery.js')}}"></script>
+
+      <!-- views.auth.loging_2 JavaScripts -->
+	<script  src="{{asset('assets/js/loginV2/script.js')}}"></script>
+      
       <!-- Custom Carousel JS File -->
       <script>
             var carouselRTL = false;
