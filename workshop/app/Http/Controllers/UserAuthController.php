@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Shop\Entity\User;
 use Hash;
+use Illuminate\Http\Request;
 use Mail;
 // use Validator;
 
@@ -105,6 +106,41 @@ class UserAuthController extends Controller
 
         }
 
+    }
+
+    public function Pizza(){
+        
+        // 重新導向至商品編輯頁
+        return view('auth.pizza');
+    }
+
+    public function CartProcess(Request $request)
+    {
+
+        $productId = $request->input('product_id');
+        $quantity = $request->input('quantity', 1); // 默认数量为1
+
+        // 逻辑: 将商品添加到购物车
+        // 假设你使用的是 Session 存储购物车
+        $cart = session()->get('cart', []);
+        if (isset($cart[$productId])) {
+            $cart[$productId] += $quantity; // 更新数量
+        } else {
+            $cart[$productId] = $quantity; // 添加新商品
+        }
+        session()->put('cart', $cart);
+
+        // 返回购物车数据
+        return response()->json([
+            'cart' => $cart,
+            'total' => array_sum($cart), // 示例: 计算总金额
+        ]);
+    }
+
+    public function Super(){
+        
+        // 重新導向至商品編輯頁
+        return view('component.super');
     }
 
    

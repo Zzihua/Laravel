@@ -121,8 +121,8 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips">
 									<div class="grid-inner">
 										<div class="product-image">
-											<a href="{{route('user.auth.pizza')}}"><img src="{{asset('assets/demos/skincare/images/products/10.jpg')}}" alt="..."></a>
-											<div class="sale-flash badge bg-color rounded-0 fw-normal p-2">50% Off*</div>
+											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/images/super/核桃木煙燻鮭魚.jpg')}}" alt="..."></a>
+											<!-- <div class="sale-flash badge bg-color rounded-0 fw-normal p-2">50% Off*</div> -->
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
 													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
@@ -131,8 +131,9 @@
 											</div>
 										</div>
 										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}" class="color">Mitzee Cream</a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-0"><del class="op-07">$24.99</del> <ins>$12.49</ins></div>
+											<div class="product-title"><h3><a href="{{asset('assets/demo-skincare-single.html')}}"><b>核桃木煙燻鮭魚 | 星級餐酒館</b></a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-0"><ins>$350</ins></div>
+											<!-- <del class="op-07">$24.99</del>  -->
 										</div>
 									</div>
 								</div>
@@ -140,10 +141,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{asset('assets/demo-skincare-single.html')}}"><img src="{{asset('assets/demos/skincare/images/products/11.jpg')}}" alt="..."></a>
+											<a href="{{route('user.auth.pizza')}}"><img src="{{asset('assets/images/super/.jpg')}}" alt="..."></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{asset('assets/demo-skincare-single.html')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
