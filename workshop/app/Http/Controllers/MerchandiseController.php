@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 
 class MerchandiseController extends Controller
@@ -27,32 +27,55 @@ class MerchandiseController extends Controller
     }
 
 
-        public function MerchandiseCreateProcess(Request $request)
-        {
-            // 验证表单数据
-            $validator = Validator::make($request->all(), [
-                'name' => 'required|string|max:255',
-                'price' => 'required|numeric',
-                'remain_count' => 'required|integer',
-                'status' => 'required|string',
-                'type' => 'required|string',
-                'introduction' => 'required|string',
-            ]);
+    public function MerchandiseCreateProcess(Request $request)
+    {
+        // 验证表单数据
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'remain_count' => 'required|integer',
+            'status' => 'required|string',
+            'type' => 'required|string',
+            'introduction' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-            // 如果验证失败，重定向回管理页面并附加错误信息
-            if ($validator->fails()) {
-                return redirect()->route('merchandise.create')
-                    ->withErrors($validator)
-                    ->withInput();
-            }
-
-            // 如果验证通过，创建商品
-            Merchandise::create($request->all());
-
-             // 重新導向到商品編輯頁
-            return redirect('/merchandise/manage')->with('success', '商品已成功创建！');
+        // 如果验证失败，重定向回创建页面并附加错误信息
+        if ($validator->fails()) {
+            return redirect()->route('merchandise.create')
+                ->withErrors($validator)
+                ->withInput();
         }
 
+        // 处理图片上传
+        $input = request()->all();
+        if (isset($input['photo'])){
+            // 有上傳圖片
+            $photo = $input['photo'];
+            // 檔案副檔名
+            $file_extension = $photo->getClientOriginalExtension();
+            // 產生自訂隨機檔案名稱
+            $file_name = uniqid() . '.' . $file_extension;
+            // 檔案相對路徑
+            $file_relative_path = 'assets/images/merchandise/';
+            // 檔案存放目錄為對外公開 public 目錄下的相對位置
+            $file_path = public_path($file_relative_path);
+            // 裁切圖片
+            $photo->move($file_path, $file_name);
+            // 設定圖片檔案相對位置
+            $input['photo'] = $file_relative_path.$file_name;
+        }
+    
+
+        // 创建商品
+        Merchandise::create($input);
+
+        // 重新导向到商品管理页
+        return redirect('/merchandise/manage')->with('success', '商品已成功创建！');
+    }
+
+
+    
 
     public function MerchandiseEdit($merchandise_id){
 
@@ -158,4 +181,36 @@ class MerchandiseController extends Controller
          // 返回圖片的 URL
          return Storage::url($file_path);
      }
+
+     public function MerchandisePizza(){
+        
+        // 重新導向至商品編輯頁
+        return view('merchandise.pizza');
+    }
+
+    public function MerchandiseCartProcess(Request $request)
+    {
+
+        $productId = $request->input('product_id');
+        $quantity = $request->input('quantity', 1); // 默认数量为1
+
+        // 逻辑: 将商品添加到购物车
+        // 假设你使用的是 Session 存储购物车
+        $cart = session()->get('cart', []);
+        if (isset($cart[$productId])) {
+            $cart[$productId] += $quantity; // 更新数量
+        } else {
+            $cart[$productId] = $quantity; // 添加新商品
+        }
+        session()->put('cart', $cart);
+
+        // 返回购物车数据
+        return response()->json([
+            'cart' => $cart,
+            'total' => array_sum($cart), // 示例: 计算总金额
+        ]);
+    }
+
+
+
 }

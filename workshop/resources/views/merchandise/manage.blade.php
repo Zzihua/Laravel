@@ -39,6 +39,7 @@
                                     <th>商品名稱</th>
                                     <th>圖片</th>
                                     <th>狀態</th>
+                                    <th>商品類型</th>
                                     <th>價格</th>
                                     <th>庫存數量</th>
                                     <th>產品說明</th>
@@ -51,7 +52,11 @@
                                     <td align='center'> {{ $Merchandise->id }}</td>
                                     <td align='center'> {{ $Merchandise->name }}</td>
                                     <td align='center'>
-                                        <img src="{{ asset($Merchandise->photo) }}" width='100' height='100'/>
+                                        @if ($Merchandise->photo)
+                                            <img src="{{ $Merchandise->photo }}" alt="商品图片" style="max-width: 100%; height: auto;">
+                                        @else
+                                            <img  alt="無圖片" style="max-width: 100%; height: auto;">
+                                        @endif
                                     </td>
                                     <td align='center'v>
                                         @if($Merchandise->status == 'C')
@@ -61,6 +66,29 @@
                                         @else
                                             <span class="label label-success">
                                                 銷售中
+                                            </span>
+                                        @endif
+                                    </td>
+                                    <td align='center'v>
+                                        @if($Merchandise->type == 'A商品')
+                                            <span class="label label-default">
+                                                A商品
+                                            </span>
+                                        @elseif($Merchandise->type == 'B商品')
+                                            <span class="label label-default">
+                                                B商品
+                                            </span>
+                                        @elseif($Merchandise->type == 'C商品')
+                                            <span class="label label-default">
+                                                C商品
+                                            </span>
+                                        @elseif($Merchandise->type == 'D商品')
+                                            <span class="label label-default">
+                                                D商品
+                                            </span>
+                                        @else($Merchandise->type == 'E商品')
+                                            <span class="label label-success">
+                                                E商品
                                             </span>
                                         @endif
                                     </td>

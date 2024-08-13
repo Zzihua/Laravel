@@ -100,7 +100,6 @@
 
 		}
 
-
 	</style>
 	
       
@@ -151,14 +150,14 @@
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.shop')}}"><div><b>商城</b></div></a></li>
                               </ul>
                         </nav>
-                        @if ( old('type')=='G')
+                        @if ( session('user_type') === 'G')
                               <nav class="primary-menu col-lg-4 order-lg-3">
                                     <ul class="menu-container justify-content-lg-end">
                                           @include('component.cart')
                                           <li class="menu-item"><a class="menu-link color" href="{{route('user.auth.signout')}}"><div><b>登出</b></div></a></li>
                                     </ul>
                               </nav>
-                        @else
+                        @else( session('user_type') === 'A')
                               <nav class="primary-menu col-lg-4 order-lg-3">
                                     <ul class="menu-container justify-content-lg-end">
                                           <li class="menu-item"><a class="menu-link" href="{{route('merchandise.manage')}}"><div><b>商品管理</b></div></a></li>
