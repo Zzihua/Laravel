@@ -4,6 +4,12 @@
 <!-- 傳送資料到母模板，並指定變數為 content -->
 @section('slider') 
 @section('content') 
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 
   	<!-- Slider
       ============================================= -->
@@ -288,5 +294,24 @@
 
             <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; background: url({{asset('assets/demos/restaurant/images/sketch-header.png')}}) repeat center bottom; background-size: auto 100%; height: 40px; margin-bottom: -10px;"></div>
 	</section>
+
+      <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                  var swiper = new Swiper('#latest-news-carousel', {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        navigation: {
+                              nextEl: '.swiper-button-next',
+                              prevEl: '.swiper-button-prev',
+                        },
+                        pagination: {
+                              el: '.swiper-pagination',
+                              clickable: true,
+                        },
+                        loop: true,
+                  });
+                  });
+
+      </script>
 	
 @endsection 

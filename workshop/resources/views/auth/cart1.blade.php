@@ -92,11 +92,12 @@
                             </div>
                             <div class="col-12">
                                 <a href="/user/auth/orderfinish" 
-                                   class="button button-small button-border mt-2 m-md-0" 
-                                   style="background-color: white; color: black; transition: background-color 0.3s;"
-                                   onmouseover="this.style.backgroundColor='white'; this.style.color='#304109';"
-                                   onmouseout="this.style.backgroundColor='#304109'; this.style.color='white';">
-                                    下訂單
+                                    class="button button-small button-border mt-2 m-md-0" 
+                                    style="background-color: white; color: black; transition: background-color 0.3s;"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='#304109';"
+                                    onmouseout="this.style.backgroundColor='#304109'; this.style.color='white';"
+                                    onclick="clearCart()">
+                                        下訂單
                                 </a>
                             </div>
                         </div>
@@ -108,7 +109,13 @@
 </div><!-- #content end -->
 
 <script>
-    function Cart1(cartData) {
+
+        function clearCart() {
+            // 清空購物車數據
+            localStorage.removeItem('cart');
+
+        }
+            function Cart1(cartData) {
         const cartTableBody = document.querySelector('.cart tbody');
         cartTableBody.innerHTML = ''; // 清空表格
 

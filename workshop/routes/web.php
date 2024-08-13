@@ -25,7 +25,7 @@ Route::group(['prefix' => 'user'], function () {
         Route::match(['get','post'],'fish','App\Http\Controllers\UserAuthController@Fish')->name('user.auth.fish');
         Route::get('cart1','App\Http\Controllers\UserAuthController@Cart1')->name('user.auth.cart1');
         Route::get('orderfinish','App\Http\Controllers\UserAuthController@OrderFinish')->name('user.auth.orderfinish');
-
+        Route::post('/', 'App\Http\Controllers\UserAuthController@AddTocart')->middleware(AuthUserAdminMiddleware::class);
 
         Route::get('super','App\Http\Controllers\UserAuthController@Super')->name('user.auth.super');
         Route::get('moon','App\Http\Controllers\UserAuthController@Moon')->name('user.auth.moon');

@@ -118,7 +118,7 @@
 
 								<!-- Shop Item 1
 								============================================= -->
-								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips">
+								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips"  data-product-id="123">
 									<div class="grid-inner">
 										<div class="product-image">
 											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62cbe15de264a300143378f3/800x.webp?source_format=jpg" alt="..."  ></a>
@@ -126,9 +126,8 @@
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
 													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
-													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2" data-product-id="{{ $product->id }}" onclick="addToCart(event, {{ $product->id }})">
-														<i class="bi-basket"></i>
-													</a>
+													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+
 												</div>
 											</div>
 										</div>
@@ -171,7 +170,7 @@
 										</div>
 										<div class="product-desc text-center">
 											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}" ><b>法芙娜莊園巧克力吐司 | Super Butter 超奶系列</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$</ins></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$240</ins></div>
 										</div>
 									</div>
 								</div>
@@ -297,51 +296,70 @@
 
 
 
-<script>document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.btn.bg-color.bg-opacity-75.text-light.me-2.z-2').forEach(button => {
-        button.addEventListener('click', function(event) {
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.btn.bg-color').forEach(function (button) {
+        button.addEventListener('click', function (event) {
             event.preventDefault();
 
-            const productId = this.getAttribute('data-product-id');
-            
-            // 發送 AJAX 請求將商品添加到購物車
-            fetch('/cart/add', {
+            const productElement = this.closest('.product');
+            if (!productElement) {
+                console.error('Product element not found.');
+                return;
+            }
+
+            const productId = productElement.getAttribute('data-product-id');
+            if (!productId) {
+                console.error('Product ID not found.');
+                return;
+            }
+
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            fetch('/add-to-cart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    'X-CSRF-TOKEN': csrfToken
                 },
-                body: JSON.stringify({ product_id: productId })
+                body: JSON.stringify({ productId: productId })
             })
             .then(response => response.json())
             .then(data => {
-                // 更新購物車預覽
-                updateCartPreview(data);
+                if (data.success) {
+                    updateCartPreview(data.cart);
+                } else {
+                    alert('無法添加商品到購物車。');
+                }
             })
             .catch(error => console.error('Error:', error));
-       	 });
-    	});
-	});
+        });
+    });
+});
 
 	function updateCartPreview(data) {
-		// 更新購物車預覽邏輯
-		// 例如：
 		const cartPreview = document.getElementById('cart-preview');
-		cartPreview.innerHTML = ''; // 清空現有內容
+		const cartTotal = document.getElementById('cart-total');
+		
+		// 清空現有內容
+		cartPreview.innerHTML = '';
 
+		// 更新購物車項目
 		data.cartItems.forEach(item => {
-			cartPreview.innerHTML += `<div class="cart-item">
-				<img src="${item.image}" alt="${item.name}" />
-				<p>${item.name}</p>
-				<p>${item.price}</p>
-				<p>Quantity: ${item.quantity}</p>
-			</div>`;
+			cartPreview.innerHTML += `
+				<div class="cart-item">
+					<img src="${item.image}" alt="${item.name}" />
+					<p>${item.name}</p>
+					<p>${item.price}</p>
+					<p>Quantity: ${item.quantity}</p>
+				</div>`;
 		});
 
 		// 更新購物車總價
-		document.getElementById('cart-total').innerText = `Total: $${data.total}`;
+		cartTotal.innerText = `Total: $${data.total}`;
 	}
 </script>
+
 
 
 <style>

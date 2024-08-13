@@ -122,43 +122,45 @@ class UserAuthController extends Controller
     }
 
     public function CartProcess(Request $request)
-        {
-            $productId = $request->input('product_id');
-            $quantity = $request->input('quantity', 1); // 默认数量为1
-            $price = $request->input('price'); // 从请求中获取商品价格
-
-            if (!$price) {
-                return response()->json(['error' => '价格信息缺失'], 400);
-            }
-
-            // 逻辑: 将商品添加到购物车
-            $cart = session()->get('cart', []);
-
-            if (isset($cart[$productId])) {
-                $cart[$productId]['quantity'] += $quantity; // 更新数量
-            } else {
-                $product = Product::find($productId);
-                $cart[$productId] = [
-                    'name' => $product->name,
-                    'price' => $product->price,
-                    'quantity' => 1,
-                    'image' => $product->image
-                ];
-            }
-
-            session()->put('cart', $cart);
-
-            $total = array_sum(array_map(function ($item) {
-                return $item['price'] * $item['quantity'];
-            }, $cart));
-        
-            return response()->json([
-                'cartItems' => array_values($cart),
-                'total' => $total
-            ]);
+    {
+        $productId = $request->input('product_id');
+        $quantity = $request->input('quantity', 1); // 默認數量為1
+    
+        // 從資料庫中獲取商品資訊
+        $product = Product::find($productId);
+    
+        if (!$product) {
+            return response()->json(['error' => '商品不存在'], 404);
         }
-
-
+    
+        // 取得當前購物車
+        $cart = session()->get('cart', []);
+    
+        if (isset($cart[$productId])) {
+            $cart[$productId]['quantity'] += $quantity; // 更新數量
+        } else {
+            $cart[$productId] = [
+                'name' => $product->name,
+                'price' => $product->price,
+                'quantity' => $quantity, // 使用請求中的數量
+                'image' => $product->image
+            ];
+        }
+    
+        // 更新購物車到 session
+        session()->put('cart', $cart);
+    
+        // 計算總價
+        $total = array_sum(array_map(function ($item) {
+            return $item['price'] * $item['quantity'];
+        }, $cart));
+    
+        return response()->json([
+            'cartItems' => array_values($cart),
+            'total' => $total
+        ]);
+    }
+    
     public function CartRemoveProcess(Request $request)
     {
         $productId = $request->input('productId');
@@ -204,6 +206,28 @@ class UserAuthController extends Controller
         
         // 重新導向至商品編輯頁
         return view('auth.cart1');
+    }
+
+    public function AddTocart(Request $request)
+    {
+        $productId = $request->input('productId');
+        
+        // 添加商品到購物車的邏輯
+        // 例如，將商品 ID 添加到 session 或購物車資料庫中
+
+        $cart = $this->getCart(); // 獲取最新的購物車內容
+        
+        return response()->json([
+            'success' => true,
+            'cart' => $cart,
+        ]);
+    }
+
+    private function getCart()
+    {
+        // 返回購物車內容的邏輯
+        // 例如：
+        return view('partials.cart_preview')->render();
     }
     
 }

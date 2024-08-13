@@ -72,7 +72,7 @@
             totalPrice += price * quantity;
         }
 
-        totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+        totalPriceElement.textContent = `$${totalPrice.toFixed(0)}`;
 
         saveCartData(cartData);
     }
