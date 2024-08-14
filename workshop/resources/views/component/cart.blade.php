@@ -9,7 +9,7 @@
             <!-- 商品項目將由 JavaScript 動態插入 -->
         </div>
         <div class="top-cart-action border-default">
-            <a href="{{route('user.auth.cart1')}}" class="button button-small m-0">檢視購物車</a>
+            <a href="{{route('user.auth.cart1')}}" class="button1 button-small m-0">檢視購物車</a>
             <span class="top-checkout-price">$0.00</span> <!-- 初始顯示為 $0.00 -->
         </div>
     </div>
@@ -23,7 +23,7 @@
         <div id="cart-popup-items">
             <!-- 彈出窗口中的商品項目將由 JavaScript 動態插入 -->
         </div>
-        <a href="{{route('user.auth.cart1')}}" class="button button-small m-0">檢視購物車</a>
+        <a href="{{route('user.auth.cart1')}}" class="button1 button-small m-0">檢視購物車</a>
     </div>
 </div>
 
@@ -141,4 +141,23 @@
         font-size: 24px;
         color: red;
     }
+
+    .button1 {
+    background-color: #2F4F4F; /* 深綠色背景 */
+    color: white; /* 文字顏色為白色 */
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    }
+
+    .button1:hover {
+        background-color: #000000; /* 停留時變成黑色背景 */
+        color: white; /* 停留時文字顏色維持白色 */
+    }
+
 </style>
