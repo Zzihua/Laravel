@@ -155,7 +155,7 @@
                   @if (session()->has('user_id'))
                         <nav class="primary-menu col-lg-4 order-lg-1">
                               <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#hot" target="_self"><div><b>熱門</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#hot" target="_self"><div><b>最新消息</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#team"><div><b>關於</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.shop')}}"><div><b>商城</b></div></a></li>
                               </ul>
@@ -178,7 +178,7 @@
                   @else
                         <nav class="primary-menu col-lg-4 order-lg-1">
                               <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#hot" target="_self"><div><b>熱門</b></div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#hot" target="_self"><div><b>最新消息</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.home')}}#team"><div><b>關於</b></div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="{{route('user.auth.shop')}}"><div><b>商城</b></div></a></li>
                               </ul>
@@ -217,7 +217,7 @@
 
                               <div class="col-12 col-md-auto text-center text-md-end">
                                     <div class="copyrights-menu copyright-links">
-                                          <a href="#">熱門</a>/<a href="#">關於我們</a>/<a href="#">聯繫</a>
+                                          <a href="{{route('user.auth.home')}}#hot">最新消息</a>/<a href="{{route('user.auth.home')}}#team">關於我們</a>/<a href="#">聯繫</a>
                                     </div>
                               </div>
                         </div>

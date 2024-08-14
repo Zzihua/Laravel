@@ -85,12 +85,12 @@
 					<div class="row">
 						<div class="col-md-3 skincare-filter sticky-sidebar-wrap" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 						<div class="scwStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><ul class="list-unstyled items-nav sticky-sidebar">
-								<li><a href="{{route('user.auth.super')}}" class="text-dark font-body"><b>超人氣排行榜</b></a></li>
-								<li><a href="{{route('user.auth.moon')}}" class="text-dark font-body"><b>2024中秋禮盒</b></a></li>
-								<li><a href="{{route('user.auth.summer')}}" class="text-dark font-body"><b>涼到夏到 | 夏季新品兩件9折</b></a></li>
-								<li><a href="{{route('user.auth.hotsale')}}" class="text-dark font-body"><b>熱銷優惠</b></a></li>
-								<li><a href="#" class="text-dark font-body"><b>甜點禮盒</b></a></li>
-								<li><a href="#" class="text-dark font-body"><b>麵包果醬</b></a></li>
+								<li class="highlight1"><a href="{{route('user.auth.super')}}" class="text-dark font-body"><b>超人氣排行榜</b></a></li>
+								<li class="highlight1"><a href="{{route('user.auth.moon')}}" class="text-dark font-body"><b>2024中秋禮盒</b></a></li>
+								<li class="highlight1"><a href="{{route('user.auth.summer')}}" class="text-dark font-body"><b>涼到夏到 | 夏季新品兩件9折</b></a></li>
+								<li class="highlight1"><a href="{{route('user.auth.hotsale')}}" class="text-dark font-body"><b>熱銷優惠</b></a></li>
+								<li class="highlight1"><a href="#" class="text-dark font-body"><b>甜點禮盒</b></a></li>
+								<li class="highlight1"><a href="#" class="text-dark font-body"><b>麵包果醬</b></a></li>
 
 							<!-- </ul><hr><ul class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body" data-container="#shop" data-active-class="active-filter">
 								<li class="widget-filter-reset active-filter"><a href="#" class="text-danger" data-filter="*">Clear</a></li>
@@ -121,16 +121,16 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips">
 									<div class="grid-inner">
 										<div class="product-image">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62ccd6299334d200290fb7ee/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62ccd6299334d200290fb7ee/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
 										</div>
 										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.pizza')}}"><b>法式油封櫻桃鴨腿｜星級餐酒館</b></a></h3></div>
+											<div class="product-title"><h3><a href="#"><b>法式油封櫻桃鴨腿｜星級餐酒館</b></a></h3></div>
 											<div class="product-price fw-normal mt-0 mb-0"><ins>$310</ins></div>
 											
 										</div>
@@ -140,10 +140,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62fdc8fa42f522003220f45a/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62fdc8fa42f522003220f45a/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -158,10 +158,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/5eb4e9ab6652e80012195b3c/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/5eb4e9ab6652e80012195b3c/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -176,10 +176,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/5eb4e9757ecae833c5baaab2/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/5eb4e9757ecae833c5baaab2/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -194,10 +194,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62e1e8b5bf5238001a4a4d6f/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62e1e8b5bf5238001a4a4d6f/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -212,10 +212,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/622ff3cdbb7dcc00267e8380/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/622ff3cdbb7dcc00267e8380/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -230,10 +230,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62e1e8dafcc69700262d1beb/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62e1e8dafcc69700262d1beb/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -248,10 +248,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/614be400aed3c90014b04f23/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/614be400aed3c90014b04f23/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -266,10 +266,10 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.pizza')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/614bdee6bc35f4003229d7e8/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/614bdee6bc35f4003229d7e8/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.pizza')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
@@ -287,5 +287,65 @@
 				</div>
 		
 </section>
+
+<script>
+	document.querySelectorAll('.shop-sorting .dropdown-item').forEach(item => {
+		item.addEventListener('click', function(e) {
+			e.preventDefault();
+			const sortBy = this.getAttribute('data-sort-by');
+			const products = Array.from(document.querySelectorAll('#shop .product'));
+
+			let sortedProducts;
+
+			if (sortBy === 'name_az') {
+				sortedProducts = products.sort((a, b) => {
+					return a.querySelector('.product-title').innerText.localeCompare(b.querySelector('.product-title').innerText);
+				});
+			} else if (sortBy === 'name_za') {
+				sortedProducts = products.sort((a, b) => {
+					return b.querySelector('.product-title').innerText.localeCompare(a.querySelector('.product-title').innerText);
+				});
+			} else if (sortBy === 'price_lh') {
+				sortedProducts = products.sort((a, b) => {
+					return parseFloat(a.querySelector('.product-price ins').innerText.replace('$', '')) - parseFloat(b.querySelector('.product-price ins').innerText.replace('$', ''));
+				});
+			} else if (sortBy === 'price_hl') {
+				sortedProducts = products.sort((a, b) => {
+					return parseFloat(b.querySelector('.product-price ins').innerText.replace('$', '')) - parseFloat(a.querySelector('.product-price ins').innerText.replace('$', ''));
+				});
+			}
+
+			const shopContainer = document.querySelector('#shop');
+			shopContainer.innerHTML = '';
+
+			sortedProducts.forEach(product => {
+				shopContainer.appendChild(product);
+			});
+		});
+	});
+
+</script>
+
+<style>
+li.highlight1 a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px; /* 修改为更小的高度，以便更好地显示为下划线 */
+    display: block;
+    margin-bottom: 22px;
+    right: 0;
+    background: red;
+    transition: width 0.3s ease, right 0.3s ease;
+}
+
+li.highlight1 a:hover::after {
+    width: 60%;
+    left: 0;
+}
+
+
+
+</style>
 @endsection  
 

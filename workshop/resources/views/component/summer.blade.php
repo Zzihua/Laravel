@@ -85,12 +85,12 @@
 					<div class="row">
 						<div class="col-md-3 skincare-filter sticky-sidebar-wrap" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 						<div class="scwStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><ul class="list-unstyled items-nav sticky-sidebar">
-								<li><a href="{{route('user.auth.super')}}" class="text-dark font-body"><b>超人氣排行榜</b></a></li>
-								<li><a href="{{route('user.auth.moon')}}" class="text-dark font-body"><b>2024中秋禮盒</b></a></li>
-								<li><a href="{{route('user.auth.summer')}}" class="text-dark font-body"><b>涼到夏到 | 夏季新品兩件9折</b></a></li>
-								<li><a href="{{route('user.auth.hotsale')}}" class="text-dark font-body"><b>熱銷優惠</b></a></li>
-								<li><a href="#" class="text-dark font-body"><b>甜點禮盒</b></a></li>
-								<li><a href="#" class="text-dark font-body"><b>麵包果醬</b></a></li>
+								<li class="highlight1"><a href="{{route('user.auth.super')}}" class="text-dark font-body"><b>超人氣排行榜</b></a></li>
+								<li class="highlight1"><a href="{{route('user.auth.moon')}}" class="text-dark font-body"><b>2024中秋禮盒</b></a></li>
+								<li class="highlight1"><a href="{{route('user.auth.summer')}}" class="text-dark font-body"><b>涼到夏到 | 夏季新品兩件9折</b></a></li>
+								<li class="highlight1"><a href="{{route('user.auth.hotsale')}}" class="text-dark font-body"><b>熱銷優惠</b></a></li>
+								<li class="highlight1"><a href="#" class="text-dark font-body"><b>甜點禮盒</b></a></li>
+								<li class="highlight1"><a href="#" class="text-dark font-body"><b>麵包果醬</b></a></li>
 
 							<!-- </ul><hr><ul class="pt-4 list-unstyled position-relative ist-unstyled items-nav shop-filter custom-filter font-body" data-container="#shop" data-active-class="active-filter">
 								<li class="widget-filter-reset active-filter"><a href="#" class="text-danger" data-filter="*">Clear</a></li>
@@ -197,5 +197,62 @@
 				</div>
 		
 </section>
+
+<script>
+	document.querySelectorAll('.shop-sorting .dropdown-item').forEach(item => {
+		item.addEventListener('click', function(e) {
+			e.preventDefault();
+			const sortBy = this.getAttribute('data-sort-by');
+			const products = Array.from(document.querySelectorAll('#shop .product'));
+
+			let sortedProducts;
+
+			if (sortBy === 'name_az') {
+				sortedProducts = products.sort((a, b) => {
+					return a.querySelector('.product-title').innerText.localeCompare(b.querySelector('.product-title').innerText);
+				});
+			} else if (sortBy === 'name_za') {
+				sortedProducts = products.sort((a, b) => {
+					return b.querySelector('.product-title').innerText.localeCompare(a.querySelector('.product-title').innerText);
+				});
+			} else if (sortBy === 'price_lh') {
+				sortedProducts = products.sort((a, b) => {
+					return parseFloat(a.querySelector('.product-price ins').innerText.replace('$', '')) - parseFloat(b.querySelector('.product-price ins').innerText.replace('$', ''));
+				});
+			} else if (sortBy === 'price_hl') {
+				sortedProducts = products.sort((a, b) => {
+					return parseFloat(b.querySelector('.product-price ins').innerText.replace('$', '')) - parseFloat(a.querySelector('.product-price ins').innerText.replace('$', ''));
+				});
+			}
+
+			const shopContainer = document.querySelector('#shop');
+			shopContainer.innerHTML = '';
+
+			sortedProducts.forEach(product => {
+				shopContainer.appendChild(product);
+			});
+		});
+	});
+
+</script>
+
+<style>
+	li.highlight1 a::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 3px; /* 修改为更小的高度，以便更好地显示为下划线 */
+		display: block;
+		margin-bottom: 22px;
+		right: 0;
+		background: red;
+		transition: width 0.3s ease, right 0.3s ease;
+	}
+
+	li.highlight1 a:hover::after {
+		width: 60%;
+		left: 0;
+	}
+</style>
 @endsection  
 
