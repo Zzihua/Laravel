@@ -410,6 +410,9 @@
       }
 
       .custom-modal-content {
+            overflow-y: scroll;
+            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
             background: white;
             padding: 20px;
             border-radius: 8px;
@@ -419,6 +422,12 @@
             overflow-y: auto;
             position: relative;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      }
+
+      .custom-modal-content::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            display: none;
       }
       .custom-modal-background {
             position: fixed;
