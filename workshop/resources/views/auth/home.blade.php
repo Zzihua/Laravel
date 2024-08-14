@@ -142,20 +142,21 @@
                                     <div class="col-lg-4 col-md-6">
                                           <div class="entry">
                                                 <div class="entry-image mb-0">
-                                                      <a href="https://www.laone.com.tw/news/image/pics/K_%E4%B8%83%E5%A4%95%E6%83%85%E4%BA%BA%E7%AF%80%E5%AE%98%E7%B6%B2%E6%96%B0%E8%A8%8A-1200x700_0.jpg" data-lightbox="image"><img src="https://www.laone.com.tw/news/image/pics/K_%E4%B8%83%E5%A4%95%E6%83%85%E4%BA%BA%E7%AF%80%E5%AE%98%E7%B6%B2%E6%96%B0%E8%A8%8A-1200x700_0.jpg" alt="Image 1"></a>
-                                                </div>
+                                                      <a href="#" onclick="openCustomModal()"><img src="https://www.laone.com.tw/news/image/pics/K_%E4%B8%83%E5%A4%95%E6%83%85%E4%BA%BA%E7%AF%80%E5%AE%98%E7%B6%B2%E6%96%B0%E8%A8%8A-1200x700_0.jpg" alt="Image 1"></a>                                               </div>
                                                 <div class="entry-title mt-0 p-4 title-xs text-transform-none">
                                                       <div class="entry-meta mt-0 mb-2">
                                                             <ul>
-                                                                  <li><a href="#">LA ONE Kitchen 歐陸廚房</a></li>
-                                                                  <li><a href="#">七夕情人節限定：8/10 </a></li>
+                                                                  <li  onclick="openCustomModal(event)">LA ONE Kitchen 歐陸廚房</li>
+                                                                  <li><a href="#"  onclick="openCustomModal(event)">七夕情人節限定：8/10 </a></li>
                                                             </ul>
                                                       </div>
 
-                                                      <h2 class="mb-0"><a href="#">LA ONE Kitchen 2024 七夕浪漫晚宴</a></h2>
+                                                      <h2 class="mb-0"><a href="#"  onclick="openCustomModal(event)">LA ONE Kitchen 2024 七夕浪漫晚宴</a></h2>
+                                                      
                                                 </div>
                                           </div>
                                     </div>
+                                   
 
                                     <div class="col-lg-4 col-md-6">
                                           <div class="entry">
@@ -313,5 +314,164 @@
                   });
 
       </script>
+
+      <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            var modalHTML = `
+                  <!-- 自定義模態窗口部分 -->
+                                    <div id="custom-modal" class="custom-modal" style="display: none;">
+                                          <div class="custom-modal-content">
+                                                <span class="close-modal" onclick="closeCustomModal()">&times;</span>
+                                                <h4>LA ONE Kitchen 2024 七夕浪漫晚宴</h4>
+                                                <p><img src="https://www.laone.com.tw/news/image/pics/K_%E4%B8%83%E5%A4%95%E6%83%85%E4%BA%BA%E7%AF%80%E5%AE%98%E7%B6%B2%E6%96%B0%E8%A8%8A-1200x700_0.jpg" alt="Image"></p>
+                                                <p>LA ONE Kitchen 歐陸廚房<br>
+                                                七夕情人節限定：8/10<br><br>
+
+                                                晚餐供應，請提前2日預訂<br>
+                                                訂位方式：電話預訂 ／ 線上訂位<br><br>
+
+                                                <b>《七夕晚宴 個人套餐》</b><br><br>
+
+                                                法國麵包與桂圓麵包<br>
+                                                
+
+                                                白肉旗魚、魚子醬、甜蝦塔塔、鳳梨薄霧<br>
+                                                
+
+                                                干貝、海瓜子、薩丁尼雅珍珠米、茴香泡泡<br>
+                                               
+                                                
+                                                小卷、鮭魚卵、甜豆仁、蒸蛋、柚子奶油<br>
+                                                
+                                                
+                                                鮑魚、舞菇、洋菇雞湯<br>
+                                                
+
+                                                蟹肉蝦汁鳥巢麵、炸中蝦<br>
+                                                
+
+                                                *****主菜三選一*****<br><br>
+
+                                                伊比利豬、季節時蔬、蘋果泥、洋蔥醬汁 $2,460<br>
+                                               
+                                                
+                                                紐西蘭小羔羊、炸菊芋、黑糖蕃茄  $2,530<br>
+                                              
+                                                
+                                                嫩煎無骨牛小排、季節時蔬、防風根泥 $2,680<br>
+                                              
+                                                **********<br><br>
+
+                                                主廚特製甜點 Chef dessert<br><br>
+
+                                                咖啡或茶 Coffee or Tea<br><br>
+
+                                                以上餐點另收 10% 服務費<br>
+                                              
+
+                                                LA ONE 歐陸廚房<br>
+                                                (博愛店)訂位專線：07-3228864 ‧ 高雄市三民區博愛一路380號2F</p>
+                                          </div>
+                                    </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+            });
+
+            function openCustomModal(event) {
+                  event.preventDefault();
+                  document.body.style.overflow = 'hidden';
+                  var modal = document.getElementById('custom-modal');
+                  modal.style.display = 'flex';
+                  console.log('Modal opened');  // 添加调试日志
+            }
+
+            function closeCustomModal() {
+                  document.body.style.overflow = '';
+                  var modal = document.getElementById('custom-modal');
+                  modal.style.display = 'none';
+                  console.log('Modal closed');  // 添加调试日志
+            }
+      </script>
+
+  
+      <style>
+      /* 自定義模態窗口的樣式 */
+      .custom-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);  /* 增加不透明度 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999999;  /* 使用非常高的 z-index 值 */
+      }
+
+      .custom-modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      }
+      .custom-modal-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+      }
+      .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ff0000;
+            background: #ffffff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000000;  /* 确保它在模态内容之上 */
+      }
+      .popup-content {
+            max-height: 80vh; /* 限制視窗的最大高度 */
+            overflow-y: auto; /* 當內容超出時，顯示縱向滾動條 */
+            }
+      .modal-body {
+            max-height: calc(80vh - 100px); /* 減去 modal-header 和 modal-footer 的高度 */
+            overflow-y: auto;
+      }
+      .modal-content {
+            overflow-y: scroll;
+      }
+
+      /* 這是針對滾動條樣式的範例 */
+      .modal-content::-webkit-scrollbar {
+            width: 10px;
+      }
+
+      .modal-content::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            border-radius: 10px;
+      }
+
+
+
+      </style>
+            
+
 	
 @endsection 

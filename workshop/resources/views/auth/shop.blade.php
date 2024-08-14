@@ -111,11 +111,12 @@
 									<span class="mx-1"> - </span>
 									<div class="price-range-to">$139.99</div>
 								</div>
+								<input class="price-range irs-hidden-input" tabindex="-1" readonly="">
 							</div><span class="irs irs--round js-irs-0"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="display: none;">0</span><span class="irs-max" style="display: none;">1</span><span class="irs-from" style="display: none; left: 0%;">0</span><span class="irs-to" style="display: none; left: 0%;">0</span><span class="irs-single" style="display: none; left: 0%;">0</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 3.50467%; width: 92.9907%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 0%;"><i></i><i></i><i></i></span><span class="irs-handle to" style="left: 92.9907%;"><i></i><i></i><i></i></span></span><input class="price-range irs-hidden-input" tabindex="-1" readonly=""><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 376px; height: 521px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div></div>
 
 						<div class="col-md-9">
 							<div id="shop" class="row shop grid-container" data-layout="fitRows">
-
+								<!-- @foreach($products as $product) -->
 								<!-- Shop Item 1
 								============================================= -->
 								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips"  data-product-id="123">
@@ -286,8 +287,12 @@
 									</div>
 								</div>
 
-
+								<!-- @endforeach -->
 							</div>
+							<!-- 分頁按鈕
+							<div class="pagination">
+								{{ $products->links() }}
+							</div> -->
 						</div>
 					</div>
 				</div>

@@ -229,5 +229,11 @@ class UserAuthController extends Controller
         // 例如：
         return view('partials.cart_preview')->render();
     }
+
+//     public function index()
+// {
+//     $products = Product::paginate(9); // 每頁顯示12個商品
+//     return view('shop.index', compact('products'));
+// }
     
 }
