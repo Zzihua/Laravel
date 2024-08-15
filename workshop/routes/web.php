@@ -12,13 +12,19 @@ Route::get('/', function () {
 // });
 
 
+Route::get('/google/auth',
+'App\Http\Controllers\SocialiteController@redirectToProvider')->name('redirectToProvider');
+Route::get('/google/auth/callback',
+'App\Http\Controllers\SocialiteController@handleProviderCallback')->name('handleProviderCallback');
+
+
 Route::group(['prefix' => 'user'], function () {
     Route::group(['prefix' => 'auth'], function () {
         Route::get('home', 'App\Http\Controllers\UserAuthController@Home')->name('user.auth.home');
         Route::get('shop', 'App\Http\Controllers\UserAuthController@Shop')->name('user.auth.shop');
         Route::get('login', 'App\Http\Controllers\UserAuthController@Login')->name('user.auth.login');
         Route::post('login', 'App\Http\Controllers\UserAuthController@LoginProcess');
-        // Route::get('signup', 'App\Http\Controllers\UserAuthController@Signup') ->name('user.auth.signup');
+        Route::get('signup', 'App\Http\Controllers\UserAuthController@Signup') ->name('user.auth.signup');
         Route::post('signup', 'App\Http\Controllers\UserAuthController@SignUpProcess');
         Route::get('signout', 'App\Http\Controllers\UserAuthController@Signout')->name('user.auth.signout');
         Route::get('profile/{id}', 'App\Http\Controllers\UserAuthController@Profile');
@@ -28,6 +34,7 @@ Route::group(['prefix' => 'user'], function () {
         Route::post('/', 'App\Http\Controllers\UserAuthController@AddTocart')->middleware(AuthUserAdminMiddleware::class);
 
         Route::get('super','App\Http\Controllers\UserAuthController@Super')->name('user.auth.super');
+        Route::get('super1','App\Http\Controllers\UserAuthController@Super1')->name('user.auth.super1');
         Route::get('moon','App\Http\Controllers\UserAuthController@Moon')->name('user.auth.moon');
         Route::get('summer','App\Http\Controllers\UserAuthController@Summer')->name('user.auth.summer');
         Route::get('hotsale','App\Http\Controllers\UserAuthController@Hotsale')->name('user.auth.hotsale');

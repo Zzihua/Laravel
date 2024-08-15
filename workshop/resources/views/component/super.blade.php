@@ -116,6 +116,8 @@
 						<div class="col-md-9">
 							<div id="shop" class="row shop grid-container" data-layout="fitRows">
 
+							
+
 								<!-- Shop Item 1
 								============================================= -->
 								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips">
@@ -169,7 +171,7 @@
 										</div>
 										<div class="product-desc text-center">
 											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}" ><b>法芙娜莊園巧克力吐司 | Super Butter 超奶系列</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$</ins></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$240</ins></div>
 										</div>
 									</div>
 								</div>
@@ -288,6 +290,17 @@
 							</div>
 						</div>
 					</div>
+					<div class="row justify-content-center">
+						<div class="col-lg-9">
+							<ul class="pagination">
+							  <li class="page-item"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>
+							  <li class="page-item"><a class="page-link" href="{{route('user.auth.super')}}">1</a></li>
+							  <li class="page-item"><a class="page-link" href="{{route('user.auth.super1')}}">2</a></li>
+							  <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+							</ul>
+					</div>
+				</div>
+
 				</div>
 		
 </section>
@@ -347,6 +360,23 @@
 		width: 60%;
 		left: 0;
 	}
+	.pagination {
+        margin-left: 60%;
+    }
+    .page-link {
+        color: gray; /* 分頁連結文字顏色 */
+        border: 1px solid gray; /* 分頁邊框顏色 */
+		border: none;
+    }
+    .page-item.active .page-link {
+        background-color: gray; /* 當前頁面背景顏色 */
+        color: white; /* 當前頁面文字顏色 */
+    }
+    .page-link:hover {
+        background-color: black; /* 鼠標懸停時背景顏色 */
+        color: white; /* 鼠標懸停時文字顏色 */
+        border: none; /* 去掉邊框 */
+    }
 </style>
 
 @endsection  

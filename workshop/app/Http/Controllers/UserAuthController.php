@@ -184,6 +184,13 @@ class UserAuthController extends Controller
         return view('component.super');
     }
 
+    public function Super1(){
+        
+        // 重新導向至商品編輯頁
+        return view('component.super1');
+    }
+
+
     public function Moon(){
         
         // 重新導向至商品編輯頁

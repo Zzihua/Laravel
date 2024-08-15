@@ -31,20 +31,20 @@
                                         <input type="text" value="" class="form-control rounded-0 bg-color-2 text-center text-md-start" placeholder="輸入優惠代碼..">
                                     </div>
                                     <div class="col-md-4 mt-3 mt-md-0">
-                                        <a href="#" 
-                                           class="button button-small button-border mt-2 m-md-0" 
-                                           style="background-color: white; color: black; transition: background-color 0.3s;"
-                                           onmouseover="this.style.backgroundColor='#304109'; this.style.color='white';"
-                                           onmouseout="this.style.backgroundColor='white'; this.style.color='#304109';">
+                                    <a href="#" 
+                                        class="button button-small button-border mt-2 m-md-0" 
+                                        style="background-color: white; color: black; transition: background-color 0.3s; box-shadow: none;"
+                                        onmouseover="this.style.backgroundColor='#304109'; this.style.color='white';"
+                                        onmouseout="this.style.backgroundColor='white'; this.style.color='#304109';">
                                             確認優惠代碼
-                                        </a>
+                                    </a>
                                     </div>
                                 </div>
                             </td>
                             <td colspan="3" class="text-md-end">
                                 <a href="#" 
                                    class="button button-small button-border mt-2 m-md-0" 
-                                   style="background-color: white; color: black; transition: background-color 0.3s;"
+                                   style="background-color: white; color: black; transition: background-color 0.3s; box-shadow: none;"
                                    onmouseover="this.style.backgroundColor='#304109'; this.style.color='white';"
                                    onmouseout="this.style.backgroundColor='white'; this.style.color='#304109';">
                                     購物車更新                                
@@ -93,7 +93,7 @@
                             <div class="col-12">
                                 <a href="/user/auth/orderfinish" 
                                     class="button button-small button-border mt-2 m-md-0" 
-                                    style="background-color: white; color: black; transition: background-color 0.3s;"
+                                    style="background-color:#304109; color: white; transition: background-color 0.2s; box-shadow: none;"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='#304109';"
                                     onmouseout="this.style.backgroundColor='#304109'; this.style.color='white';"
                                     onclick="clearCart()">
@@ -115,50 +115,52 @@
             localStorage.removeItem('cart');
 
         }
-            function Cart1(cartData) {
-        const cartTableBody = document.querySelector('.cart tbody');
-        cartTableBody.innerHTML = ''; // 清空表格
+            
+        
+        function Cart1(cartData) {
+            const cartTableBody = document.querySelector('.cart tbody');
+            cartTableBody.innerHTML = ''; // 清空表格
 
-        let totalPrice = 0;
-        const shippingCost = 60; // 固定運費
+            let totalPrice = 0;
+            const shippingCost = 60; // 固定運費
 
-        for (const [productId, { name, price, quantity, image }] of Object.entries(cartData)) {
-            const row = document.createElement('tr');
-            row.classList.add('cart_item');
-            row.innerHTML = `
-                <td class="cart-product-thumbnail">
-                    <a href="/product/${productId}" class="position-relative">
-                        <img class="border-0" width="64" height="64" src="${image}" alt="${name}">
-                        <span class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center">
-                            <span class="visually-hidden">Remove Product</span>&times;
-                        </span>
-                    </a>
-                </td>
-                <td class="cart-product-name">
-                    <a class="fw-normal" href="/product/${productId}">${name}</a>
-                </td>
-                <td class="cart-product-price">
-                    <span class="amount">$${price.toFixed(0)}</span>
-                </td>
-                <td class="cart-product-quantity cart cart-border cart-border-2">
-                    <div class="quantity" style="border-color: #3041;">
-                        <button type="button" class="minus" onclick="changeQuantity('${productId}', -1)"><i class="uil uil-minus"></i></button>
-                        <input type="number" step="1" min="1" name="quantity" value="${quantity}" title="Qty" class="qty border-0">
-                        <button type="button" class="plus" onclick="changeQuantity('${productId}', 1)"><i class="uil uil-plus"></i></button>
-                    </div>
-                </td>
-                <td class="cart-product-subtotal">
-                    <span class="amount">$${(price * quantity).toFixed(0)}</span>
-                </td>
-            `;
-            cartTableBody.appendChild(row);
+            for (const [productId, { name, price, quantity, image }] of Object.entries(cartData)) {
+                const row = document.createElement('tr');
+                row.classList.add('cart_item');
+                row.innerHTML = `
+                    <td class="cart-product-thumbnail">
+                        <a href="/product/${productId}" class="position-relative">
+                            <img class="border-0" width="64" height="64" src="${image}" alt="${name}">
+                            <span class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle lh-1 border border-white text-white square square-xs text-center">
+                                <span class="visually-hidden">Remove Product</span>&times;
+                            </span>
+                        </a>
+                    </td>
+                    <td class="cart-product-name">
+                        <a class="fw-normal" href="/product/${productId}">${name}</a>
+                    </td>
+                    <td class="cart-product-price">
+                        <span class="amount">$${price.toFixed(0)}</span>
+                    </td>
+                    <td class="cart-product-quantity cart cart-border cart-border-2">
+                        <div class="quantity" style="border-color: #3041;">
+                            <button type="button" class="minus" onclick="changeQuantity('${productId}', -1)"><i class="uil uil-minus"></i></button>
+                            <input type="number" step="1" min="1" name="quantity" value="${quantity}" title="Qty" class="qty border-0">
+                            <button type="button" class="plus" onclick="changeQuantity('${productId}', 1)"><i class="uil uil-plus"></i></button>
+                        </div>
+                    </td>
+                    <td class="cart-product-subtotal">
+                        <span class="amount">$${(price * quantity).toFixed(0)}</span>
+                    </td>
+                `;
+                cartTableBody.appendChild(row);
 
-            totalPrice += price * quantity;
+                totalPrice += price * quantity;
+            }
+
+            // 更新總金額
+            updateTotalPrice(totalPrice, shippingCost);
         }
-
-        // 更新總金額
-        updateTotalPrice(totalPrice, shippingCost);
-    }
 
     function updateTotalPrice(totalPrice, shippingCost) {
         const totalPriceElement = document.querySelector('#total-price');

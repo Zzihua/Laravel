@@ -26,7 +26,7 @@
 				</div>
 
 				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/fresh-food.jpg')}});">
-					<h4><a href="{{route('user.auth.summer')}}" class="text-light">食材小舖/Fresh Food</a></h4>
+					<h4><a href="#" class="text-light">食材小舖/Fresh Food</a></h4>
 				</div>
 
 				<div class="expand-category bg-light" style="background-image: url({{asset('assets/images/joinus.jpg')}});">
@@ -111,30 +111,28 @@
 									<span class="mx-1"> - </span>
 									<div class="price-range-to">$139.99</div>
 								</div>
-								<input class="price-range irs-hidden-input" tabindex="-1" readonly="">
 							</div><span class="irs irs--round js-irs-0"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="display: none;">0</span><span class="irs-max" style="display: none;">1</span><span class="irs-from" style="display: none; left: 0%;">0</span><span class="irs-to" style="display: none; left: 0%;">0</span><span class="irs-single" style="display: none; left: 0%;">0</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 3.50467%; width: 92.9907%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 0%;"><i></i><i></i><i></i></span><span class="irs-handle to" style="left: 92.9907%;"><i></i><i></i><i></i></span></span><input class="price-range irs-hidden-input" tabindex="-1" readonly=""><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 376px; height: 521px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div></div>
 
 						<div class="col-md-9">
 							<div id="shop" class="row shop grid-container" data-layout="fitRows">
-								
-								<!-- ============================================= --> 
-								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips"  data-product-id="123">
+
+								<!-- Shop Item 1
+								============================================= -->
+								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-lips">
 									<div class="grid-inner">
 										<div class="product-image">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62cbe15de264a300143378f3/800x.webp?source_format=jpg" alt="..."  ></a>
-											<!-- <div class="sale-flash badge bg-color rounded-0 fw-normal p-2">50% Off*</div> -->
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/6323101f4da4e80028074d13/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
-
 												</div>
 											</div>
 										</div>
 										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}"><b>核桃木煙燻鮭魚 | 星級餐酒館</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-0"><ins>$350</ins></div>
-											<!-- <del class="op-07">$24.99</del>  -->
+											<div class="product-title"><h3><a href="#"><b>黑魂咖哩佐星級焦糖洋蔥漢堡排 6 入優惠組</b></a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-0"><ins>$135</ins></div>
+											
 										</div>
 									</div>
 								</div>
@@ -142,153 +140,58 @@
 								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/650e8cac9e6b2c000ec9b4da/800x.webp?source_format=jpg" alt="..."  ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/633bcfce9ad56400193a7bb8/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
 										</div>
 										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="demo-skincare-single.html"><b>麻辣牛腱 | 名廚家常菜</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$260</ins></div>
+											<div class="product-title"><h3><a href="demo-skincare-single.html"><b>黑魂咖哩佐星級焦糖洋蔥漢堡排 6 入優惠組</b></a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><del class="op-07">$1,470</del> <ins>$1,399</ins></div>
 										</div>
 									</div>
 								</div>
 
-								<div class="col-lg-4 col-md-6 mb-4 product sf-face sf-ayurvedic sf-makeup">
+								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/64dd8e757af7e9000d6237ee/800x.webp?source_format=jpg" alt="..." ></a>
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62ea2cd07e79b0002846609d/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
 										</div>
 										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}" ><b>法芙娜莊園巧克力吐司 | Super Butter 超奶系列</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$240</ins></div>
+											<div class="product-title"><h3><a href="demo-skincare-single.html"><b>超奶Super Butter - 玉荷包吐司 1入</b></a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$65</ins></div>
 										</div>
 									</div>
 								</div>
 
-								<div class="col-lg-4 col-md-6 mb-4 product sf-body sf-hair">
+								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
 									<div class="grid-inner">
 										<div class="product-image mb-2">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/65150b66babca00023e905de/800x.webp?source_format=jpg" alt="..."></a>
-											<!-- <div class="sale-flash badge bg-color rounded-0 fw-normal p-2">Sale!</div> -->
+											<a href="#"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/632d512d13718a0025e633a7/800x.webp?source_format=jpg" alt="..."  ></a>
 											<div class="bg-overlay">
 												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+													<a href="#" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
 													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
 												</div>
 											</div>
 										</div>
 										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}"><b>醬燒香Ｑ豬腳 | 名廚家常菜</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"> <ins>$290</ins></div>
-											<!-- <del class="op-07">$19.99</del> -->
+											<div class="product-title"><h3><a href="demo-skincare-single.html"><b>超級玉米濃湯*3 + 原味超奶餐包禮盒*1｜金秋優惠3+1老饕組</b></a></h3></div>
+											<div class="product-price fw-normal mt-0 mb-2"><ins>$695</ins></div>
 										</div>
 									</div>
 								</div>
-
-								<div class="col-lg-4 col-md-6 mb-4 product sf-eyes sf-hair">
-									<div class="grid-inner">
-										<div class="product-image mb-2">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62cb8760f113ff002cd4ba29/800x.webp?source_format=jpg" alt="..."></a>
-											<div class="bg-overlay">
-												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
-													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
-												</div>
-											</div>
-										</div>
-										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}" ><b>法式培根洋菇鹹派 (2入) | 名廚家常菜</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$150</ins></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-lg-4 col-md-6 mb-4 product sf-lips sf-lotions sf-body">
-									<div class="grid-inner">
-										<div class="product-image mb-2">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/66753d28b8e10a001c20384d/800x.webp?source_format=jpg" alt="..."></a>
-											<div class="bg-overlay">
-												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
-													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
-												</div>
-											</div>
-										</div>
-										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}" ><b>肉醬千層麵 | 名廚家常菜</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$230</ins></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-lg-4 col-md-6 mb-4 product sf-body sf-hair">
-									<div class="grid-inner">
-										<div class="product-image mb-2">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/636b8b3e64182b0013fc6975/800x.webp?source_format=jpg" alt="..."></a>
-											<!-- <div class="sale-flash badge bg-color rounded-0 fw-normal p-2">Sale!</div> -->
-											<div class="bg-overlay">
-												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
-													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
-												</div>
-											</div>
-										</div>
-										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}"><b>野菇火腿 | 超人氣豹紋披薩</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$190</ins></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-lg-4 col-md-6 mb-4 product sf-eyes sf-face">
-									<div class="grid-inner">
-										<div class="product-image mb-2">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62ccd6299334d200290fb7ee/800x.webp?source_format=jpg" alt="..."></a>
-											<div class="bg-overlay">
-												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
-													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
-												</div>
-											</div>
-										</div>
-										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}" ><b>法式油封櫻桃鴨腿 | 星級餐酒館</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$310</ins></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-lg-4 col-md-6 mb-4 product sf-hair sf-ayurvedic sf-makeup">
-									<div class="grid-inner">
-										<div class="product-image mb-2">
-											<a href="{{route('user.auth.fish')}}"><img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62fdacf342f522002620e980/800x.webp?source_format=jpg" alt="..."></a>
-											<div class="bg-overlay">
-												<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
-													<a href="{{route('user.auth.fish')}}" class="d-block positon-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
-													<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
-												</div>
-											</div>
-										</div>
-										<div class="product-desc text-center">
-											<div class="product-title"><h3><a href="{{route('user.auth.fish')}}"><b>黑魂咖哩佐星級焦糖洋蔥漢堡排 | 名廚家常菜</b></a></h3></div>
-											<div class="product-price fw-normal mt-0 mb-2"><ins>$245</ins></div>
-										</div>
-									</div>
-								</div>
-
-								
+														
 							</div>
-							
 						</div>
 					</div>
 					<div class="row justify-content-center">
@@ -303,72 +206,6 @@
 				</div>
 		
 </section>
-
-
-
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.btn.bg-color').forEach(function (button) {
-        button.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            const productElement = this.closest('.product');
-            if (!productElement) {
-                console.error('Product element not found.');
-                return;
-            }
-
-            const productId = productElement.getAttribute('data-product-id');
-            if (!productId) {
-                console.error('Product ID not found.');
-                return;
-            }
-
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-            fetch('/add-to-cart', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({ productId: productId })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    updateCartPreview(data.cart);
-                } else {
-                    alert('無法添加商品到購物車。');
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        });
-    });
-});
-
-	function updateCartPreview(data) {
-		const cartPreview = document.getElementById('cart-preview');
-		const cartTotal = document.getElementById('cart-total');
-		
-		// 清空現有內容
-		cartPreview.innerHTML = '';
-
-		// 更新購物車項目
-		data.cartItems.forEach(item => {
-			cartPreview.innerHTML += `
-				<div class="cart-item">
-					<img src="${item.image}" alt="${item.name}" />
-					<p>${item.name}</p>
-					<p>${item.price}</p>
-					<p>Quantity: ${item.quantity}</p>
-				</div>`;
-		});
-
-		// 更新購物車總價
-		cartTotal.innerText = `Total: $${data.total}`;
-	}
-</script>
 
 <script>
 	document.querySelectorAll('.shop-sorting .dropdown-item').forEach(item => {
@@ -408,10 +245,7 @@
 
 </script>
 
-
-
 <style>
-
 	li.highlight1 a::after {
 		content: '';
 		position: absolute;
@@ -446,6 +280,7 @@
         color: white; /* 鼠標懸停時文字顏色 */
         border: none; /* 去掉邊框 */
     }
+
 
 </style>
 @endsection  
