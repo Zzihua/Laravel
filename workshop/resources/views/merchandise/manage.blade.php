@@ -1,4 +1,3 @@
-
 @extends('layout.master')
 
 @section('content')
@@ -30,97 +29,93 @@
                         </div>
                     </div>
 
-                                                        
                     <div class="border rounded p-4 mb-4 h-shadow all-ts bg-white h-translatey-sm">
-                        <div class="row align-items-center col-mb-30">
+                        <div class="table-responsive">
                             <table class="table table-hover">
-                                <tr align='center'>
-                                    <th>編號</th>
-                                    <th>商品名稱</th>
-                                    <th>圖片</th>
-                                    <th>狀態</th>
-                                    <th>商品類型</th>
-                                    <th>價格</th>
-                                    <th>庫存數量</th>
-                                    <th>產品說明</th>
-                                    <th>編輯</th>
-                                    <th>刪除</th>
-                                </tr>
-
-                                @foreach($MerchandisePaginate as $Merchandise)
-                                <tr>
-                                    <td align='center'> {{ $Merchandise->id }}</td>
-                                    <td align='center'> {{ $Merchandise->name }}</td>
-                                    <td align='center'>
-                                        @if ($Merchandise->photo)
-                                            <img src="{{ $Merchandise->photo }}" alt="商品图片"  width='100' height='100'/>
-                                        @else
-                                            <img  alt="無圖片" style="max-width: 100%; height: auto;">
-                                        @endif
-                                    </td>
-                                    <td align='center'v>
-                                        @if($Merchandise->status == 'C')
-                                            <span class="label label-default">
-                                                編輯中
+                                <thead>
+                                    <tr class="text-center">
+                                        <th style="width: 5%;">編號</th>
+                                        <th style="width: 15%;">商品名稱</th>
+                                        <th style="width: 10%;">圖片</th>
+                                        <th style="width: 10%;">狀態</th>
+                                        <th style="width: 15%;">商品類型</th>
+                                        <th style="width: 10%;">價格</th>
+                                        <th style="width: 10%;">庫存數量</th>
+                                        <th style="width: 15%;">產品說明</th>
+                                        <th style="width: 5%;">編輯</th>
+                                        <th style="width: 5%;">刪除</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($MerchandisePaginate as $Merchandise)
+                                    <tr class="text-center" style="background-color: {{ $loop->even ? '#f9f9f9' : '#ffffff' }};">
+                                        <td>{{ $Merchandise->id }}</td>
+                                        <td>{{ $Merchandise->name }}</td>
+                                        <td>
+                                            @if ($Merchandise->photo)
+                                                <img src="{{ $Merchandise->photo }}" alt="商品图片" width='100' height='100' class="img-thumbnail"/>
+                                            @else
+                                                <img src="default-image-path.jpg" alt="無圖片" width='100' height='100' class="img-thumbnail"/>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($Merchandise->status == 'S')
+                                                <form action="{{ route('merchandise.updateStatus', $Merchandise->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-success btn-sm" style="font-size:15px;">銷售中</button>
+                                                </form>
+                                            @else
+                                                <span class="badge bg-warning" style="font-size:15px;">編輯中</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($Merchandise->type == 'A商品')
+                                                <span class="badge bg-info" style="font-size:15px;">超人氣排行榜</span>
+                                            @elseif($Merchandise->type == 'B商品')
+                                                <span class="badge bg-primary" style="font-size:15px;">2024中秋禮盒</span>
+                                            @elseif($Merchandise->type == 'C商品')
+                                                <span class="badge bg-success" style="font-size:15px;">涼到夏到 | 夏季新品兩件9折</span>
+                                            @else
+                                                <span class="badge bg-danger" style="font-size:15px;">熱銷優惠</span>
+                                            @endif
+                                        </td>
+                                        <td>NT$ {{ $Merchandise->price }}</td>
+                                        <td>{{ $Merchandise->remain_count }}</td>
+                                        <td class="text-start">
+                                            <span title="{{ $Merchandise->introduction }}">
+                                                {{ \Illuminate\Support\Str::limit($Merchandise->introduction, 50) }}
                                             </span>
-                                        @else
-                                            <span class="label label-success">
-                                                銷售中
-                                            </span>
-                                        @endif
-                                    </td>
-                                    <td align='center'v>
-                                        @if($Merchandise->type == 'A商品')
-                                            <span class="label label-default">
-                                                A商品
-                                            </span>
-                                        @elseif($Merchandise->type == 'B商品')
-                                            <span class="label label-default">
-                                                B商品
-                                            </span>
-                                        @elseif($Merchandise->type == 'C商品')
-                                            <span class="label label-default">
-                                                C商品
-                                            </span>
-                                        @elseif($Merchandise->type == 'D商品')
-                                            <span class="label label-default">
-                                                D商品
-                                            </span>
-                                        @else($Merchandise->type == 'E商品')
-                                            <span class="label label-success">
-                                                E商品
-                                            </span>
-                                        @endif
-                                    </td>
-                                    <td align='center'> {{ $Merchandise->price }} </td>
-                                    <td align='center'> {{ $Merchandise->remain_count }}</td>
-                                    <td align='center'> {{ $Merchandise->introduction }}</td>
-                                    <td align='center'>
-                                        <a href="/merchandise/{{ $Merchandise->id }}/edit">
-                                            <i class="fa fa-pencil" aria-hidden="true" style="color:black"></i>
-                                        </a>
-                                    </td>
-                                    <td align='center'>
-                                        <div class="col-lg-2 text-lg-end col-md-6">
-                                            <a href="/merchandise/{{ $Merchandise->id }}/delete">
-                                                <i class="fa fa-trash" aria-hidden="true" style="color:red"></i>
+                                        </td>
+                                        <td>
+                                            <a href="/merchandise/{{ $Merchandise->id }}/edit" class="btn btn-outline-primary btn-sm">
+                                                <i class="fa fa-pencil-alt"></i>
                                             </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endforeach
+                                        </td>
+                                        <td>
+                                            <a href="/merchandise/{{ $Merchandise->id }}/delete" class="btn btn-outline-danger btn-sm">
+                                                <i class="fa fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+
+                <!-- Pagination -->
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        {{ $MerchandisePaginate->links() }}
+                    </div>
+                </div>
+
             </div>
         </div>
     </section><!-- #content end -->
 
-
 </div><!-- #wrapper end -->
-
-
-
 
 @endsection

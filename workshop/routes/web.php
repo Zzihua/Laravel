@@ -67,6 +67,7 @@ Route::group(['prefix' => 'merchandise'], function () {
         Route::get('edit', 'App\Http\Controllers\MerchandiseController@MerchandiseEdit')->middleware(AuthUserAdminMiddleware::class);
         Route::put('/', 'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess');
         Route::get('delete', 'App\Http\Controllers\MerchandiseController@MerchandiseDelete')->middleware(AuthUserAdminMiddleware::class);
+        Route::patch('update', 'App\Http\Controllers\MerchandiseController@MerchandiseUpdate')->middleware(AuthUserAdminMiddleware::class);
     });
 
     // // 圖片上傳

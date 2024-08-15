@@ -94,11 +94,10 @@
                                             <div class="input-group">
                                                 <select class="form-select required" name="type"  id="product-form-type">
                                                     <option value="">選擇商品類型</option>
-                                                    <option value="A商品">A商品</option>
-                                                    <option value="B商品">B商品</option>
-                                                    <option value="C商品">C商品</option>
-                                                    <option value="D商品">D商品</option>
-                                                    <option value="E商品">E商品</option>
+                                                    <option value="A商品">超人氣排行榜</option>
+                                                    <option value="B商品">2024中秋禮盒</option>
+                                                    <option value="C商品">涼到夏到 | 夏季新品兩件9折</option>
+                                                    <option value="D商品">熱銷優惠</option>
                                                 </select>
                                             </div>
                                         </div>

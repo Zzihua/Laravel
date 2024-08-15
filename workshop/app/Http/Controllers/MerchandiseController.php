@@ -183,6 +183,23 @@ class MerchandiseController extends Controller
          return Storage::url($file_path);
      }
 
+     public function update(Request $request, $id)
+    {
+        // 找到對應的商品，若找不到會拋出 404 錯誤
+        $merchandise = Merchandise::findOrFail($id);
+
+        // 更新狀態
+        $status = $request->input('status');
+        $merchandise->status = $status;
+
+        // 保存更新
+        $merchandise->save();
+
+        // 返回成功訊息
+        return redirect()->route('auth.shop')->with('success', '狀態更新成功');
+    }
+
+     
 
 
 }
