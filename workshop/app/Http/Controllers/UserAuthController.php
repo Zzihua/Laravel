@@ -61,6 +61,14 @@ class UserAuthController extends Controller
         return view( 'auth.home');
     }
 
+    public function Store()
+    {
+        // $binding = [
+        //     'title' => 'Home',
+        // ];
+        return view( 'component.store');
+    }
+
     public function SignUpProcess()
     {
         $form_data = request()->all();
