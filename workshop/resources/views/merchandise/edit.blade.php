@@ -38,7 +38,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="name">名稱 *</label>
+                                        <label for="name">名稱 <span class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="name" id="name" class="form-control required" value="{{ old('name', $Merchandise->name) }}" placeholder="商品名稱">
@@ -48,7 +48,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="price">價格 *</label>
+                                        <label for="price">價格<span class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="price" id="price" class="form-control required" value="{{ old('price', $Merchandise->price) }}" placeholder="商品價格">
@@ -58,10 +58,10 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="amount">數量 *</label>
+                                        <label for="remain_count">數量 <span class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="amount" id="amount" class="form-control required" value="{{ old('amount', $Merchandise->amount) }}" placeholder="商品總數量">
+                                        <input type="text" name="remain_count" id="remain_count" class="form-control required" value="{{ old('remain_count', $Merchandise->remain_count) }}" placeholder="商品總數量">
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="product-form-status">狀態 *</label>
+                                        <label for="product-form-status">狀態<span class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="btn-group d-flex" role="group">
@@ -86,7 +86,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="type">類型 *</label>
+                                        <label for="type">類型 <span class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
@@ -104,11 +104,11 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="illustrate">說明 *</label>
+                                        <label for="introduction">說明<span class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
-                                            <textarea name="illustrate" id="illustrate" class="form-control required" cols="30" rows="5" placeholder="商品說明">{{ old('illustrate', $Merchandise->illustrate) }}</textarea>
+                                            <textarea name="introduction" id="introduction" class="form-control required" cols="30" rows="5" placeholder="新增商品說明">{{ old('introduction', $Merchandise->introduction ) }}</textarea>
                                         </div>
                                     </div>
                                 </div>

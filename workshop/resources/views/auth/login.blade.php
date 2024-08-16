@@ -4,7 +4,11 @@
 
 <!-- contnet -->
 <section id="content" >
-		<div class="main1" >
+	<div id="background-animation">
+		<div class="ripple"></div>
+		<div class="ripple"></div>
+	</div>
+		<div class="main1" >a
 			<div class="container1 a-container" id="a-container">
 				@include('component.loginAlert')
 				<form class="form1" id="a-form" method="post" action="/user/auth/signup">
@@ -66,7 +70,53 @@
 					<button class="switch__button button switch-btn">註冊</button>
 				</div>
 			</div>
+			<div id="particles-js"></div>
 		</div>
 </section>
 <!-- contnetend -->
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+
+<style>
+	/* background-animation.css */
+	#background-animation {
+			position: fixed; /* 更改為 fixed，以覆蓋整個視窗 */
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+            align-items: center;
+            justify-content: center;
+            /* background: radial-gradient(circle at center,   #FAFCFF, #CDD0D6);
+			overflow: hidden; 確保背景動畫不被遮擋 */
+			background-image: url({{asset('assets/images/log.png')}});
+			z-index: -1; /* 確保背景在其他內容之下 */
+			background-size: cover; 
+			background-position: center center;
+        }
+
+		
+	.form1 {
+		box-shadow: none; /* 移除阴影 */
+		border: none; /* 移除边框 */
+		background: transparent; /* 使背景透明 */
+	}
+
+	.main1 {
+		box-shadow: none;
+		background: transparent;
+	}
+
+	.switch__button {
+		color: white; 
+		background-color: #909399; 
+	}
+
+	.form__button{
+		color: white; 
+		background-color: #909399;
+	}
+</style>
+
 @endsection
