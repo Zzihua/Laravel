@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Shop\Entity\User;
 use Hash;
-use App\Models\Merchandise;
+use App\Shop\Entity\Merchandise;
 use Illuminate\Http\Request;
 use Mail;
 use Product;
@@ -29,10 +29,7 @@ class UserAuthController extends Controller
 
     public function shop()
     {
-        // 獲取所有狀態為「銷售中」的商品
-        // $merchandises = Merchandise::where('status', '銷售中')->get();
-
-        // return view('auth.shop', compact('merchandises'));
+        
         return view('auth.shop');
     }
 
@@ -198,8 +195,8 @@ class UserAuthController extends Controller
 
     public function Super1(){
         
-        // 重新導向至商品編輯頁
-        return view('component.super1');
+        $products = Merchandise::where('status', 'S')->get();
+        return view('component.super1', compact('products'));
     }
 
 

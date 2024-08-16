@@ -60,11 +60,8 @@
                                         </td>
                                         <td>
                                             @if($Merchandise->status == 'S')
-                                                <form action="{{ route('merchandise.updateStatus', $Merchandise->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('PATCH')
-                                                    <button type="submit" class="btn btn-success btn-sm" style="font-size:15px;">銷售中</button>
-                                                </form>
+                                                <span class="btn btn-success btn-sm" style="font-size:15px;">銷售中</span>
+                                               
                                             @else
                                                 <span class="badge bg-warning" style="font-size:15px;">編輯中</span>
                                             @endif

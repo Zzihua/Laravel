@@ -190,7 +190,30 @@
 										</div>
 									</div>
 								</div>
-														
+								<div class="col-lg-4 col-md-6 mb-4 product sf-lotions sf-makeup">
+								
+								<div id="shop" class="row shop grid-container" data-layout="fitRows">
+									@foreach ($products as $product)
+										
+											<div class="grid-inner">
+												<div class="product-image">
+													<a href="{{ route('product.show', $product->id) }}"><img src="{{ asset($product->photo) }}" alt="{{ $product->name }}" style="height:407px"></a>
+													<div class="bg-overlay">
+														<div class="bg-overlay-content align-items-end justify-content-end" data-hover-animate="fadeIn">
+															<a href="{{ route('product.show', $product->id) }}" class="d-block position-absolute top-0 start-0 w-100 h-100 z-1"><span class="visually-hidden">Product Link</span></a>
+															<a href="#" class="btn bg-color bg-opacity-75 text-light me-2 z-2"><i class="bi-basket"></i></a>
+														</div>
+													</div>
+												</div>
+												<div class="product-desc text-center">
+													<div class="product-title"><h3><a href="{{ route('product.show', $product->id) }}"><b>{{ $product->name }}</b></a></h3></div>
+													<div class="product-price fw-normal mt-0 mb-0"><ins>${{ $product->price }}</ins></div>
+												</div>
+											</div>
+										</div>
+									@endforeach
+								</div>
+								
 							</div>
 						</div>
 					</div>

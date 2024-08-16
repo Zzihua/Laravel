@@ -45,6 +45,9 @@ Route::group(['prefix' => 'user'], function () {
         
         Route::get('/', 'App\Http\Controllers\UserAuthController@CartProcess')->middleware(AuthUserAdminMiddleware::class);
         Route::post('/', 'App\Http\Controllers\UserAuthController@CartRemoveProcess')->middleware(AuthUserAdminMiddleware::class);
+        // Route for showing individual product details
+        Route::get('product/{id}', 'App\Http\Controllers\ProductController@show')->name('product.show');
+
         // Route::get('/', 'App\Http\Controllers\UserAuthController@Page')->middleware(AuthUserAdminMiddleware::class);
 
     });

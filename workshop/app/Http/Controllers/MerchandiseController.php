@@ -35,7 +35,7 @@ class MerchandiseController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'remain_count' => 'required|integer',
-            'status' => 'required|string',
+           'status' => 'required|in:C,S', 
             'type' => 'required|string',
             'introduction' => 'required|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -66,10 +66,17 @@ class MerchandiseController extends Controller
             // 設定圖片檔案相對位置
             $input['photo'] = $file_relative_path.$file_name;
         }
-    
 
-        // 创建商品
-        Merchandise::create($input);
+        $merchandise = Merchandise::create([
+            'name' => $input['name'],
+            'price' => $input['price'],
+            'remain_count' => $input['remain_count'],
+            'status' => $input['status'],
+            'type' => $input['type'],
+            'introduction' => $input['introduction'],
+            'photo' => $input['photo'],
+        ]);
+
 
         // 重新导向到商品管理页
         return redirect('/merchandise/manage')->with('success', '商品已成功创建！');
