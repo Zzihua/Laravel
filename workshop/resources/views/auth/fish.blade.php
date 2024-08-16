@@ -18,11 +18,34 @@
 								<a href="https://shoplineimg.com/5baaeb237afd880005c43ed5/62cbe15de264a300143378f3/800x.webp?source_format=jpg" id="item-1" data-lightbox="gallery-item" >
 									<img src="https://shoplineimg.com/5baaeb237afd880005c43ed5/62cbe15de264a300143378f3/800x.webp?source_format=jpg" alt="#1 Image Caption">
 								</a>
+							</div>
+							<br/>
+							<div class="tabs">
+								<a href="#" class="active" onclick="showSection(event, 'description')"><b>商品描述</b></a>
+								<a href="#" onclick="showSection(event, 'shipping-payment')"><b>送貨及付款方式</b></a>
+							</div>
+							<div class="masonry-thumbs grid-container row row-cols-3 row-cols-md-1 masonry-gap-xl content-section active" data-lightbox="gallery" name="description" id="description">
 								<a href="https://img.shoplineapp.com/media/image_clips/64d0a4506240c00010c64ff3/original.jpg?1691395152" id="item-2" data-lightbox="gallery-item">
 									<img src="https://img.shoplineapp.com/media/image_clips/64d0a4506240c00010c64ff3/original.jpg?1691395152" alt="#2 Image Caption">
 								</a>
-								
 							</div>
+
+							<div id="shipping-payment" name="shipping-payment" class="content-section">
+								<h3>送貨及付款方式</h3>
+								<div style="display: flex; justify-content: space-between;">
+									<div>
+										<h4>送貨方式</h4>
+										<p>黑貓·冷凍</p>
+									</div>
+									<div>
+										<h4>付款方式</h4>
+										<p>信用卡付款（VISA / Master / JCB）</p>
+										<p>黑貓宅配（貨到付款）</p>
+										<p>ATM 虛擬代碼繳費（需持代碼至實體ATM或網路銀行繳費）</p>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -83,6 +106,48 @@
 
 			.device-touch .section-single-features {
 				background-attachment: scroll !important;
+			}
+
+			.navbar {
+				display: flex;
+				justify-content: space-around;
+				/* background-color: rgba(255, 255, 255, 0.7); */
+				padding: 10px;
+				/* position: absolute; */
+				top: 0;
+				width: 100%;
+			}
+			.navbar a {
+				text-decoration: none;
+				color: black;
+				font-size: 16px;
+				padding: 5px;
+			} 
+			.tabs {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            /* background-color: #f8f8f8; */
+			}
+			.tabs a {
+				padding: 10px 20px;
+				cursor: pointer;
+				text-decoration: none;
+				color: black;
+				font-size: 14px;
+				border-bottom: 2px solid transparent;
+			}
+			.tabs a.active {
+				border-bottom: 2px solid black;
+			}
+			.content-section {
+				padding: 20px;
+				display: none;
+			}
+			.content-section.active {
+				display: block;
+			}
+			.content-section h3 {
+				margin-top: 0;
 			}
 	</style>
 
@@ -149,6 +214,17 @@
 			// 初始化價格顯示
 			updatePrice();
 		});
+
+		function showSection(event, sectionId) {
+            const tabs = document.querySelectorAll('.tabs a');
+            const sections = document.querySelectorAll('.content-section');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            sections.forEach(section => section.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(sectionId).classList.add('active');
+        }
 
 
 	</script>

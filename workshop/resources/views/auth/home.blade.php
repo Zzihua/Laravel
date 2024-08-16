@@ -250,7 +250,7 @@
                         <div class="row g-5">
 
                               <div class="col-lg-3 col-md-6 text-center">
-                                    <a href="{{route('user.auth.store')}}"><i class="i-plain i-xlarge mx-auto mb-0 icon-et-map"></i></a>
+                                    <i class="i-plain i-xlarge mx-auto mb-0 icon-et-map" onclick="window.location.href='{{route('user.auth.store')}}'"></i>
                                     <h3 class="text-uppercase font-body" style="font-size: 22px; font-weight: 700;margin-top: 20px">Store</h3>
                                     <span class="font-primary">博愛店  LA ONE 烘焙坊<br>文衡店  LA ONE 烘焙坊<br>美術館店  LA ONE 烘焙坊<br>孟子店  LA ONE 烘焙坊</span>
                               </div>
