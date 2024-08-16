@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <a href="/user/auth/orderfinish" 
+                                <a href="#" 
                                     class="button button-small button-border mt-2 m-md-0" 
                                     style="background-color:#304109; color: white; transition: background-color 0.2s; box-shadow: none;"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='#304109';"
@@ -109,11 +109,20 @@
 </div><!-- #content end -->
 
 <script>
+        
+        const isLoggedIn = @json(Auth::check());
 
         function clearCart() {
-            // 清空購物車數據
-            localStorage.removeItem('cart');
-
+            if (!isLoggedIn) {
+                // 使用者未登入，跳轉到登入頁面
+                alert('您尚未登入！');
+                window.location.href = '/user/auth/login';
+            } else {
+                // 使用者已登入，清空購物車並下訂單
+                localStorage.removeItem('cart'); // 清空購物車的資料
+                // 可以在這裡加入其他下訂單的邏輯
+                window.location.href = '/user/auth/orderfinish';
+            }
         }
             
         

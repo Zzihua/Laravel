@@ -96,12 +96,18 @@
 
         localStorage.setItem('cart', JSON.stringify(cartData));
         updateCartDisplay(cartData); // Update cart display in the preview section
+
+        console.log('Before opening popup'); // 加這行
         openCartPopup(); // 自動打開購物車彈出窗口
+        console.log('After opening popup'); // 加這行
     }
 
     function openCartPopup() {
-        console.log('Opening cart popup'); // Add this line
-        document.getElementById('cart-popup').style.display = 'flex';
+        const cartPopup = document.getElementById('cart-popup');
+        console.log(cartPopup); // 檢查元素是否正確獲取
+        if (cartPopup) {
+            cartPopup.style.display = 'flex';
+        }
     }
 
     function closeCartPopup() {

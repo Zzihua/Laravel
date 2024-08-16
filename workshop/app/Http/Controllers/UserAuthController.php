@@ -30,9 +30,10 @@ class UserAuthController extends Controller
     public function shop()
     {
         // 獲取所有狀態為「銷售中」的商品
-        $merchandises = Merchandise::where('status', '銷售中')->get();
+        // $merchandises = Merchandise::where('status', '銷售中')->get();
 
-        return view('auth.shop', compact('merchandises'));
+        // return view('auth.shop', compact('merchandises'));
+        return view('auth.shop');
     }
 
     public function LogIn()

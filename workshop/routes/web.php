@@ -11,6 +11,9 @@ Route::get('/', function () {
 //     return "hello world";
 // });
 
+Route::get('checkout','App\Http\Controllers\CheckoutController@Checkout')->middleware(AuthUserAdminMiddleware::class);
+
+
 
 Route::get('/google/auth',
 'App\Http\Controllers\SocialiteController@redirectToProvider')->name('redirectToProvider');

@@ -367,7 +367,12 @@
 
 		// 更新購物車總價
 		cartTotal.innerText = `Total: $${data.total}`;
+
+		
 	}
+
+
+
 </script>
 
 <script>
