@@ -293,10 +293,10 @@
 					<div class="row justify-content-center">
 						<div class="col-lg-9">
 							<ul class="pagination">
-							  <li class="page-item"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>
+							  <li class="page-item"><a class="page-link" href="{{route('user.auth.super')}}" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>
 							  <li class="page-item"><a class="page-link" href="{{route('user.auth.super')}}">1</a></li>
 							  <li class="page-item"><a class="page-link" href="{{route('user.auth.super1')}}">2</a></li>
-							  <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+							  <li class="page-item"><a class="page-link" href="{{route('user.auth.super1')}}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
 							</ul>
 					</div>
 				</div>

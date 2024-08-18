@@ -112,6 +112,8 @@
         
         const isLoggedIn = @json(Auth::check());
 
+        console.log('Is logged in:', isLoggedIn);
+
         function clearCart() {
             if (!isLoggedIn) {
                 // 使用者未登入，跳轉到登入頁面
@@ -124,7 +126,7 @@
                 window.location.href = '/user/auth/orderfinish';
             }
         }
-            
+
         
         function Cart1(cartData) {
             const cartTableBody = document.querySelector('.cart tbody');

@@ -19,13 +19,13 @@ class UserAuthController extends Controller
         return $id.'<br> my id:'.$id;
     }
 
-    // public function SignUp()
-    // {
-    //     $binding = [
-    //         'title' => '註冊',
-    //     ];
-    //     return view( 'auth.signup' , $binding);
-    // }
+    public function SignUp()
+    {
+        // $binding = [
+        //     'title' => '註冊',
+        // ];
+        return view( 'auth.login' );
+    }
 
     public function shop()
     {

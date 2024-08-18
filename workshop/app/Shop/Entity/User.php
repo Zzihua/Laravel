@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model {
+class User extends  Authenticatable {
     // 資料表名稱
+
+    use Notifiable;
     protected $table = 'users';
     // 主鍵名稱
     protected $primaryKey = 'id';

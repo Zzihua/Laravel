@@ -15,10 +15,8 @@ Route::get('checkout','App\Http\Controllers\CheckoutController@Checkout')->middl
 
 
 
-Route::get('/google/auth',
-'App\Http\Controllers\SocialiteController@redirectToProvider')->name('redirectToProvider');
-Route::get('/google/auth/callback',
-'App\Http\Controllers\SocialiteController@handleProviderCallback')->name('handleProviderCallback');
+Route::get('/google/auth','App\Http\Controllers\SocialiteController@redirectToProvider')->name('redirectToProvider');
+Route::get('/google/auth/callback','App\Http\Controllers\SocialiteController@handleProviderCallback')->name('handleProviderCallback');
 
 
 Route::group(['prefix' => 'user'], function () {
